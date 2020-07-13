@@ -1,0 +1,41 @@
+{
+  "name": "reime005",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "@reime005/web",
+      "@reime005/web/**"
+    ]
+  },
+  "scripts": {
+    "lint": "eslint packages --fix",
+    "lint-check": "eslint packages --quiet",
+    "watch": "yarn workspace @reime005/common watch",
+    "postinstall": "sh ./scripts/post.sh",
+    "mobile/start": "yarn workspace mobile start",
+    "web/start": "yarn workspace web start",
+    "run-android": "yarn workspace mobile run-android",
+    "run-ios": "yarn workspace mobile run-ios"
+  },
+  "dependencies": {
+    "react": "16.11.0",
+    "react-dom": "16.11.0",
+    "react-native": "0.62.2",
+    "react-native-web": "0.12.2",
+    "react-redux": "7.2.0"
+  },
+  "devDependencies": {
+    "@react-native-community/eslint-config": "1.0.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "detox": "^14.5.1",
+    "eslint": "^7.0.0",
+    "eslint-plugin-react-hooks": "^4.0.4",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.0",
+    "typescript": "3.9.2"
+  }
+}

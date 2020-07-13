@@ -1,0 +1,111 @@
+{
+  "name": "mobile",
+  "version": "2.1.4",
+  "main": "App.js",
+  "private": true,
+  "scripts": {
+    "start": "react-native start",
+    "lint-ci": "eslint 'src/**/*.{js,jsx}' --quiet",
+    "lint": "yarn lint-ci --fix",
+    "postinstall": "sh scripts/postInstallHacks.sh",
+    "run-android": "react-native run-android",
+    "run-ios": "react-native run-ios --simulator 'iPhone 6s'",
+    "test-ci": "jest --passWithNoTests",
+    "test": "yarn test-ci --watch",
+    "test-android-debug": "E2E_DEVICE=local_android_debug jest",
+    "test-android-release": "E2E_DEVICE=local_android_release jest",
+    "build-android-debug": "pushd android; ./gradlew assembleDebug; popd",
+    "build-android-release": "pushd android; ./gradlew assembleRelease; popd",
+    "test-ios-debug": "E2E_DEVICE=local_ios_debug jest",
+    "test-ios-release": "E2E_DEVICE=local_ios_release jest",
+    "build-detox-ios": "detox build -c ios.sim.release",
+    "test-detox-ios": "detox test -c ios.sim.release",
+    "build-detox-android": "detox build -c android.emu.debug",
+    "test-detox-android": "detox test -c android.emu.debug",
+    "test-detox-android-release": "detox test -c android.emu.release",
+    "build-ios-release": "xcodebuild -workspace ios/reime005.xcworkspace -scheme reime005 -configuration Release -sdk iphonesimulator -UseModernBuildSystem=NO -derivedDataPath ios/build/app -quiet; rm ios/app-release.zip; zip -r ios/app-release.zip ios/build/app/Build/Products/Release-iphonesimulator/*.app"
+  },
+  "dependencies": {
+    "@react-native-community/async-storage": "^1.10.1",
+    "@react-native-community/masked-view": "^0.1.10",
+    "@react-navigation/bottom-tabs": "^5.5.0",
+    "@react-navigation/native": "^5.4.3",
+    "@react-navigation/stack": "^5.4.0",
+    "@reime005/common": "*",
+    "react": "16.11.0",
+    "react-i18next": "^10.11.4",
+    "react-native": "0.62.2",
+    "react-native-config": "^1.0.0",
+    "react-native-countdown-component": "^1.7.3",
+    "react-native-exception-handler": "^2.10.8",
+    "react-native-gesture-handler": "^1.6.1",
+    "react-native-reanimated": "^1.9.0",
+    "react-native-safe-area-context": "^2.0.0",
+    "react-native-screens": "^2.8.0",
+    "react-native-webview": "^9.4.0",
+    "styled-components": "^5.0.1"
+  },
+  "devDependencies": {
+    "@apollo/react-hooks": "^3.1.5",
+    "@babel/core": "^7.6.2",
+    "@babel/runtime": "^7.6.2",
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@fortawesome/react-native-fontawesome": "^0.2.5",
+    "@types/react": "^16.9.11",
+    "@types/react-native": "^0.60.22",
+    "apollo-boost": "^0.4.9",
+    "babel-jest": "24.9.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react-native": "4.0.1",
+    "detox": "^14.5.1",
+    "eslint": "^7.0.0",
+    "graphql": "^15.0.0",
+    "jest": "^24.9.0",
+    "metro-react-native-babel-preset": "^0.58.0",
+    "react-native-svg": "^12.1.0",
+    "react-test-renderer": "16.11.0"
+  },
+  "jest": {
+    "preset": "react-native",
+    "transform": {
+      "^.+\\.js$": "<rootDir>/../../node_modules/react-native/jest/preprocessor.js"
+    },
+    "testMatch": [
+      "<rootDir>/../../(test/unit/**/*.spec.(js|jsx|ts|tsx)|**/__test__/*.(js|jsx|ts|tsx))"
+    ]
+  },
+  "detox": {
+    "configurations": {
+      "ios.sim.debug": {
+        "binaryPath": "ios/build/app/Build/Products/Debug-iphonesimulator/reime005.app",
+        "build": "xcodebuild -workspace ios/reime005.xcworkspace -scheme reime005 -configuration Debug -sdk iphonesimulator -UseModernBuildSystem=NO -derivedDataPath ios/build/app -quiet",
+        "type": "ios.simulator",
+        "name": "iPhone 11"
+      },
+      "ios.sim.release": {
+        "binaryPath": "ios/build/app/Build/Products/Release-iphonesimulator/reime005.app",
+        "build": "xcodebuild -workspace ios/reime005.xcworkspace -scheme reime005 -configuration Release -sdk iphonesimulator -derivedDataPath ios/build/app -quiet",
+        "type": "ios.simulator",
+        "name": "iPhone 11"
+      },
+      "android.emu.debug": {
+        "binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
+        "build": "pushd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && popd",
+        "type": "android.emulator",
+        "name": "emu"
+      },
+      "android.emu.release": {
+        "binaryPath": "android/app/build/outputs/apk/release/app-release.apk",
+        "build": "pushd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release && popd",
+        "type": "android.emulator",
+        "name": "emu"
+      }
+    },
+    "test-runner": "jest"
+  },
+  "resolutions": {
+    "js-yaml": "^3.13.1",
+    "pem": "^1.13.2"
+  }
+}
