@@ -2,9 +2,9 @@
 
 WIP
 
-![iOS build](https://github.com/reime005/mariusreimer.com/workflows/iOS/badge.svg)
+<!-- ![iOS build](https://github.com/reime005/mariusreimer.com/workflows/iOS/badge.svg)
 
-![Android build](https://github.com/reime005/mariusreimer.com/workflows/Android/badge.svg)
+![Android build](https://github.com/reime005/mariusreimer.com/workflows/Android/badge.svg) -->
 
 ![Web build](https://github.com/reime005/mariusreimer.com/workflows/Web/badge.svg)
 
