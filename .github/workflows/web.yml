@@ -2,14 +2,16 @@ name: Web
 
 on:
   push:
+    paths-ignore:
+      - 'packages/mobile/**/*'
     branches:
       - 'develop'
       - 'master'
   pull_request:
+    paths-ignore:
+      - 'packages/mobile/**/*'
     branches:
       - 'master'
-  paths-ignore:
-    - 'packages/mobile/**/*'
 
 jobs:
   build-test-deploy:
