@@ -3,10 +3,11 @@ name: Web
 on:
   push:
     branches:
-      - '*'
+      - 'develop'
+      - 'master'
   pull_request:
     branches:
-      - '*'
+      - 'master'
   paths-ignore:
     - 'packages/mobile/**/*'
 
