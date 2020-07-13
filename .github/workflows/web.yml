@@ -46,10 +46,9 @@ jobs:
 
       - uses: actions/upload-artifact@v2
         if: failure()
-        working-directory: packages/web/
         with:
           name: test-screenshots
-          path: ./screenshots
+          path: ./packages/web/screenshots
 
       - name: Deploy Test
         if: "(github.ref == 'refs/heads/master' || github.ref == 'refs/heads/develop')"
