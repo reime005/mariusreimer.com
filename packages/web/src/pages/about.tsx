@@ -78,7 +78,7 @@ const data: Data[] = [
     date: '2018-now',
     imgSource: require('../assets/nectlogo.png'),
   },
-];
+].reverse();
 
 export const AboutPage = () => {
   return (
@@ -91,7 +91,7 @@ export const AboutPage = () => {
         </Intro>
 
         <TimeLine>
-          {data.reverse().map((d, i) => {
+          {data.map((d, i) => {
             let className = i % 2 === 0 ? 'left' : 'right';
 
             return (

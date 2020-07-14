@@ -33,8 +33,8 @@ export const HomePage = () => {
 
           <Sub>
             Additionally, I use techniques like Docker to provide Continuous
-            Integration. For developing backend software I usually take Node.JS
-            and Rust.
+            Integration. For developing backend software I like to take Node.JS
+            / Rust.
           </Sub>
 
           <a href="/about">Read More</a>
