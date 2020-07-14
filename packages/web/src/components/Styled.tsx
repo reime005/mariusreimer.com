@@ -4,13 +4,13 @@ export const Intro = styled.div`
   box-sizing: border-box;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
   flex: 1;
   max-width: 1000px;
   padding: 32px;
-  padding-left: 10vw;
-  padding-right: 10vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
   font-size: 18px;
   line-height: 1.55em;
   width: 100%;
@@ -38,9 +38,14 @@ export const Intro = styled.div`
       color: ${({ theme }) => theme.color.link};
     }
   }
+
+  @media screen and (max-width: 570px) {
+    flex-direction: column !important;
+  }
 `;
 
 export const StyledHeadline = styled.h1`
   font-size: 3em;
   margin: 0 !important;
+  padding: 0.5em !important;
 `;

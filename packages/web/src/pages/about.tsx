@@ -86,8 +86,15 @@ export const AboutPage = () => {
       <Header />
 
       <main>
-        <Intro>
+        <Intro style={{ flexDirection: 'row' }}>
           <HeadLine />
+
+          <img
+            src={require('../assets/marius-portrait.jpg')}
+            width={150}
+            height={154}
+            style={{ borderRadius: 200 }}
+          />
         </Intro>
 
         <TimeLine>
