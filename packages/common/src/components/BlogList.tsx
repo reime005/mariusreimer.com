@@ -33,7 +33,7 @@ export const BlogList = (props: Props) => {
           alignItems: 'center',
         }}
         data={props.data}
-        numColumns={window.width > 575 ? 2 : 1}
+        numColumns={window.width > 570 ? 2 : 1}
         onEndReachedThreshold={0.5}
         onEndReached={change}
         keyExtractor={(item: any) => item.node.id}

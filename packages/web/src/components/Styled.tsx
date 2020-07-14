@@ -11,7 +11,7 @@ export const Intro = styled.div`
   padding: 32px;
   padding-left: 10vw;
   padding-right: 10vw;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.55em;
   width: 100%;
   margin-bottom: 24px;

@@ -9,7 +9,7 @@ import { Intro } from '../components/Styled';
 import { HeadLine } from '../components/HeadLine';
 
 const Sub = styled.p`
-  font-size: 1em;
+  font-size: 1.1rem;
 `;
 
 export const HomePage = () => {

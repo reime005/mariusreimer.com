@@ -2,22 +2,18 @@
 
 WIP
 
-<!-- ![iOS build](https://github.com/reime005/mariusreimer.com/workflows/iOS/badge.svg)
-
-![Android build](https://github.com/reime005/mariusreimer.com/workflows/Android/badge.svg) -->
-
 ![Web build](https://github.com/reime005/mariusreimer.com/workflows/Web/badge.svg)
 
 ## Tech Stack
 
 * Monorepo (yarn workspace)
-* React Native (without Expo)
+* React Native (without Expo) with code sharing between Web & Mobile
+* TypeScript
+* Gatsby for the Website
+* Wordpress as a CMS
 
 React Native project can be found at [packages/mobile](packages/mobile)
 
-## Build & Run
-Should be as simple as:
+Gatsby project can be found at [packages/web](packages/mobile)
 
-      yarn; yarn mobile/start
-      yarn run-android
-      yarn run-ios
+Shared code can be found at [packages/commomn](packages/mobile)

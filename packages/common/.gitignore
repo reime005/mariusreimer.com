@@ -60,3 +60,5 @@ release.keystore.properties
 
 # CocoaPods
 ios/Pods/
+
+*.tsbuildinfo

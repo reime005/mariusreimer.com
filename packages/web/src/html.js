@@ -11,7 +11,7 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <title>React Native Development | mariusreimer.com</title>
+        <title>React Native Development | Marius Reimer</title>
         <link
           rel="stylesheet"
           type="text/css"
