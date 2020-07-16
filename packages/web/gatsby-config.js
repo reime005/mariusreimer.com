@@ -14,7 +14,7 @@ module.exports = {
       resolve: 'gatsby-source-wordpress',
       options: {
         // your WordPress source
-        baseUrl: 'mariusreimer.com',
+        baseUrl: 'w.mariusreimer.com',
         protocol: 'https',
         // is it hosted on wordpress.com, or self-hosted?
         hostingWPCOM: false,
