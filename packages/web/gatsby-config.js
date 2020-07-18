@@ -1,4 +1,13 @@
 module.exports = {
+  siteMetadata: {
+    title: 'React Native Development | Marius Reimer',
+    author: 'Marius Reimer',
+    description: 'Personal Website, Blog and App by Marius Reimer. React Native, Flutter and Rust.',
+    siteUrl: 'https://mariusreimer.com',
+    social: {
+      twitter: '@reime005',
+    },
+  },
   plugins: [
     {
       resolve: 'gatsby-plugin-typescript',
@@ -25,13 +34,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Marius Reimer',
+        name: 'React Native Development | Marius Reimer',
         short_name: 'Marius Reimer',
         start_url: '/',
         background_color: '#ffffff',
-        theme_color: '#4278bd',
+        theme_color: '#6246ea',
         display: 'minimal-ui',
-        // icon: `src/assets/icon.png`,
+        icon: 'static/icons/icon-144x144.png',
         theme_color_in_head: false,
       },
     },
@@ -47,6 +56,12 @@ module.exports = {
       resolve: 'gatsby-plugin-typography',
       options: {
         pathToConfigModule: 'src/utils/typography',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: ['*', '/project/*', '/blog/*', '/about'],
       },
     },
   ],
