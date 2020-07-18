@@ -59,10 +59,17 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-offline`,
+      resolve: 'gatsby-plugin-webpack-bundle-analyzer',
       options: {
-        precachePages: ['*', '/project/*', '/blog/*', '/about'],
+        analyzerPort: 3000,
+        production: true,
       },
     },
+    {
+      resolve: 'gatsby-plugin-zopfli',
+      options: {
+        extensions: ['css', 'html', 'js', 'svg', 'json']
+      }
+    }
   ],
 };
