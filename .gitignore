@@ -69,3 +69,4 @@ yarn-error.log
 .expo/
 packages/web/public
 packages/web/*.png
+target/
