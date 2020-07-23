@@ -9,11 +9,17 @@ use regex::Regex;
 use rocket::Request;
 use rocket::config::{Config, Environment};
 use rocket_contrib::serve::StaticFiles;
+use rocket::response::{self, Response, Responder};
+use rocket::http::Header;
 use std::env;
 use std::fs::File;
 use std::io::prelude::*;
 use std::path::Path;
 use std::result::Result;
+use std::io::Cursor;
+use rocket_cors::{AllowedHeaders, AllowedOrigins, Error, Guard};
+
+use rocket::http::Method;
 
 static APP_USER_AGENT: &str = "test";
 static ROOT_PATH: &str = "./gists";
@@ -40,8 +46,22 @@ fn write_to_file(gist_id: &str, content: &str) -> () {
     }
 }
 
+
+struct Test {
+    text: String
+}
+
+impl<'r> Responder<'r> for Test {
+    fn respond_to(self, _: &Request) -> response::Result<'r> {
+        Response::build()
+            .sized_body(Cursor::new(self.text))
+            .raw_header("Access-Control-Allow-Origin", "https://mariusreimer.com")
+            .ok()
+    }
+}
+
 #[catch(404)]
-fn not_found(req: &Request) -> Result<String, reqwest::Error> {
+fn not_found(req: &Request) -> Result<Test, reqwest::Error> {
     let gh_pass = env::var("GH_TOKEN").unwrap().to_string();
 
     let uri = req.uri().to_string();
@@ -68,12 +88,28 @@ fn not_found(req: &Request) -> Result<String, reqwest::Error> {
         .text()
         .unwrap();
 
+
     write_to_file(gist_id, &response_text);
 
-    Ok(response_text)
+    let res = Test {
+        text: response_text
+    };
+
+    Ok(res)
 }
 
-fn main() {
+fn main() -> Result<(), Error> {
+    let allowed_origins = AllowedOrigins::some_exact(&["https://mariusreimer.com"]);
+
+    // You can also deserialize this
+    let cors = rocket_cors::CorsOptions {
+        allowed_origins,
+        allowed_methods: vec![Method::Get].into_iter().map(From::from).collect(),
+        allowed_headers: AllowedHeaders::some(&["Authorization", "Accept"]),
+        ..Default::default()
+    }
+    .to_cors()?;
+
     let args: Vec<String> = env::args().collect();
 
     let port = &args[1];
@@ -90,6 +126,9 @@ fn main() {
 
     rocket::custom(config)
         .mount("/gist", StaticFiles::from("./gists"))
+        .manage(cors)
         .register(catchers![not_found])
         .launch();
+
+    Ok(())
 }

@@ -12,3 +12,4 @@ rocket_contrib = "0.4.5"
 reqwest = { version = "0.10.6", features = ["blocking"] }
 regex = "1"
 lazy_static = "1.4.0"
+rocket_cors = "0.5.1"
