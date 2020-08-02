@@ -26,7 +26,7 @@ export const Gist = (props: Props) => {
         return;
       }
 
-      fetch(`/gists/${props.id}`).then(
+      fetch(`/gists/${props.id}.json`).then(
         async response => {
 
           if (response.ok) {

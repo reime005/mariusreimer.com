@@ -146,7 +146,7 @@ const attemptToStoreGists = (gists = null) => {
   }
 
   gists.forEach(gist => {
-    const gistPath = `./static/gists/${gist}`;
+    const gistPath = `./static/gists/${gist}.json`;
 
     if (!fs.existsSync(gistPath)) {
       fetch(`https://api.github.com/gists/${gist}`, { headers: { 'Authorization': authHeader } })
