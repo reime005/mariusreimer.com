@@ -30,7 +30,17 @@ jobs:
 
       - name: Build & Clean
         working-directory: packages/web/
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: yarn build && rm -rf .cache/
+
+      - uses: EndBug/add-and-commit@v4
+        if: "(github.ref == 'refs/heads/master' || github.ref == 'refs/heads/develop')"
+        with:
+          add: 'packages/web/static/gists'
+          message: 'chore: [skip ci] adding gists'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Prepare Screenshots Folder
         working-directory: packages/web/

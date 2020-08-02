@@ -1,5 +1,6 @@
 const path = require('path');
-const { slash } = require('gatsby-core-utils');
+const fs = require('fs');
+const fetch = require('node-fetch');
 
 exports.onCreateWebpackConfig = ({ actions, loaders, getConfig }) => {
   const config = getConfig();
@@ -48,6 +49,7 @@ exports.createPages = async ({ graphql, actions }) => {
           node {
             slug
             id
+            content
             categories {
               name
             }
@@ -67,6 +69,9 @@ exports.createPages = async ({ graphql, actions }) => {
 
   result.data.allWordpressPost.edges.forEach((post, i) => {
     if (post.node.categories.some(category => /blog/i.test(category.name))) {
+      let allContentGists = post.node.content.match(/(?<=https:\/\/gist.github.com\/reime005\/)(.*?)(?=.js)/g);
+      attemptToStoreGists(allContentGists);
+
       finalResult.data.allWordpressPost.edges.push(post);
     }
   });
@@ -107,24 +112,10 @@ exports.createPages = async ({ graphql, actions }) => {
     );
   };
 
-  // const allProjectPages = require('./allProjectPages.json');
-
-  // const createProjectsPages = ({ allProjectPages }, createPage) => {
-  //   return Array.from({ length: allProjectPages.length }).map((_, index) => {
-  //     return createPage({
-  //       path: `/project/${allProjectPages[index].slug}`,
-  //       component: path.resolve('./src/templates/ProjectsPageTemplate.tsx'),
-  //       context: {
-  //         ...allProjectPages[index],
-  //       },
-  //     });
-  //   });
-  // };
 
   return [
     ...createDetailPages(finalResult.data, createPage),
     ...createPaginationPages(finalResult.data, createPage),
-    // ...createProjectsPages({ allProjectPages }, createPage),
   ];
 };
 
@@ -138,3 +129,38 @@ exports.onCreateWebpackConfig = ({ actions, stage }) => {
     });
   }
 };
+
+const attemptToStoreGists = (gists = null) => {
+  if (!Array.isArray(gists) || !gists.length) {
+    return;
+  }
+
+  if (!process.env.GH_TOKEN) {
+    throw 'aborting... GH_TOKEN not in env variables!';
+  }
+
+  const authHeader = `token ${process.env.GH_TOKEN}`;
+
+  if (!fs.existsSync('./static/gists')) {
+    fs.mkdirSync('./static/gists');
+  }
+
+  gists.forEach(gist => {
+    const gistPath = `./static/gists/${gist}`;
+
+    if (!fs.existsSync(gistPath)) {
+      fetch(`https://api.github.com/gists/${gist}`, { headers: { 'Authorization': authHeader } })
+        .then(res => {
+          if (res.ok) {
+            res.json().then(data => {
+              fs.writeFileSync(gistPath, JSON.stringify(data));
+            })
+          }
+        })
+        .catch(error => console.error(error))
+
+    } else {
+      console.log(`gist ${gist} already exists`);
+    }
+  });
+}

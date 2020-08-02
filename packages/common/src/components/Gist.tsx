@@ -26,11 +26,11 @@ export const Gist = (props: Props) => {
         return;
       }
 
-      fetch(`https://mariusreimer.com:8043/gist/${props.id}`).then(
+      fetch(`/gists/${props.id}`).then(
         async response => {
+
           if (response.ok) {
             setHasResult(true);
-            console.warn('new gist request');
 
             const json = await response.json();
 
