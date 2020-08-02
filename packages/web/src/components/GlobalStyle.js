@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     font-family: 'Lato';
+    font-display: swap;
     background-color: ${({ theme }) =>
       theme === 'dark' ? darkTheme.color.body : lightTheme.color.body};
     color: ${({ theme }) =>
