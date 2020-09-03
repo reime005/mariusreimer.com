@@ -73,9 +73,9 @@ const data: Data[] = [
   {
     title: 'Mobile Engineer',
     desc:
-      "<p>Responsible for the React Native and React applications in a 5 to 60 people startup.</p><p>Apps had a rating of ~4.7 and more than 300k downloads.</p><p>Germany's first fully-automated biometric self-identification app.</p><ul><li>React, React Native and many Custom Native Modules</li><li>Strong focus on camera use cases (OpenCV and Tesseract OCR)</li><li>TypeScript, JavaScript</li><li>Objective C</li><li>Kotlin, Java</li><li>Docker, CI/CD, E2E Tests</li></ul>",
+      "<p>Responsible for the React Native and React applications in a 5 to 60 people startup.</p><p>Apps had a rating of ~4.7 and more than 300k downloads.</p><p>Germany's first fully-automated biometric self-identification app.</p><ul><li>React, React Native and many Custom Native Modules</li><li>Strong focus on camera use cases (OpenCV and Tesseract OCR)</li><li>TypeScript, JavaScript</li><li>Objective C, Swift</li><li>Kotlin, Java</li><li>Docker, CI/CD, E2E Tests</li></ul>",
     location: 'Hamburg, Germany',
-    date: '2018-now',
+    date: '2018-2020',
     imgSource: require('../assets/nectlogo.png'),
   },
 ].reverse();
