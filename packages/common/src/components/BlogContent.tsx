@@ -34,6 +34,7 @@ export const BlogContent = (props: Props) => {
 
   return (
     <View
+      //@ts-ignore
       accessibilityRole="article"
       style={{
         padding: 0,

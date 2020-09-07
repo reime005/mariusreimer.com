@@ -14,6 +14,7 @@ export function renderNode(node, styles) {
   if (node.name === 'a') {
     return (
       <Text
+        //@ts-ignore
         href={node.attribs.href}
         accessibilityRole="link"
         onPress={() => Linking.openURL(node.attribs.href || '')}
@@ -27,6 +28,7 @@ export function renderNode(node, styles) {
     return (
       <Text
         style={styles[node.name] || {}}
+        // @ts-ignore
         accessibilityRole="heading"
         aria-level={node.name.substr(1)}
       >
