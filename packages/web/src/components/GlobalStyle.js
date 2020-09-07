@@ -93,4 +93,9 @@ export const GlobalStyle = createGlobalStyle`
     overflow: hidden;
     background: #1e5284;
   }
+  [data-testid="blog-header"] {
+    :hover {
+      text-decoration: none;
+    }
+  }
 `;
