@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { Gist } from '../components/Gist';
-import { View } from 'react-native';
+import { View, Text, Linking } from 'react-native';
 import entities from 'entities';
 import AutoSizedImage from 'react-native-htmlview/AutoSizedImage';
 
@@ -10,14 +10,32 @@ import { IframeWrapper } from '../components/IframeWrapper';
 import { IframeView } from '../components/IframeView';
 import { Quote, Cite, Caption, Paragraph, Code } from '../components/Styled';
 
-export function renderNode(node) {
-  // if (node.name === 'a') {
-  //   return (
-  //     <Text onPress={() => Linking.openURL(node.attribs.href || '')}>
-  //       {entities.decodeHTML(node.children[0].data)}
-  //     </Text>
-  //   );
-  // }
+export function renderNode(node, styles) {
+  if (node.name === 'a') {
+    return (
+      <Text
+        //@ts-ignore
+        href={node.attribs.href}
+        accessibilityRole="link"
+        onPress={() => Linking.openURL(node.attribs.href || '')}
+      >
+        {entities.decodeHTML(node.children[0].data)}
+      </Text>
+    );
+  }
+
+  if (/^h[1-9]/.test(node.name)) {
+    return (
+      <Text
+        style={styles[node.name] || {}}
+        // @ts-ignore
+        accessibilityRole="heading"
+        aria-level={node.name.substr(1)}
+      >
+        {node.children[0].data}
+      </Text>
+    );
+  }
 
   if (
     node.name === 'p' &&

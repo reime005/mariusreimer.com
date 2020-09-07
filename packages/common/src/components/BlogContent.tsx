@@ -34,6 +34,8 @@ export const BlogContent = (props: Props) => {
 
   return (
     <View
+      //@ts-ignore
+      accessibilityRole="article"
       style={{
         padding: 0,
         paddingLeft: 24,
@@ -59,9 +61,11 @@ export const BlogContent = (props: Props) => {
         }}
         showsVerticalScrollIndicator={false}
       >
-        <H1 testID="blog-title">{entities.decodeHTML(props.item.title)}</H1>
+        <H1 accessibilityRole="heading" testID="blog-title">
+          {entities.decodeHTML(props.item.title)}
+        </H1>
 
-        <SubH1>
+        <SubH1 accessibilityRole="heading" aria-level="2">
           {dateFormat(new Date(props.item.date), 'MMMM d, yyyy')}
           &nbsp;-&nbsp;
           {min} min read
@@ -89,7 +93,7 @@ const Root = (props: RootProps) => {
       style={{ width: '100%', flex: 1 }}
       value={removeDuplicateOccurencies(props.data, '\n')}
       stylesheet={styles(theme)}
-      renderNode={renderNode}
+      renderNode={node => renderNode(node, styles(theme))}
       onWordMinCount={props.onWordMinCount}
     />
   );
