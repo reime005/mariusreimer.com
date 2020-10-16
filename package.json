@@ -17,7 +17,7 @@
     "watch": "yarn workspace @reime005/common watch",
     "postinstall": "sh ./scripts/post.sh",
     "mobile/start": "yarn workspace mobile start",
-    "web/start": "yarn workspace web start",
+    "web/start": "yarn workspace @reime005/web start",
     "run-android": "yarn workspace mobile run-android",
     "run-ios": "yarn workspace mobile run-ios"
   },
