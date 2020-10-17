@@ -31,7 +31,7 @@
   "devDependencies": {
     "@react-native-community/eslint-config": "1.0.0",
     "@typescript-eslint/parser": "^2.26.0",
-    "detox": "^14.5.1",
+    "detox": "*",
     "eslint": "^7.0.0",
     "eslint-plugin-react-hooks": "^4.0.4",
     "husky": "^4.2.5",

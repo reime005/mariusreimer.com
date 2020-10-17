@@ -58,7 +58,7 @@
     "babel-jest": "24.9.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react-native": "4.0.1",
-    "detox": "^14.5.1",
+    "detox": "^17.10.0",
     "eslint": "^7.0.0",
     "graphql": "^15.0.0",
     "jest": "^24.9.0",

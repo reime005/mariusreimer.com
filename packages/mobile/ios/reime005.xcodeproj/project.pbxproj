@@ -16,8 +16,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* reime005Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = reime005Tests.m; sourceTree = "<group>"; };
 		01C8F88C4C8ECBA3617A73DB /* libPods-reime005-reime005Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-reime005-reime005Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* reime005.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reime005.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = reime005/AppDelegate.h; sourceTree = "<group>"; };
@@ -54,23 +52,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* reime005Tests */ = {
-			isa = PBXGroup;
-			children = (
-				00E356F21AD99517003FC87E /* reime005Tests.m */,
-				00E356F01AD99517003FC87E /* Supporting Files */,
-			);
-			path = reime005Tests;
-			sourceTree = "<group>";
-		};
-		00E356F01AD99517003FC87E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				00E356F11AD99517003FC87E /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		13B07FAE1A68108700A75B9A /* reime005 */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,7 +91,6 @@
 				2920B527246C9BFA0075DF85 /* Config.xcconfig */,
 				13B07FAE1A68108700A75B9A /* reime005 */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* reime005Tests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				982E9FA51D4728F49BD558FB /* Pods */,

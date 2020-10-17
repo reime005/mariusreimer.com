@@ -10,7 +10,6 @@ const typography = new Typography({
   ],
   headerFontFamily: ['Lato', 'Georgia', 'serif'],
   bodyFontFamily: ['Lato', 'Georgia', 'serif'],
-  bodyColor: 'hsla(0,0%,0%,0.9)',
   headerWeight: 900,
   bodyWeight: 400,
   boldWeight: 700,

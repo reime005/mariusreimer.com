@@ -70,10 +70,6 @@ export const DarkThemeSwitch = () => {
     /* eslint-disable-next-line */
   }, []);
 
-  useEffect(() => {
-    setItem('theme', theme);
-  }, [theme]);
-
   return (
     <Wrapper data-test-id="switch">
       <Input
