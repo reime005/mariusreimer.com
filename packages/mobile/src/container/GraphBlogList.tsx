@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
-import { useQuery } from '@apollo/react-hooks';
-import { gql } from 'apollo-boost';
+import { gql, useQuery } from '@apollo/client';
 import { Text, ActivityIndicator, View } from 'react-native';
 import { BlogList } from '../views/BlogList';
 import { store } from '../state/GlobalStateProvider';

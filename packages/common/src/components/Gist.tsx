@@ -22,13 +22,11 @@ export const Gist = (props: Props) => {
       if (_rawCode) {
         setHasResult(true);
         setRawCode(_rawCode);
-        console.warn('loaded code from cache');
         return;
       }
 
-      fetch(`/gists/${props.id}.json`).then(
+      fetch(`https://mariusreimer.com/gists/${props.id}.json`).then(
         async response => {
-
           if (response.ok) {
             setHasResult(true);
 

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { Gist } from '../components/Gist';
-import { View, Text, Linking } from 'react-native';
+import { View, Text, Linking, Platform } from 'react-native';
 import entities from 'entities';
 import AutoSizedImage from 'react-native-htmlview/AutoSizedImage';
 
@@ -9,6 +9,11 @@ import { SyntaxCode } from '../components/SyntaxCode';
 import { IframeWrapper } from '../components/IframeWrapper';
 import { IframeView } from '../components/IframeView';
 import { Quote, Cite, Caption, Paragraph, Code } from '../components/Styled';
+
+const accessibilityProps: any =
+  Platform.select({
+    web: { accessibilityRole: 'heading' },
+  }) || {};
 
 export function renderNode(node, styles) {
   if (node.name === 'a') {
@@ -28,8 +33,7 @@ export function renderNode(node, styles) {
     return (
       <Text
         style={styles[node.name] || {}}
-        // @ts-ignore
-        accessibilityRole="heading"
+        {...accessibilityProps}
         aria-level={node.name.substr(1)}
       >
         {node.children[0].data}
@@ -166,10 +170,9 @@ export function renderNode(node, styles) {
     }
   }
 
-  if (node.name == 'script' && node.attribs && node.attribs.src) {
+  if (node.name === 'script' && node.attribs && node.attribs.src) {
     try {
       let id = node.attribs.src.split(/reime005\/|.js/)[1];
-      console.warn(id);
       return <Gist id={id} />;
     } catch (e) {
       console.warn(e);

@@ -1,7 +1,13 @@
 import dateFormat from 'date-fns/format';
 import entities from 'entities';
 import React, { useState } from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
+import {
+  AccessibilityProps,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  View,
+} from 'react-native';
 import HTMLView from 'react-native-htmlview';
 import { removeDuplicateOccurencies } from '../utils/removeDuplicateOccurencies';
 import { renderNode } from '../utils/renderNode';
@@ -29,13 +35,23 @@ interface Data {
   name?: string;
 }
 
+const accessibilityTextProps: any =
+  Platform.select({
+    web: { accessibilityRole: 'heading' },
+  }) || {};
+
+const accessibilityArticleProps: any =
+  Platform.select({
+    web: { accessibilityRole: 'article' },
+  }) || {};
+
 export const BlogContent = (props: Props) => {
   const [min, setMin] = useState(0);
 
   return (
     <View
       //@ts-ignore
-      accessibilityRole="article"
+      {...accessibilityArticleProps}
       style={{
         padding: 0,
         paddingLeft: 24,
@@ -61,11 +77,11 @@ export const BlogContent = (props: Props) => {
         }}
         showsVerticalScrollIndicator={false}
       >
-        <H1 accessibilityRole="heading" testID="blog-title">
+        <H1 {...accessibilityTextProps} testID="blog-title">
           {entities.decodeHTML(props.item.title)}
         </H1>
 
-        <SubH1 accessibilityRole="heading" aria-level="2">
+        <SubH1 {...accessibilityTextProps} aria-level="2">
           {dateFormat(new Date(props.item.date), 'MMMM d, yyyy')}
           &nbsp;-&nbsp;
           {min} min read

@@ -13,8 +13,7 @@ const DEFAULT_THEME: Themes = 'light';
 const ALL_THEMES: Themes[] = ['dark', 'light'];
 
 const initialState: ThemeState = {
-  theme:
-    typeof window !== 'undefined' ? (window as any).__theme : DEFAULT_THEME,
+  theme: Platform.OS === 'web' ? (window as any).__theme : DEFAULT_THEME,
 };
 
 type Context = {

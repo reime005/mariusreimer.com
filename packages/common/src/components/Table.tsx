@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Platform, Text, View } from 'react-native';
 import styled from 'styled-components/native';
 
 interface Props {
@@ -10,13 +10,13 @@ const Row = styled.View`
   width: 100%;
   flex-direction: row;
   border-top-width: 1px;
-  border-color: inherit;
+  border-color: ${Platform.OS === 'web' ? 'inherit' : '#999'};
 `;
 
 const Header = styled(Row)`
   font-weight: bold;
   border-top-width: 0;
-  border-color: inherit;
+  border-color: ${Platform.OS === 'web' ? 'inherit' : '#999'};
 `;
 
 const Cell = styled.View`
@@ -26,7 +26,7 @@ const Cell = styled.View`
   display: flex;
   justify-content: center;
   border-left-width: 1px;
-  border-color: inherit;
+  border-color: ${Platform.OS === 'web' ? 'inherit' : '#999'};
 `;
 
 const FirstCell = styled(Cell)`
