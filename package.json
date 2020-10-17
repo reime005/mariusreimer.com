@@ -18,6 +18,7 @@
     "postinstall": "sh ./scripts/post.sh",
     "mobile/start": "yarn workspace mobile start",
     "web/start": "yarn workspace @reime005/web start",
+    "web/build": "yarn workspace @reime005/web build",
     "run-android": "yarn workspace mobile run-android",
     "run-ios": "yarn workspace mobile run-ios"
   },

@@ -1,30 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { useDimensions } from '@reime005/common';
 
 import { Menu } from './Menu';
 import { Logo } from '../assets/Logo';
-import { View } from 'react-native';
-import { Link } from 'gatsby';
-import { Socials } from './Socials';
 import { Footer } from './Footer';
 
-const Text = styled.span`
-  font-family: 'Lato';
-  font-size: 14px;
-  color: ${({ theme }) => theme.color.grey};
-`;
-
-const Item = styled.div`
-  margin-left: 8px;
-  margin-right: 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-`;
-
-const _Wrapper = styled.header`
+const Wrapper = styled.header`
   padding: 16px;
   margin-top: 16px;
   margin-bottom: 16px;
@@ -35,11 +16,11 @@ const _Wrapper = styled.header`
   justify-content: center;
   align-items: center;
   flex-direction: row;
-`;
 
-const _WrapperMobile = styled(_Wrapper)`
-  flex-direction: column;
-  min-height: 125px;
+  @media screen and (max-width: 570px) {
+    flex-direction: column;
+    min-height: 125px;
+  }
 `;
 
 const Inner = styled.div`
@@ -57,7 +38,7 @@ const Inner = styled.div`
   }
 `;
 
-const _MobileButton = styled.button`
+const MobileButton = styled.button`
   background-repeat: no-repeat;
   background-image: url(${require('../assets/bars.svg')});
   background-position: 50% 50%;
@@ -70,6 +51,23 @@ const _MobileButton = styled.button`
   background-color: ${({ theme }) => theme.color.menuBG};
   cursor: pointer;
   z-index: 4;
+
+  @media screen and (min-width: 571px) {
+    display: none;
+  }
+`;
+
+const MenuWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @media screen and (max-width: 570px) {
+    display: none;
+  }
 `;
 
 const Overlay = styled.div`
@@ -94,8 +92,6 @@ const Overlay = styled.div`
 `;
 
 export const Header = () => {
-  const { window } = useDimensions();
-
   const [showMobile, setShowMobile] = useState(false);
   const toggleShowMobile = () => setShowMobile(!showMobile);
 
@@ -106,14 +102,6 @@ export const Header = () => {
       elements[0].className = showMobile ? 'mobile' : '';
     }
   }, [showMobile]);
-
-  let Wrapper = _WrapperMobile;
-  let MobileButton = _MobileButton;
-
-  if (window.width > 570) {
-    Wrapper = _Wrapper;
-    MobileButton = null;
-  }
 
   if (showMobile) {
     return (
@@ -146,20 +134,11 @@ export const Header = () => {
           </a>
         </div>
 
-        {MobileButton ? (
-          <MobileButton id="mobileButton" onClick={toggleShowMobile} />
-        ) : (
-          <View
-            style={{
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'flex-end',
-              paddingHorizontal: 16,
-            }}
-          >
-            <Menu />
-          </View>
-        )}
+        <MobileButton id="mobileButton" onClick={toggleShowMobile} />
+
+        <MenuWrapper>
+          <Menu />
+        </MenuWrapper>
       </Inner>
     </Wrapper>
   );

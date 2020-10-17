@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useDimensions } from '@reime005/common';
 
 import { Link as GLink } from 'gatsby';
 import { DarkThemeSwitch } from './DarkThemeSwitch';
@@ -55,7 +54,7 @@ const ContactLink = styled.a`
   border-radius: 6px;
 `;
 
-const _Wrapper = styled.ul`
+const Wrapper = styled.ul`
   list-style: none;
   margin: 0;
   box-sizing: border-box;
@@ -63,22 +62,14 @@ const _Wrapper = styled.ul`
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-`;
 
-const _WrapperMobile = styled(_Wrapper)`
-  flex-direction: column;
-  min-height: 125px;
+  @media screen and (max-width: 570px) {
+    flex-direction: column;
+    min-height: 125px;
+  }
 `;
 
 export const Menu = () => {
-  const { window } = useDimensions();
-
-  let Wrapper = _WrapperMobile;
-
-  if (window.width > 570) {
-    Wrapper = _Wrapper;
-  }
-
   return (
     <Wrapper>
       <Item>
