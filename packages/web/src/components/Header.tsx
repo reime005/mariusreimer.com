@@ -95,14 +95,6 @@ export const Header = () => {
   const [showMobile, setShowMobile] = useState(false);
   const toggleShowMobile = () => setShowMobile(!showMobile);
 
-  useEffect(() => {
-    const elements = document.getElementsByTagName('body');
-
-    if (elements && elements.length) {
-      elements[0].className = showMobile ? 'mobile' : '';
-    }
-  }, [showMobile]);
-
   if (showMobile) {
     return (
       <Wrapper>

@@ -20,5 +20,14 @@
 }
 
 body {
+  --bg: #fff;
+
   font-family: 'Lato', sans-serif;
+  background-color: var(--bg);
+}
+
+body.dark {
+  --bg: #16161a;
+
+  background-color: var(--bg);
 }
