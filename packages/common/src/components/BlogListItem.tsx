@@ -83,6 +83,14 @@ export const BlogListItem = (props: Props) => {
     return null;
   }
 
+  const splits = item.featured_media?.source_url;
+
+  const imageName = splits && splits[splits.length - 1];
+
+  const uri = `${
+    Platform.OS === 'web' ? '' : 'https://mariusreimer.com'
+  }/images/${imageName}`;
+
   return (
     <Wrapper>
       <TouchableOpacity
@@ -128,7 +136,7 @@ export const BlogListItem = (props: Props) => {
               paddingVertical: 0,
               overflow: 'hidden', // prevent image overflow of the container
             }}
-            source={{ uri: item.featured_media?.source_url || '' }}
+            source={{ uri }}
           />
 
           <View

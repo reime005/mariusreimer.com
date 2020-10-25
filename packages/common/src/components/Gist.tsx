@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Platform } from 'react-native';
 import { getCachedCode } from '../utils/getCachedCodes';
 import { GitFile, setCachedCodes } from '../utils/setCachedCodes';
 import { SyntaxCode } from './SyntaxCode';
@@ -25,26 +26,28 @@ export const Gist = (props: Props) => {
         return;
       }
 
-      fetch(`https://mariusreimer.com/gists/${props.id}.json`).then(
-        async response => {
-          if (response.ok) {
-            setHasResult(true);
+      fetch(
+        `${Platform.OS === 'web' ? '' : 'https://mariusreimer.com'}/gists/${
+          props.id
+        }.json`,
+      ).then(async response => {
+        if (response.ok) {
+          setHasResult(true);
 
-            const json = await response.json();
+          const json = await response.json();
 
-            if (json && json.files) {
-              const file = json.files[Object.keys(json.files)[0]];
+          if (json && json.files) {
+            const file = json.files[Object.keys(json.files)[0]];
 
-              await setCachedCodes(props.id, {
-                ...file,
-                id: props.id,
-              });
+            await setCachedCodes(props.id, {
+              ...file,
+              id: props.id,
+            });
 
-              setRawCode(file);
-            }
+            setRawCode(file);
           }
-        },
-      );
+        }
+      });
     });
   });
 
