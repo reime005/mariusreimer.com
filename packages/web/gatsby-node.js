@@ -53,6 +53,9 @@ exports.createPages = async ({ graphql, actions }) => {
             categories {
               name
             }
+            featured_media {
+              source_url
+            }
           }
         }
       }
@@ -69,8 +72,12 @@ exports.createPages = async ({ graphql, actions }) => {
 
   result.data.allWordpressPost.edges.forEach((post, i) => {
     if (post.node.categories.some(category => /blog/i.test(category.name))) {
-      let allContentGists = post.node.content.match(/(?<=https:\/\/gist.github.com\/reime005\/)(.*?)(?=.js)/g);
+      let allContentGists = post.node.content.match(
+        /(?<=https:\/\/gist.github.com\/reime005\/)(.*?)(?=.js)/g,
+      );
       attemptToStoreGists(allContentGists);
+
+      attemptToStoreImage(post.node.featured_media.source_url);
 
       finalResult.data.allWordpressPost.edges.push(post);
     }
@@ -112,7 +119,6 @@ exports.createPages = async ({ graphql, actions }) => {
     );
   };
 
-
   return [
     ...createDetailPages(finalResult.data, createPage),
     ...createPaginationPages(finalResult.data, createPage),
@@ -128,6 +134,24 @@ exports.onCreateWebpackConfig = ({ actions, stage }) => {
       devtool: false,
     });
   }
+};
+
+const attemptToStoreImage = (url = null) => {
+  if (typeof url !== 'string' || !url.length) {
+    return;
+  }
+
+  if (!fs.existsSync('./static/images')) {
+    fs.mkdirSync('./static/images');
+  }
+
+  const splits = url.split('/');
+
+  fetch(url)
+    .then(r => r.buffer())
+    .then(data =>
+      fs.writeFileSync(`./static/images/${splits[splits.length - 1]}`, data),
+    );
 };
 
 const attemptToStoreGists = (gists = null) => {
@@ -149,18 +173,19 @@ const attemptToStoreGists = (gists = null) => {
     const gistPath = `./static/gists/${gist}.json`;
 
     if (!fs.existsSync(gistPath)) {
-      fetch(`https://api.github.com/gists/${gist}`, { headers: { 'Authorization': authHeader } })
+      fetch(`https://api.github.com/gists/${gist}`, {
+        headers: { Authorization: authHeader },
+      })
         .then(res => {
           if (res.ok) {
             res.json().then(data => {
               fs.writeFileSync(gistPath, JSON.stringify(data));
-            })
+            });
           }
         })
-        .catch(error => console.error(error))
-
+        .catch(error => console.error(error));
     } else {
       console.log(`gist ${gist} already exists`);
     }
   });
-}
+};
