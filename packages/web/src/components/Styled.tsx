@@ -45,7 +45,7 @@ export const Intro = styled.div`
 `;
 
 export const StyledHeadline = styled.h1`
-  font-size: 3em;
+  font-size: 2.75rem;
   margin: 0 !important;
-  padding: 0.5em !important;
+  padding: 0.1rem !important;
 `;
