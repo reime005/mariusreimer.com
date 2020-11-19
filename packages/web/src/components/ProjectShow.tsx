@@ -41,6 +41,27 @@ const Box = styled.div`
 
 const data: ProjectShowHeaderProps[] = [
   {
+    title: 'Space Seek',
+    subTitle: 'React Native App',
+    description: `
+      Rewrite of the 'Space Viewer' app
+      <ul>
+        <li>See information about live streams, launch time or mission description!</li>
+        <li>The data is fetched from the <a rel="noopener noreferrer" href="https://thespacedevs.com/">The Space Devs API</a></li>
+        <li>Github Actions, Fastlane and Detox E2E Tests</li>
+        <li><a rel="noopener noreferrer" href="https://github.com/reime005/spaceseek">Open Source</a></li>
+      </ul>
+      `,
+    backgroundColor: '#7a2c1a',
+    tags: ['TypeScript', 'React Native', 'iOS', 'Android'],
+    // link: {
+    //   text: 'More',
+    //   to: '/project/spaceviewer/',
+    // },
+    imageSource: require('../assets/project_spaceseek.png'),
+    bgComponent: <BGFirst fill="rgba(21, 92, 172, 1)" />,
+  },
+  {
     title: 'Space Viewer',
     subTitle: 'React Native App',
     description: `
