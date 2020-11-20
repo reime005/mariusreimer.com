@@ -83,7 +83,7 @@ export const BlogListItem = (props: Props) => {
     return null;
   }
 
-  const splits = item.featured_media?.source_url;
+  const splits = item.featured_media?.source_url?.split('/');
 
   const imageName = splits && splits[splits.length - 1];
 
