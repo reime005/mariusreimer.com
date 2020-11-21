@@ -3,21 +3,19 @@ import styled from 'styled-components';
 export const Intro = styled.div`
   box-sizing: border-box;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   flex: 1;
   max-width: 1000px;
   padding: 32px;
-  padding-left: 5vw;
-  padding-right: 5vw;
+  padding-left: 3vw;
+  padding-right: 3vw;
   font-size: 18px;
   line-height: 1.55em;
   width: 100%;
   margin-bottom: 24px;
 
   h1 {
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
   }
 
   h2 {

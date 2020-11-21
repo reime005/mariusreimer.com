@@ -48,16 +48,16 @@ const data: ProjectShowHeaderProps[] = [
       <ul>
         <li>See information about live streams, launch time or mission description!</li>
         <li>The data is fetched from the <a rel="noopener noreferrer" href="https://thespacedevs.com/">The Space Devs API</a></li>
-        <li>Github Actions, Fastlane and Detox E2E Tests</li>
+        <li>CI/CD via Github Actions, Fastlane and Detox E2E Tests</li>
         <li><a rel="noopener noreferrer" href="https://github.com/reime005/spaceseek">Open Source</a></li>
       </ul>
       `,
     backgroundColor: '#7a2c1a',
     tags: ['TypeScript', 'React Native', 'iOS', 'Android'],
-    // link: {
-    //   text: 'More',
-    //   to: '/project/spaceviewer/',
-    // },
+    link: {
+      text: 'More',
+      to: '/project/spaceseek/',
+    },
     imageSource: require('../assets/project_spaceseek.png'),
     bgComponent: <BGFirst fill="rgba(21, 92, 172, 1)" />,
   },
@@ -70,7 +70,7 @@ const data: ProjectShowHeaderProps[] = [
         <li>See information about live streams, launch time or mission description!</li>
         <li>The data is fetched from the <a rel="noopener noreferrer" href="https://launchlibrary.net/">LaunchLibrary.net API</a></li>
         <li>Code sharing via React Native Web</li>
-        <li>Github Actions, Fastlane and Detox E2E Tests</li>
+        <li>CI/CD via Github Actions, Fastlane and Detox E2E Tests</li>
         <li><a rel="noopener noreferrer" href="https://github.com/reime005/react-native-spaceviewer">Open Source</a></li>
       </ul>
       `,
