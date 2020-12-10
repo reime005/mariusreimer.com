@@ -141,8 +141,8 @@ const attemptToStoreImage = (url = null) => {
     return;
   }
 
-  if (!fs.existsSync('./public/static/images')) {
-    fs.mkdirSync('./public/static/images');
+  if (!fs.existsSync('./public/images')) {
+    fs.mkdirSync('./public/images');
   }
 
   const splits = url.split('/');
@@ -150,7 +150,7 @@ const attemptToStoreImage = (url = null) => {
   fetch(url)
     .then(r => r.buffer())
     .then(data =>
-      fs.writeFileSync(`./public/static/images/${splits[splits.length - 1]}`, data),
+      fs.writeFileSync(`./public/images/${splits[splits.length - 1]}`, data),
     );
 };
 
