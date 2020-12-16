@@ -11,6 +11,8 @@
   "homepage": ".",
   "dependencies": {
     "@reime005/common": "*",
+    "gatsby-remark-embed-gist": "^1.2.1",
+    "gatsby-remark-prismjs": "^3.10.0",
     "react": "16.11.0",
     "react-dom": "16.11.0",
     "react-i18next": "^11.3.3",
@@ -47,7 +49,9 @@
     "gatsby-plugin-typography": "^2.5.2",
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.5",
     "gatsby-plugin-zopfli": "^1.3.2",
+    "gatsby-remark-prismjs": "^3.10.0",
     "gatsby-source-wordpress": "^3.3.3",
+    "gatsby-transformer-remark": "^2.13.0",
     "graphql": "^15.0.0",
     "jest": "^25.1.0",
     "jest-playwright-preset": "^1.2.1",
