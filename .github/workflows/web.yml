@@ -5,8 +5,7 @@ on:
     paths-ignore:
       - 'packages/mobile/**/*'
     branches:
-      - 'develop'
-      - 'master'
+      - '*'
   pull_request:
     paths-ignore:
       - 'packages/mobile/**/*'
