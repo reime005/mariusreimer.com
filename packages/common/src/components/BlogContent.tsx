@@ -58,7 +58,7 @@ export const BlogContent = (props: Props) => {
         paddingRight: 24,
         display: 'flex',
         flex: 1,
-        maxWidth: 700,
+        maxWidth: 800,
         marginTop: 24,
         width: '100%',
         alignItems: 'center',

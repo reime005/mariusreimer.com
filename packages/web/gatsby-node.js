@@ -59,6 +59,17 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              slug
+            }
+          }
+        }
+      }
     }
   `);
 
@@ -87,8 +98,8 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const pageSize = 10;
 
-  const createPaginationPages = ({ allWordpressPost }, createPage) => {
-    const pageCount = Math.ceil(allWordpressPost.edges.length / pageSize);
+  const createPaginationPages = ({ allData }, createPage) => {
+    const pageCount = Math.ceil(allData.edges.length / pageSize);
     return Array.from({ length: pageCount }).map((_, index) =>
       createPage({
         path: `/blog/${index + 1}`,
@@ -119,9 +130,50 @@ exports.createPages = async ({ graphql, actions }) => {
     );
   };
 
+  const createMarkdownPages = ({ allData }, createPage) => {
+    return Array.from({ length: allData.edges.length }).map((node, index) => {
+      const isMarkdown = allData.edges[index].node.frontmatter;
+
+      const slug =
+        (allData.edges[index].node.frontmatter &&
+          allData.edges[index].node.frontmatter.slug) ||
+        allData.edges[index].node.slug;
+
+      return createPage({
+        path: '/blog/id/' + slug,
+        component: isMarkdown
+          ? path.resolve('./src/templates/MarkdownPostTemplate.tsx')
+          : path.resolve('./src/templates/PostTemplate.tsx'),
+        context: {
+          id: allData.edges[index].node.id,
+          slug: isMarkdown && allData.edges[index].node.frontmatter.slug,
+          currentPage: Math.ceil((index + 1) / pageSize),
+        },
+      });
+    });
+  };
+
+  const allData = {
+    edges: [
+      ...finalResult.data.allWordpressPost.edges,
+      ...result.data.allMarkdownRemark.edges,
+    ],
+  };
+
   return [
-    ...createDetailPages(finalResult.data, createPage),
-    ...createPaginationPages(finalResult.data, createPage),
+    ...createMarkdownPages(
+      {
+        allData,
+      },
+      createPage,
+    ),
+    // ...createDetailPages(finalResult.data, createPage),
+    ...createPaginationPages(
+      {
+        allData,
+      },
+      createPage,
+    ),
   ];
 };
 

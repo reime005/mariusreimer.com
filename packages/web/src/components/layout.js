@@ -8,7 +8,7 @@ import {
   ThemeProvider,
 } from '@reime005/common';
 import { ThemeProvider as WebThemeProvider } from 'styled-components';
-import { GlobalStyle } from './GlobalStyle';
+import { DarkGistsStyle, GlobalStyle } from './GlobalStyle';
 import { getItem } from '../utils/storageHelper';
 
 const Layout = ({ children }) => {
@@ -74,7 +74,12 @@ const Style = () => {
     //eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <GlobalStyle theme={theme} />;
+  return (
+    <>
+      <GlobalStyle theme={theme} />
+      {theme === 'dark' && <DarkGistsStyle />}
+    </>
+  );
 };
 
 Layout.propTypes = {

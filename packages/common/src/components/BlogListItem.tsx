@@ -17,7 +17,8 @@ import { useTheme } from '..';
 import { darkTheme, lightTheme } from './theme';
 
 interface Props {
-  item: Wordpress__Post;
+  item: Wordpress__Post | any;
+  minRead?: number;
   onClickItem?: (item: Wordpress__Post) => void;
 }
 
@@ -71,9 +72,13 @@ export const BlogListItem = (props: Props) => {
   const isWide = window.width > 999;
   const item = props.item;
 
-  const [minRead, setMinRead] = useState<number | null>(null);
+  const [minRead, setMinRead] = useState<number | null>(props?.item?.minRead || null);
 
   useEffect(() => {
+    if (minRead) {
+      return;
+    }
+
     calculateMinutesToRead({ rawHTML: item.content || '' }).then(res =>
       setMinRead(res),
     );
@@ -162,7 +167,7 @@ export const BlogListItem = (props: Props) => {
               }}
             >
               <HTMLView
-                value={(item.excerpt || '').replace('\n', '')}
+                value={`<p>${(item.excerpt || '').replace('\n', '')}</p>`}
                 stylesheet={styles(theme)}
               />
               {
