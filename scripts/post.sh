@@ -9,3 +9,5 @@ fi
 yarn workspace mobile postinstall
 
 npx jetify
+
+mkdir -p packages/web/src/markdown-pages/
