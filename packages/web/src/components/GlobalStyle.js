@@ -108,6 +108,17 @@ export const GlobalStyle = createGlobalStyle`
       text-decoration: none;
     }
   }
+  .blog-post-content img {
+    height: auto;
+    position: relative;
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    max-height: calc(50vh + 180px);
+  }
+  .gist-data td {
+    border-bottom: none;
+  }
 `;
 
 export const DarkGistsStyle = createGlobalStyle`

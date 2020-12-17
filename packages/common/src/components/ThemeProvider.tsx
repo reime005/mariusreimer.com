@@ -60,7 +60,6 @@ const reducer = (state: ThemeState, action: Actions): ThemeState => {
 
 export const ThemeProvider: React.FC = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  console.warn(state.theme);
 
   return (
     <Provider value={{ state, dispatch }}>

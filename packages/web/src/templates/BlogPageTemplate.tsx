@@ -20,6 +20,7 @@ interface Props {
   };
   data: {
     allWordpressPost: Wordpress__PostConnection;
+    allMarkdownRemark: any;
   };
 }
 
@@ -35,18 +36,34 @@ class BlogPageTemplate extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
 
-    this.state = {
-      data: props.data.allWordpressPost.edges.filter(
-        (edge: Wordpress__PostEdge) => {
-          if (
-            edge.node.categories?.some((category: any) =>
-              /blog/i.test(category.name),
-            )
-          ) {
-            return true;
-          }
+    const allMarkdownRemark: Wordpress__PostEdge[] = props.data.allMarkdownRemark.edges.map(
+      ({ node }: any) => ({
+        node: {
+          title: node.frontmatter.title,
+          excerpt: node.frontmatter.description,
+          slug: node.frontmatter.slug,
+          id: node.frontmatter.slug,
+          date: node.frontmatter.date,
+          featured_media: { source_url: node.frontmatter.cover_image },
+          minRead: Math.ceil(node.fields.readingTime.minutes)
         },
-      ),
+      }),
+    );
+
+    const allWordpressPost = props.data.allWordpressPost.edges.filter(
+      (edge: Wordpress__PostEdge) => {
+        if (
+          edge.node.categories?.some((category: any) =>
+            /blog/i.test(category.name),
+          )
+        ) {
+          return true;
+        }
+      },
+    );
+
+    this.state = {
+      data: [...allMarkdownRemark, ...allWordpressPost],
     };
   }
 
@@ -93,6 +110,24 @@ export const pageQuery = graphql`
           date
           featured_media {
             source_url
+          }
+        }
+      }
+    }
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      edges {
+        node {
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            slug
+            title
+            description
+            cover_image
+          }
+          fields {
+            readingTime {
+              minutes
+            }
           }
         }
       }

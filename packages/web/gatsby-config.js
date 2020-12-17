@@ -20,6 +20,14 @@ module.exports = {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
+          `gatsby-remark-reading-time`,
+          {
+            resolve: "gatsby-remark-embed-youtube",
+            options: {
+              width: 800,
+              height: 400
+            }
+          },
           {
             resolve: "gatsby-remark-embed-gist",
             options: {
