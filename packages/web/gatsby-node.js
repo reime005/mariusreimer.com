@@ -114,22 +114,6 @@ exports.createPages = async ({ graphql, actions }) => {
     );
   };
 
-  //TODO: [mr] query include category in
-  const createDetailPages = ({ allWordpressPost }, createPage) => {
-    return Array.from({ length: allWordpressPost.edges.length }).map(
-      (node, index) => {
-        return createPage({
-          path: '/blog/id/' + allWordpressPost.edges[index].node.slug,
-          component: path.resolve('./src/templates/PostTemplate.tsx'),
-          context: {
-            id: allWordpressPost.edges[index].node.id,
-            currentPage: Math.ceil((index + 1) / pageSize),
-          },
-        });
-      },
-    );
-  };
-
   const createMarkdownPages = ({ allData }, createPage) => {
     return Array.from({ length: allData.edges.length }).map((node, index) => {
       const isMarkdown = allData.edges[index].node.frontmatter;

@@ -36,7 +36,7 @@ class BlogPageTemplate extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
 
-    const allMarkdownRemark: Wordpress__PostEdge[] = props.data.allMarkdownRemark.edges.map(
+    const allMarkdownRemark: Wordpress__PostEdge[] = props.pageContext.currentPage === 1 ? props.data.allMarkdownRemark.edges.map(
       ({ node }: any) => ({
         node: {
           title: node.frontmatter.title,
@@ -48,7 +48,7 @@ class BlogPageTemplate extends Component<Props, State> {
           minRead: Math.ceil(node.fields.readingTime.minutes)
         },
       }),
-    );
+    ) : [];
 
     const allWordpressPost = props.data.allWordpressPost.edges.filter(
       (edge: Wordpress__PostEdge) => {
