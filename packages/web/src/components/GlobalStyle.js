@@ -11,11 +11,16 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     font-family: 'Lato';
-    font-display: swap;
-    background-color: ${({ theme }) =>
-      theme === 'dark' ? darkTheme.color.body : lightTheme.color.body};
-    color: ${({ theme }) =>
-      theme === 'dark' ? darkTheme.color.font : lightTheme.color.font};
+
+    &.light {
+      background-color: ${lightTheme.color.body};
+      color: ${lightTheme.color.font};
+    }
+
+    &.dark {
+      background-color: ${darkTheme.color.body};
+      color: ${darkTheme.color.font};
+    }
 
     &.mobile {
       overflow: hidden;
