@@ -51,7 +51,9 @@ To actually change `radius` and `x`, we will use interpolation. We will simply "
 ### Animate React Native SVG
 
 In order to change component props via animated shared values, you need to pass the `useAnimatedProps` output to the component. This will only work, when the component is actually animated via `Animated.createAnimatedComponent` and you change native props of native views.
-https://gist.github.com/reime005/7228c88cfe4d3baffa7024d2de4c8e38#file-tiktok-spinner-animated-circle-jsx
+
+`gist:reime005/7228c88cfe4d3baffa7024d2de4c8e38`
+
 The circles are now animated, but still need to have the clipping effect. In order to achieve this, we need to define a `ClipPath` mask, that includes both animated circles.
 
 `gist:reime005/6d717be8a4c5499e6718ddeee7f3db2f`
