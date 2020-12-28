@@ -31,7 +31,7 @@ const Wrapper = styled.div`
   align-items: center;
   align-self: center;
   justify-content: space-between;
-  max-width: 800px;
+  max-width: 900px;
   width: 100%;
   box-sizing: border-box;
   padding-left: 32px;

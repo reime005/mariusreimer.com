@@ -44,21 +44,6 @@ exports.createPages = async ({ graphql, actions }) => {
   // query content for WordPress posts
   const result = await graphql(`
     {
-      allWordpressPost {
-        edges {
-          node {
-            slug
-            id
-            content
-            categories {
-              name
-            }
-            featured_media {
-              source_url
-            }
-          }
-        }
-      }
       allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] }
       ) {
@@ -72,29 +57,6 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `);
-
-  const finalResult = {
-    data: {
-      allWordpressPost: {
-        edges: [],
-      },
-    },
-  };
-
-  result.data.allWordpressPost.edges.forEach((post, i) => {
-    if (post.node.categories.some(category => /blog/i.test(category.name))) {
-      let allContentGists = post.node.content.match(
-        /(?<=https:\/\/gist.github.com\/reime005\/)(.*?)(?=.js)/g,
-      );
-      attemptToStoreGists(allContentGists);
-
-      attemptToStoreImage(post.node.featured_media.source_url);
-
-      finalResult.data.allWordpressPost.edges.push(post);
-    }
-  });
-
-  const postTemplate = path.resolve('src/templates/PostTemplate.tsx');
 
   const pageSize = 10;
 
@@ -125,9 +87,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
       return createPage({
         path: '/blog/id/' + slug,
-        component: isMarkdown
-          ? path.resolve('./src/templates/MarkdownPostTemplate.tsx')
-          : path.resolve('./src/templates/PostTemplate.tsx'),
+        component: path.resolve('./src/templates/MarkdownPostTemplate.tsx'),
         context: {
           id: allData.edges[index].node.id,
           slug: isMarkdown && allData.edges[index].node.frontmatter.slug,
@@ -139,7 +99,6 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const allData = {
     edges: [
-      ...finalResult.data.allWordpressPost.edges,
       ...result.data.allMarkdownRemark.edges,
     ],
   };

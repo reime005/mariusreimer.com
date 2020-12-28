@@ -36,7 +36,7 @@ class BlogPageTemplate extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
 
-    const allMarkdownRemark: Wordpress__PostEdge[] = props.pageContext.currentPage === 1 ? props.data.allMarkdownRemark.edges.map(
+    const data: Wordpress__PostEdge[] = props.data.allMarkdownRemark.edges.map(
       ({ node }: any) => ({
         node: {
           title: node.frontmatter.title,
@@ -45,25 +45,13 @@ class BlogPageTemplate extends Component<Props, State> {
           id: node.frontmatter.slug,
           date: node.frontmatter.date,
           featured_media: { source_url: node.frontmatter.cover_image },
-          minRead: Math.ceil(node.fields.readingTime.minutes)
+          minRead: Math.ceil(node.fields.readingTime.minutes),
         },
       }),
-    ) : [];
-
-    const allWordpressPost = props.data.allWordpressPost.edges.filter(
-      (edge: Wordpress__PostEdge) => {
-        if (
-          edge.node.categories?.some((category: any) =>
-            /blog/i.test(category.name),
-          )
-        ) {
-          return true;
-        }
-      },
     );
 
     this.state = {
-      data: [...allMarkdownRemark, ...allWordpressPost],
+      data,
     };
   }
 
@@ -92,29 +80,12 @@ class BlogPageTemplate extends Component<Props, State> {
 export default BlogPageTemplate;
 
 export const pageQuery = graphql`
-  query($skip: Int!, $limit: Int!) {
-    allWordpressPost(
-      sort: { fields: [date], order: DESC }
+  query blogListQuery($skip: Int!, $limit: Int!) {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
       limit: $limit
       skip: $skip
     ) {
-      edges {
-        node {
-          title
-          excerpt
-          content
-          categories {
-            name
-          }
-          slug
-          date
-          featured_media {
-            source_url
-          }
-        }
-      }
-    }
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
           frontmatter {

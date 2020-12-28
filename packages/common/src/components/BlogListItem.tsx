@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {
   View,
-  StyleSheet,
   Platform,
   ImageBackground,
   TouchableOpacity,
@@ -16,14 +15,26 @@ import { Wordpress__Post } from '../types/graphql-types';
 import { useTheme } from '..';
 import { darkTheme, lightTheme } from './theme';
 
+export interface Item {
+  title: string,
+  excerpt: string,
+  slug: string,
+  id: string,
+  date: string,
+  featured_media: { source_url: string },
+  minRead: number,
+}
+
+export type onClickItem = (item?: Item) => void;
+
 interface Props {
-  item: Wordpress__Post | any;
+  item?: Item,
   minRead?: number;
-  onClickItem?: (item: Wordpress__Post) => void;
+  onClickItem?: onClickItem;
 }
 
 const Paragraph = styled.Text`
-  color: ${props => props.theme.color.listItemFont};
+  color: ${props => props.theme.color.listItemHeadline};
   font-size: 12px;
   line-height: 20px;
   @media (min-width: 570px) {
@@ -71,18 +82,6 @@ export const BlogListItem = (props: Props) => {
 
   const isWide = window.width > 999;
   const item = props.item;
-
-  const [minRead, setMinRead] = useState<number | null>(props?.item?.minRead || null);
-
-  useEffect(() => {
-    if (minRead) {
-      return;
-    }
-
-    calculateMinutesToRead({ rawHTML: item.content || '' }).then(res =>
-      setMinRead(res),
-    );
-  }, [item]);
 
   if (!item) {
     return null;
@@ -154,9 +153,7 @@ export const BlogListItem = (props: Props) => {
             }}
           >
             <View>
-              <H1 testID="blog-header-title">
-                {entities.decodeHTML(item.title || '')}
-              </H1>
+              <H1 testID="blog-header-title">{item.title}</H1>
             </View>
 
             <View
@@ -166,14 +163,11 @@ export const BlogListItem = (props: Props) => {
                 justifyContent: 'space-between',
               }}
             >
-              <HTMLView
-                value={`<p>${(item.excerpt || '').replace('\n', '')}</p>`}
-                stylesheet={styles(theme)}
-              />
+              <Paragraph>{item.excerpt}</Paragraph>
               {
                 <DateAndMinRead
                   date={new Date(item.date)}
-                  minRead={minRead || 5}
+                  minRead={props.minRead || 5}
                 />
               }
             </View>
@@ -183,19 +177,5 @@ export const BlogListItem = (props: Props) => {
     </Wrapper>
   );
 };
-
-const styles = (theme?: 'light' | 'dark') =>
-  StyleSheet.create({
-    p: {
-      fontFamily: 'Lato',
-      fontSize: 14,
-      lineHeight: 22,
-      fontWeight: '400',
-      color:
-        theme === 'dark'
-          ? darkTheme.color.listItemFont
-          : lightTheme.color.listItemFont,
-    },
-  });
 
 export default BlogListItem;

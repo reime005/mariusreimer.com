@@ -36,7 +36,7 @@ export function renderNode(node, styles) {
         {...accessibilityProps}
         aria-level={node.name.substr(1)}
       >
-        {node.children[0].data}
+        {entities.decodeHTML(node.children[0].data)}
       </Text>
     );
   }

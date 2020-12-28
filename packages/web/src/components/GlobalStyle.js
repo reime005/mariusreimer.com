@@ -121,6 +121,9 @@ export const GlobalStyle = createGlobalStyle`
     max-width: 100%;
     max-height: calc(50vh + 180px);
   }
+  .blog-post-content p {
+    line-height: 1.75rem;
+  }
   .gist-data td {
     border-bottom: none;
   }

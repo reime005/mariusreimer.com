@@ -1,14 +1,14 @@
 import React from 'react';
 import { View } from 'react-native';
-import { BlogListItem } from './BlogListItem';
+import { BlogListItem, Item, onClickItem } from './BlogListItem';
 import { useGraphHelper } from '../utils/useGraphHelper';
 import { useDimensions } from '../utils/useDimensions';
 import { Wordpress__Post, Wordpress__PostEdge } from '../types/graphql-types';
 import styled from 'styled-components/native';
 
 interface Props {
-  data?: Wordpress__PostEdge[];
-  onClickItem: (item: Wordpress__Post) => void;
+  data?: Item[];
+  onClickItem: onClickItem;
 }
 
 const List = styled.FlatList`

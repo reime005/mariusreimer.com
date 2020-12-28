@@ -60,18 +60,6 @@ module.exports = {
     'gatsby-plugin-react-native-web',
     'gatsby-plugin-styled-components',
     {
-      resolve: 'gatsby-source-wordpress',
-      options: {
-        // your WordPress source
-        baseUrl: 'w.mariusreimer.com',
-        protocol: 'https',
-        // is it hosted on wordpress.com, or self-hosted?
-        hostingWPCOM: false,
-        // does your site use the Advanced Custom Fields Plugin?
-        useACF: false,
-      },
-    },
-    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'React Native Development | Marius Reimer',
@@ -96,13 +84,6 @@ module.exports = {
       resolve: 'gatsby-plugin-typography',
       options: {
         pathToConfigModule: 'src/utils/typography',
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-webpack-bundle-analyzer',
-      options: {
-        analyzerPort: 3000,
-        production: true,
       },
     },
     {
