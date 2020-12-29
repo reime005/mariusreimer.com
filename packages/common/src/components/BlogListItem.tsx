@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {
   View,
   Platform,
@@ -6,12 +6,8 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import styled from 'styled-components/native';
-import entities from 'entities';
 import { DateAndMinRead } from './DateAndMinRead';
-import HTMLView from 'react-native-htmlview';
-import { calculateMinutesToRead } from '../utils/calculateMinutesToRead';
 import { useDimensions } from '../utils/useDimensions';
-import { Wordpress__Post } from '../types/graphql-types';
 import { useTheme } from '..';
 import { darkTheme, lightTheme } from './theme';
 

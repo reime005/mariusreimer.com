@@ -3,11 +3,10 @@ import { View } from 'react-native';
 import { BlogListItem, Item, onClickItem } from './BlogListItem';
 import { useGraphHelper } from '../utils/useGraphHelper';
 import { useDimensions } from '../utils/useDimensions';
-import { Wordpress__Post, Wordpress__PostEdge } from '../types/graphql-types';
 import styled from 'styled-components/native';
 
 interface Props {
-  data?: Item[];
+  data?: { node: Item }[];
   onClickItem: onClickItem;
 }
 
@@ -19,7 +18,7 @@ export const BlogList = (props: Props) => {
   const { change } = useGraphHelper();
   const { window } = useDimensions();
 
-  if (!Array.isArray(props.data)) {
+  if (!Array.isArray(props.data) || !props.data.length) {
     return null;
   }
 
