@@ -139,7 +139,7 @@ export const GlobalStyle = createGlobalStyle`
     margin-bottom: 24px;
     padding: 6px 10px;
     background-color: ${({ theme }) =>
-      theme === 'dark' ? darkTheme.color.listBG : lightTheme.color.listBG};
+      theme === 'dark' ? darkTheme.color.backgroundColor2 : lightTheme.color.backgroundColor2};
     color: ${({ theme }) =>
       theme === 'dark' ? darkTheme.color.listItemHeadline : lightTheme.color.listItemHeadline};
   }
