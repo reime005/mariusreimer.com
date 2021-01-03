@@ -63,24 +63,39 @@ class BlogPageTemplate extends Component<Props, State> {
         <Header />
 
         <main>
-          <input
-            type="text"
-            placeholder="Search Blog"
-            value={this.state.searchValue}
-            onChange={e => {
-              this.setState({ searchValue: e.target.value });
-
-              const val = e.target.value.toLowerCase();
-
-              const searchResult = this.state.allData.filter(
-                ({ node }) => node.title.toLowerCase().indexOf(val) != -1,
-              );
-
-              this.setState({ searchResult });
+          <div
+            style={{
+              flex: 1,
+              justifyContent: 'flex-start',
+              alignItems: 'center',
             }}
-          />
+          >
+            <input
+              type="text"
+              placeholder="Search Blog"
+              value={this.state.searchValue}
+              onChange={e => {
+                this.setState({ searchValue: e.target.value });
 
-          <div style={{ width: '100%' }}>
+                const val = e.target.value.toLowerCase();
+
+                const searchResult = this.state.allData.filter(
+                  ({ node }) => node.title.toLowerCase().indexOf(val) != -1,
+                );
+
+                this.setState({ searchResult });
+              }}
+            />
+          </div>
+
+          <div
+            style={{
+              width: '100%',
+              flex: 1,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
             <BlogList
               onClickItem={onClickItem}
               data={searchValue ? searchResult : data}
