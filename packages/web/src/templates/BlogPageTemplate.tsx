@@ -14,7 +14,8 @@ interface Props {
     currentPage: number;
   };
   data: {
-    allMarkdownRemark: { edges: unknown[] };
+    limited: { edges: unknown[] };
+    all: { edges: unknown[] };
   };
 }
 
@@ -26,6 +27,13 @@ interface State {
   data: {
     node: Item;
   }[];
+  allData: {
+    node: Item;
+  }[];
+  searchResult: {
+    node: Item;
+  }[];
+  searchValue: string;
 }
 
 class BlogPageTemplate extends Component<Props, State> {
@@ -34,41 +42,72 @@ class BlogPageTemplate extends Component<Props, State> {
 
     this.state = {
       data: [],
+      allData: [],
+      searchResult: [],
+      searchValue: '',
     };
   }
 
   componentDidMount() {
-    const data = this.props.data.allMarkdownRemark.edges.map(
-      ({ node }: any) => ({
-        node: {
-          title: node.frontmatter.title,
-          excerpt: node.frontmatter.description,
-          slug: node.frontmatter.slug,
-          id: node.frontmatter.slug,
-          date: node.frontmatter.date,
-          featured_media: { source_url: node.frontmatter.cover_image },
-          minRead: Math.ceil(node.fields.readingTime.minutes),
-        },
-      }),
-    );
+    const data = this.props.data.limited.edges.map(mapNode);
+    const allData = this.props.data.all.edges.map(mapNode);
 
-    this.setState({ data });
+    this.setState({ data, allData });
   }
 
   render() {
+    const { searchResult, searchValue, data } = this.state;
+
     return (
       <Layout>
         <Header />
 
         <main>
-          <div style={{ width: '100%' }}>
-            <BlogList onClickItem={onClickItem} data={this.state.data} />
+          <div
+            style={{
+              flex: 1,
+              justifyContent: 'flex-start',
+              alignItems: 'center',
+            }}
+          >
+            <input
+              type="text"
+              placeholder="Search Blog"
+              value={this.state.searchValue}
+              onChange={e => {
+                this.setState({ searchValue: e.target.value });
+
+                const val = e.target.value.toLowerCase();
+
+                const searchResult = this.state.allData.filter(
+                  ({ node }) => node.title.toLowerCase().indexOf(val) != -1,
+                );
+
+                this.setState({ searchResult });
+              }}
+            />
           </div>
 
-          <Pagination
-            pageCount={this.props.pageContext.pageCount}
-            currentPage={this.props.pageContext.currentPage}
-          />
+          <div
+            style={{
+              width: '100%',
+              flex: 1,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <BlogList
+              onClickItem={onClickItem}
+              data={searchValue ? searchResult : data}
+            />
+          </div>
+
+          {!searchValue && (
+            <Pagination
+              pageCount={this.props.pageContext.pageCount}
+              currentPage={this.props.pageContext.currentPage}
+            />
+          )}
         </main>
 
         <Footer />
@@ -77,17 +116,53 @@ class BlogPageTemplate extends Component<Props, State> {
   }
 }
 
+const mapNode = ({ node }: any) => {
+  return {
+    node: {
+      html: node.html,
+      title: node.frontmatter.title,
+      excerpt: node.frontmatter.description,
+      slug: node.frontmatter.slug,
+      id: node.frontmatter.slug,
+      date: node.frontmatter.date,
+      featured_media: { source_url: node.frontmatter.cover_image },
+      minRead: Math.ceil(node.fields.readingTime.minutes),
+    },
+  };
+};
+
 export default BlogPageTemplate;
 
 export const pageQuery = graphql`
   query blogListQuery($skip: Int!, $limit: Int!) {
-    allMarkdownRemark(
+    limited: allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       limit: $limit
       skip: $skip
     ) {
       edges {
         node {
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            slug
+            title
+            description
+            cover_image
+          }
+          fields {
+            readingTime {
+              minutes
+            }
+          }
+        }
+      }
+    }
+    all: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
+      edges {
+        node {
+          html
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             slug

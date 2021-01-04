@@ -4,6 +4,7 @@ import { BlogListItem, Item, onClickItem } from './BlogListItem';
 import { useGraphHelper } from '../utils/useGraphHelper';
 import { useDimensions } from '../utils/useDimensions';
 import styled from 'styled-components/native';
+import { Paragraph } from './Styled';
 
 interface Props {
   data?: { node: Item }[];
@@ -14,12 +15,23 @@ const List = styled.FlatList`
   background-color: ${({ theme }) => theme.color.listBG};
 `;
 
+const EmptyContainer = styled.View`
+  background-color: ${({ theme }) => theme.color.listBG};
+  min-height: 200px;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const BlogList = (props: Props) => {
   const { change } = useGraphHelper();
   const { window } = useDimensions();
 
   if (!Array.isArray(props.data) || !props.data.length) {
-    return null;
+    return (
+      <EmptyContainer>
+        <Paragraph>No data found</Paragraph>
+      </EmptyContainer>
+    );
   }
 
   return (

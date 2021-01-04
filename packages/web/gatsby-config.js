@@ -28,6 +28,7 @@ module.exports = {
               height: 400
             }
           },
+          "gatsby-remark-responsive-iframe",
           {
             resolve: "gatsby-remark-embed-gist",
             options: {

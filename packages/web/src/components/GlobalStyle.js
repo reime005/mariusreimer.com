@@ -83,8 +83,14 @@ export const GlobalStyle = createGlobalStyle`
     padding-bottom: 3px;
     border-radius: 2px;
     font-size: 14px;
-    background-color: ${({ theme }) => theme === 'dark' ? darkTheme.color.inlineCodeBG : lightTheme.color.inlineCodeBG};
-    color: ${({ theme }) => theme === 'dark' ? darkTheme.color.inlineCodeFont : lightTheme.color.inlineCodeFont};
+    background-color: ${({ theme }) =>
+      theme === 'dark'
+        ? darkTheme.color.inlineCodeBG
+        : lightTheme.color.inlineCodeBG};
+    color: ${({ theme }) =>
+      theme === 'dark'
+        ? darkTheme.color.inlineCodeFont
+        : lightTheme.color.inlineCodeFont};
   }
   .strong,
   strong {
@@ -126,6 +132,16 @@ export const GlobalStyle = createGlobalStyle`
   }
   .gist-data td {
     border-bottom: none;
+  }
+  input[type=text] {
+    border: none;
+    border-radius: 6px;
+    margin-bottom: 24px;
+    padding: 6px 10px;
+    background-color: ${({ theme }) =>
+      theme === 'dark' ? darkTheme.color.backgroundColor2 : lightTheme.color.backgroundColor2};
+    color: ${({ theme }) =>
+      theme === 'dark' ? darkTheme.color.listItemHeadline : lightTheme.color.listItemHeadline};
   }
 `;
 
