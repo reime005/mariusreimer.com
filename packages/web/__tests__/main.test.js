@@ -44,28 +44,28 @@ test('navigate to the about page via menu', async () => {
   expect(text).toEqual('Mobile Engineer');
 });
 
-// test('navigate to a blog article', async () => {
-//   await page.click('#mobileButton');
+test('navigate to a blog article', async () => {
+  await page.click('#mobileButton');
 
-//   await page.click('a >> text=Blog');
+  await page.click('a >> text=Blog');
 
-//   await page.waitForSelector('data-testid=blog-header-title');
+  await page.waitForSelector('data-testid=blog-header-title');
 
-//   const listHeaderTitle = await page.$eval(
-//     'data-testid=blog-header-title',
-//     e => e.textContent,
-//   );
+  const listHeaderTitle = await page.$eval(
+    'data-testid=blog-header-title',
+    e => e.textContent,
+  );
 
-//   await page.click(`text=${listHeaderTitle}`);
+  await page.click(`text=${listHeaderTitle}`);
 
-//   await page.waitForSelector('data-testid=blog-title');
+  await page.waitForSelector('data-testid=blog-title');
 
-//   // await page.screenshot({ path: Date.now() / 1000 + '_test.png' });
+  // await page.screenshot({ path: Date.now() / 1000 + '_test.png' });
 
-//   const headerTitle = await page.$eval(
-//     'data-testid=blog-title',
-//     e => e.textContent,
-//   );
+  const headerTitle = await page.$eval(
+    'data-testid=blog-title',
+    e => e.textContent,
+  );
 
-//   expect(headerTitle).toEqual(listHeaderTitle);
-// });
+  expect(headerTitle).toEqual(listHeaderTitle);
+});

@@ -71,7 +71,7 @@ const MarkdownPostTemplate = (props: any) => {
             width: '100%',
           }}
         >
-          <H1 testID="blog-title">
+          <H1 testID="blog-title" accessibilityRole="heading" aria-level={1}>
             {props.data.markdownRemark.frontmatter.title}
           </H1>
 
