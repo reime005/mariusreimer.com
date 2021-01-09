@@ -56,7 +56,7 @@ test('navigate to a blog article', async () => {
     e => e.textContent,
   );
 
-  // await page.click(`text=${listHeaderTitle}`);
+  await page.click(`text=${listHeaderTitle}`);
 
   // await page.waitForSelector('data-testid=blog-title');
 
