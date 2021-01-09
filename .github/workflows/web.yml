@@ -61,8 +61,8 @@ jobs:
         run: mkdir -p ./screenshots
 
       - name: Start Test Webserver in Background
-        working-directory: packages/web/
-        run: npx serve -s ./public -p 8000 &
+        working-directory: packages/web/public
+        run: npx serve -p 8000 &
 
       - name: Test
         working-directory: packages/web/

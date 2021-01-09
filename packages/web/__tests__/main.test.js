@@ -56,15 +56,9 @@ test('navigate to a blog article', async () => {
     e => e.textContent,
   );
 
-  await page.screenshot({ path: `screenshots/${Date.now() / 1000}_${listHeaderTitle}_0.png` });
-
   await page.click(`data-testid=blog-header`);
 
-  await page.screenshot({ path: `screenshots/${Date.now() / 1000}_${listHeaderTitle}_1.png` });
-
   await page.waitForSelector('data-testid=blog-title');
-
-  await page.screenshot({ path: `screenshots/${Date.now() / 1000}_${listHeaderTitle}_2.png` });
 
   const headerTitle = await page.$eval(
     'data-testid=blog-title',
