@@ -1,12 +1,37 @@
 //@ts-check
+
+const { chromium, devices } = require('playwright');
+const expect = require('expect');
+let context;
+let browser;
+let page;
+
+const pixel2 = devices['Pixel 2'];
+
 const pageTitle = 'React Native';
 const openSourceMobileText = 'Github';
 
 beforeAll(async () => {
-  await page.goto('http://localhost:8000/');
+  browser = await chromium.launch();
+
+  context = await browser.newContext({
+    ...pixel2,
+  });
+});
+afterAll(async () => {
+  await browser.close();
+});
+
+beforeEach(async () => {
+  page = await context.newPage();
+});
+afterEach(async () => {
+  await page.close();
 });
 
 test('toggle mobile menu, and do dark mode switch', async () => {
+  await page.goto('http://localhost:8000/');
+
   let sectionText = await page.$eval(`text=${pageTitle}`, e => e.textContent);
 
   expect(sectionText).toEqual(pageTitle);
@@ -30,6 +55,8 @@ test('toggle mobile menu, and do dark mode switch', async () => {
 });
 
 test('navigate to the about page via menu', async () => {
+  await page.goto('http://localhost:8000/');
+
   await page.click('#mobileButton');
 
   await page.click('a >> text=About');
@@ -45,6 +72,8 @@ test('navigate to the about page via menu', async () => {
 });
 
 test('navigate to a blog article', async () => {
+  await page.goto('http://localhost:8000/');
+
   await page.click('#mobileButton');
 
   await page.click('a >> text=Blog');

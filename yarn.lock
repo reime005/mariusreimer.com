@@ -8561,7 +8561,7 @@ extract-files@^8.0.0:
   resolved "https://registry.yarnpkg.com/extract-files/-/extract-files-8.1.0.tgz#46a0690d0fe77411a2e3804852adeaa65cd59288"
   integrity sha512-PTGtfthZK79WUMk+avLmwx3NGdU8+iVFXC2NMGxKsn0MnihOG2lvumj+AZo8CTwTrwjXDgZ5tztbRlEdRjBonQ==
 
-extract-zip@^2.0.0:
+extract-zip@^2.0.0, extract-zip@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/extract-zip/-/extract-zip-2.0.1.tgz#663dca56fe46df890d5f131ef4a06d22bb8ba13a"
   integrity sha512-GDhU9ntwuKyGXdZBUgTIe+vXnWj0fppUEtMDL0+idd5Sta8TGpHssn/eusA9mrPr9qNDym6SxAYZjNvCn/9RBg==
@@ -13139,6 +13139,11 @@ jpeg-js@^0.3.4, jpeg-js@^0.3.7:
   resolved "https://registry.yarnpkg.com/jpeg-js/-/jpeg-js-0.3.7.tgz#471a89d06011640592d314158608690172b1028d"
   integrity sha512-9IXdWudL61npZjvLuVe/ktHiA41iE8qFyLB+4VDTblEsWBzeg8WQTlktdUK4CdncUqtUgUg0bbOmTE2bKBKaBQ==
 
+jpeg-js@^0.4.2:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/jpeg-js/-/jpeg-js-0.4.2.tgz#8b345b1ae4abde64c2da2fe67ea216a114ac279d"
+  integrity sha512-+az2gi/hvex7eLTMTlbRLOhH6P6WFdk2ITI8HJsaH2VqYO0I594zXSYEP+tf4FW+8Cy68ScDXoAsQdyQanv3sw==
+
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
@@ -16057,22 +16062,22 @@ playwright-firefox@^1.2.0:
     rimraf "^3.0.2"
     ws "^6.1.0"
 
-playwright@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/playwright/-/playwright-1.2.0.tgz#9a25c050183a8f83994d4bbd0b7555c799d5866b"
-  integrity sha512-r8780weMaCxa7yG5pMudf3T+s8NWa+2aG+vo7DGjDkO013WxUNpmRMe6L6LYOU9YpAUUTDHsRDur1HLKQBov3A==
+playwright@^1.7.1:
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/playwright/-/playwright-1.7.1.tgz#841638811bc39eb2fed792ffaacbcc959a0aaf5e"
+  integrity sha512-dOSWME42wDedJ/PXv8k0zG0Kxd6d6R2OKA51/05++Z2ISdA4N58gHlWqlVKPDkBog1MI6lu/KNt7QDn19AybWQ==
   dependencies:
-    commander "^5.1.0"
     debug "^4.1.1"
-    extract-zip "^2.0.0"
+    extract-zip "^2.0.1"
     https-proxy-agent "^5.0.0"
-    jpeg-js "^0.3.7"
-    mime "^2.4.4"
+    jpeg-js "^0.4.2"
+    mime "^2.4.6"
     pngjs "^5.0.0"
     progress "^2.0.3"
+    proper-lockfile "^4.1.1"
     proxy-from-env "^1.1.0"
     rimraf "^3.0.2"
-    ws "^6.1.0"
+    ws "^7.3.1"
 
 please-upgrade-node@^3.2.0:
   version "3.2.0"
@@ -21379,6 +21384,11 @@ ws@^7.0.0, ws@^7.2.3:
   version "7.3.1"
   resolved "https://registry.yarnpkg.com/ws/-/ws-7.3.1.tgz#d0547bf67f7ce4f12a72dfe31262c68d7dc551c8"
   integrity sha512-D3RuNkynyHmEJIpD2qrgVkc9DQ23OrN/moAwZX4L8DfvszsJxpjQuUq3LMx6HoYji9fbIOBY18XWBsAux1ZZUA==
+
+ws@^7.3.1:
+  version "7.4.2"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-7.4.2.tgz#782100048e54eb36fe9843363ab1c68672b261dd"
+  integrity sha512-T4tewALS3+qsrpGI/8dqNMLIVdq/g/85U98HPMa6F0m6xTbvhXU6RCQLqPH3+SlomNV/LdY6RXEbBpMH6EOJnA==
 
 ws@~6.1.0:
   version "6.1.4"
