@@ -56,11 +56,15 @@ test('navigate to a blog article', async () => {
     e => e.textContent,
   );
 
+  await page.screenshot({ path: `screenshots/${Date.now() / 1000}_0.png` });
+
   await page.click(`data-testid=blog-header-title`);
+
+  await page.screenshot({ path: `screenshots/${Date.now() / 1000}_1.png` });
 
   await page.waitForSelector('data-testid=blog-title');
 
-  // await page.screenshot({ path: Date.now() / 1000 + '_test.png' });
+  await page.screenshot({ path: `screenshots/${Date.now() / 1000}_2.png` });
 
   const headerTitle = await page.$eval(
     'data-testid=blog-title',
