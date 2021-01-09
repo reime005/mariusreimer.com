@@ -97,6 +97,7 @@ export const BlogListItem = (props: Props) => {
         //@ts-ignore
         href={`/blog/id/${item.slug}`}
         accessibilityRole="link"
+        accessibilityLabel={item.title}
         testID="blog-header"
         style={{ flex: 1 }}
         onPress={() => props.onClickItem && props.onClickItem(props.item)}
