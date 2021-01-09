@@ -56,7 +56,7 @@ test('navigate to a blog article', async () => {
     e => e.textContent,
   );
 
-  await page.click(`a >> aria-label=${listHeaderTitle}`);
+  await page.click(`data-testid=blog-header-title`);
 
   await page.waitForSelector('data-testid=blog-title');
 
