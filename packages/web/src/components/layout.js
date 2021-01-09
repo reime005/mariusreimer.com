@@ -54,25 +54,7 @@ const WebProviderWrapper = ({ children }) => {
 };
 
 const Style = () => {
-  const { theme, toggleTheme, setTheme } = useTheme();
-
-  React.useEffect(() => {
-    let persistedTheme = getItem('theme');
-
-    if (
-      ['dark', 'light'].includes(persistedTheme) &&
-      theme !== persistedTheme
-    ) {
-      setTheme(persistedTheme);
-    } else if (
-      window &&
-      window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches === true
-    ) {
-      setTheme('dark');
-    }
-    //eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const { theme } = useTheme();
 
   return (
     <>

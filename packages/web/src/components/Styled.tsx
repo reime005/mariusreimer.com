@@ -13,6 +13,7 @@ export const Intro = styled.div`
   line-height: 1.55em;
   width: 100%;
   margin-bottom: 24px;
+  justify-content: space-around;
 
   h1 {
     margin-bottom: 1em;
