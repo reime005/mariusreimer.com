@@ -6,7 +6,7 @@ import { DarkThemeSwitch } from './DarkThemeSwitch';
 
 const Link = styled(GLink)`
   font-weight: 900;
-  color: ${({ theme }) => theme.color.font};
+  color: var(--font);
   line-height: 1.25em;
 
   :visited {
@@ -15,16 +15,10 @@ const Link = styled(GLink)`
 
   :hover,
   &.activeLink {
-    box-shadow: 0 2px 0 0 ${({ theme }) => theme.color.primary};
-    color: ${({ theme }) => theme.color.primary};
+    box-shadow: 0 2px 0 0 var(--primary);
+    color: var(--primary);
     text-decoration: none;
   }
-`;
-
-const Text = styled.div`
-  font-family: 'Lato';
-  font-size: 14px;
-  color: ${({ theme }) => theme.color.grey};
 `;
 
 const Item = styled.li`
@@ -44,7 +38,7 @@ const Item = styled.li`
 `;
 
 const ContactLink = styled.a`
-  background-color: ${({ theme }) => theme.color.primary};
+  background-color: var(--primary);
   color: white;
   font-weight: 500;
   padding-left: 14px;

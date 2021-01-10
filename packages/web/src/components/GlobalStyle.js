@@ -2,6 +2,19 @@ import { createGlobalStyle } from 'styled-components';
 import { darkTheme, lightTheme } from '@reime005/common';
 
 export const GlobalStyle = createGlobalStyle`
+  :root {
+    --bg2: ${lightTheme.color.backgroundColor2};
+    --primaryLight: ${lightTheme.color.primaryLight};
+    --menuBG: ${lightTheme.color.menuBG};
+    --stroke: ${lightTheme.color.stroke};
+    --backgroundColor1: ${lightTheme.color.backgroundColor1};
+    --projectHeaderStroke: ${lightTheme.color.projectHeaderStroke};
+    --font: ${lightTheme.color.font};
+    --primary: ${lightTheme.color.primary};
+    --lightBorder: ${lightTheme.color.lightBorder};
+    --link: ${lightTheme.color.link};
+    --listBG: ${lightTheme.color.listBG};
+  }
   * {
     box-sizing: border-box;
   }
@@ -20,6 +33,18 @@ export const GlobalStyle = createGlobalStyle`
     &.dark {
       background-color: ${darkTheme.color.body};
       color: ${darkTheme.color.font};
+
+      --bg2: ${darkTheme.color.backgroundColor2};
+      --primaryLight: ${darkTheme.color.primaryLight};
+      --menuBG: ${darkTheme.color.menuBG};
+      --stroke: ${darkTheme.color.stroke};
+      --backgroundColor1: ${darkTheme.color.backgroundColor1};
+      --projectHeaderStroke: ${darkTheme.color.projectHeaderStroke};
+      --font: ${darkTheme.color.font};
+      --primary: ${darkTheme.color.primary};
+      --lightBorder: ${darkTheme.color.lightBorder};
+      --link: ${darkTheme.color.link};
+      --listBG: ${darkTheme.color.listBG};
     }
 
     &.mobile {

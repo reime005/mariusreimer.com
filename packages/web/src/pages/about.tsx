@@ -213,10 +213,10 @@ const Content = styled.article`
   position: relative;
   border-radius: 2px;
   border-width: 2px;
-  border-color: ${({ theme }) => theme.color.primaryLight};
+  border-color: var(--primaryLight);
   border-style: solid;
-  background-color: ${({ theme }) => theme.color.listBG};
-  box-shadow: 0px 0px 2px 1px ${({ theme }) => theme.color.primaryLight};
+  background-color: var(--listBG);
+  box-shadow: 0px 0px 2px 1px var(--primaryLight);
 
   p {
     margin-top: 1em;

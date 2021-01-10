@@ -6,7 +6,7 @@ import { Socials } from './Socials';
 const Text = styled.p`
   font-family: 'Lato';
   font-size: 14px;
-  color: ${({ theme }) => theme.color.font};
+  color: var(--font);
   margin: 0;
   line-height: 2em;
 
@@ -45,7 +45,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  border-top-color: ${({ theme }) => theme.color.lightBorder};
+  border-top-color: var(--lightBorder);
   border-top-width: 1px;
 
   @media screen and (max-width: 570px) {

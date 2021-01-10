@@ -9,7 +9,6 @@ import {
 } from '@reime005/common';
 import { ThemeProvider as WebThemeProvider } from 'styled-components';
 import { DarkGistsStyle, GlobalStyle } from './GlobalStyle';
-import { getItem } from '../utils/storageHelper';
 
 const Layout = ({ children }) => {
   return (
