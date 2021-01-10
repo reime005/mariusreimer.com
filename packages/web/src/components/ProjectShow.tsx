@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   align-items: center;
   box-sizing: border-box;
   min-height: 300px;
-  background-color: var(--bg2);
+  background-color: var(--backgroundColor2);
 `;
 
 const data: ProjectShowHeaderProps[] = [

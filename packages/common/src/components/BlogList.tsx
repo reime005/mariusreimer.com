@@ -4,7 +4,7 @@ import { BlogListItem, Item, onClickItem } from './BlogListItem';
 import { useGraphHelper } from '../utils/useGraphHelper';
 import { useDimensions } from '../utils/useDimensions';
 import styled from 'styled-components/native';
-import { Paragraph } from './Styled';
+import { SubH1 } from './Styled';
 
 interface Props {
   data?: { node: Item }[];
@@ -28,8 +28,10 @@ export const BlogList = (props: Props) => {
 
   if (!Array.isArray(props.data) || !props.data.length) {
     return (
-      <EmptyContainer>
-        <Paragraph>No data found</Paragraph>
+      <EmptyContainer testID="blogEmptyContainer">
+        <SubH1 accessibilityRole="heading" aria-level={1}>
+          No data available...
+        </SubH1>
       </EmptyContainer>
     );
   }

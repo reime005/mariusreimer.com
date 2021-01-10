@@ -37,7 +37,9 @@ export const HomePage = () => {
             / Rust.
           </Sub>
 
-          <a href="/about">Read More</a>
+          <div>
+            <a href="/about">Read More</a>
+          </div>
         </Intro>
       </main>
 

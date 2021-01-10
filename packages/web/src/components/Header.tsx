@@ -78,7 +78,7 @@ const Overlay = styled.div`
   right: 0px;
   position: absolute;
   display: flex;
-  background-color: var(--bg2);
+  background-color: var(--backgroundColor2);
   padding: 40px;
   justify-content: flex-start;
   align-items: center;
