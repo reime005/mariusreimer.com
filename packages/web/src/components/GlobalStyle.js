@@ -90,7 +90,7 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
     width: 100%;
   }
-  span, h1 {
+  span {
     color: var(--font);
   }
   p {
