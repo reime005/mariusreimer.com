@@ -48,7 +48,7 @@ const MobileButton = styled.button`
   height: 30px;
   border-radius: 4px;
   border: none;
-  background-color: ${({ theme }) => theme.color.menuBG};
+  background-color: var(--menuBG);
   cursor: pointer;
   z-index: 4;
 
@@ -78,15 +78,15 @@ const Overlay = styled.div`
   right: 0px;
   position: absolute;
   display: flex;
-  background-color: ${({ theme }) => theme.color.backgroundColor2};
+  background-color: var(--backgroundColor2);
   padding: 40px;
   justify-content: flex-start;
   align-items: center;
   border-top-left-radius: 8px;
   transition: transform 0.5s linear;
-  -webkit-box-shadow: -2px -2px 4px 0px ${({ theme }) => theme.color.primaryLight};
-  -moz-box-shadow: -2px -2px 4px 0px ${({ theme }) => theme.color.primaryLight};
-  box-shadow: -2px -2px 4px 0px ${({ theme }) => theme.color.primaryLight};
+  -webkit-box-shadow: -2px -2px 4px 0px var(--primaryLight);
+  -moz-box-shadow: -2px -2px 4px 0px var(--primaryLight);
+  box-shadow: -2px -2px 4px 0px var(--primaryLight);
   transform: translateX(0px);
   flex-direction: column;
 `;

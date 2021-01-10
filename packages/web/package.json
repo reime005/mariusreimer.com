@@ -58,7 +58,7 @@
     "jest": "^25.1.0",
     "jest-playwright-preset": "^1.2.1",
     "node-fetch": "^2.6.0",
-    "playwright": "^1.2.0",
+    "playwright": "^1.7.1",
     "playwright-firefox": "^1.2.0",
     "react-helmet": "^6.0.0",
     "react-native-svg": "^12.1.0",
@@ -73,8 +73,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "jest": {
-    "preset": "jest-playwright-preset"
-  }
+  ]
 }

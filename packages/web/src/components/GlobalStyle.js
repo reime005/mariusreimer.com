@@ -2,6 +2,20 @@ import { createGlobalStyle } from 'styled-components';
 import { darkTheme, lightTheme } from '@reime005/common';
 
 export const GlobalStyle = createGlobalStyle`
+  :root {
+    --backgroundColor1: ${lightTheme.color.backgroundColor1};
+    --backgroundColor2: ${lightTheme.color.backgroundColor2};
+    --primaryLight: ${lightTheme.color.primaryLight};
+    --menuBG: ${lightTheme.color.menuBG};
+    --stroke: ${lightTheme.color.stroke};
+    --projectHeaderStroke: ${lightTheme.color.projectHeaderStroke};
+    --font: ${lightTheme.color.font};
+    --primary: ${lightTheme.color.primary};
+    --lightBorder: ${lightTheme.color.lightBorder};
+    --link: ${lightTheme.color.link};
+    --listBG: ${lightTheme.color.listBG};
+    --listItemHeadline: ${lightTheme.color.listItemHeadline};
+  }
   * {
     box-sizing: border-box;
   }
@@ -20,6 +34,19 @@ export const GlobalStyle = createGlobalStyle`
     &.dark {
       background-color: ${darkTheme.color.body};
       color: ${darkTheme.color.font};
+
+      --backgroundColor1: ${darkTheme.color.backgroundColor1};
+      --backgroundColor2: ${darkTheme.color.backgroundColor2};
+      --primaryLight: ${darkTheme.color.primaryLight};
+      --menuBG: ${darkTheme.color.menuBG};
+      --stroke: ${darkTheme.color.stroke};
+      --projectHeaderStroke: ${darkTheme.color.projectHeaderStroke};
+      --font: ${darkTheme.color.font};
+      --primary: ${darkTheme.color.primary};
+      --lightBorder: ${darkTheme.color.lightBorder};
+      --link: ${darkTheme.color.link};
+      --listBG: ${darkTheme.color.listBG};
+      --listItemHeadline: ${darkTheme.color.listItemHeadline};
     }
 
     &.mobile {
@@ -62,6 +89,9 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 100%;
     height: 100%;
     width: 100%;
+  }
+  span {
+    color: var(--font);
   }
   p {
     margin-bottom: 1.33em;
@@ -119,6 +149,9 @@ export const GlobalStyle = createGlobalStyle`
       text-decoration: none;
     }
   }
+  [data-testid="blogEmptyContainer"] {
+    background-color: var(---backgroundColor1);
+  }
   .blog-post-content img {
     height: auto;
     position: relative;
@@ -138,10 +171,8 @@ export const GlobalStyle = createGlobalStyle`
     border-radius: 6px;
     margin-bottom: 24px;
     padding: 6px 10px;
-    background-color: ${({ theme }) =>
-      theme === 'dark' ? darkTheme.color.backgroundColor2 : lightTheme.color.backgroundColor2};
-    color: ${({ theme }) =>
-      theme === 'dark' ? darkTheme.color.listItemHeadline : lightTheme.color.listItemHeadline};
+    background-color: var(--backgroundColor2);
+    color: var(--listItemHeadline);
   }
 `;
 

@@ -24,7 +24,7 @@ const Wrapper = styled.div<ProjectShowHeaderProps>`
   min-height: 500px;
   column-gap: 16px;
   width: 100%;
-  background-color: ${({ theme }) => theme.color.backgroundColor1};
+  background-color: var(--backgroundColor1);
   transition: transform 300ms ease-in-out 0s;
   :hover {
     transform: scale(1.015);
@@ -33,12 +33,12 @@ const Wrapper = styled.div<ProjectShowHeaderProps>`
   border-radius: 8px;
   padding: 24px;
   margin-bottom: 40px;
-  color: ${({ theme }) => theme.color.white};
+  color: #fff;
   -webkit-box-shadow: 0px 0px 3px 1px
-    ${({ theme }) => theme.color.projectHeaderStroke};
+    var(--projectHeaderStroke);
   -moz-box-shadow: 0px 0px 3px 1px
-    ${({ theme }) => theme.color.projectHeaderStroke};
-  box-shadow: 0px 0px 3px 1px ${({ theme }) => theme.color.projectHeaderStroke};
+    var(--projectHeaderStroke);
+  box-shadow: 0px 0px 3px 1px var(--projectHeaderStroke);
 `;
 
 const Tags = styled.div`
@@ -52,21 +52,12 @@ const Tags = styled.div`
 `;
 
 const Image = styled.img`
-  /* background-size: cover; */
   max-width: 400px;
   width: 100%;
-  /* align-content: center;
-  justify-content: center;
-  justify-self: center;
-  background-position: 50% 50%;
-  background-size: contain;
-  background-repeat: no-repeat; */
 `;
 
 const Tag = styled.div`
-  /* text-overflow: ellipsis; */
   white-space: nowrap;
-  /* overflow: hidden; */
   padding-top: 3px;
   padding-bottom: 4px;
   padding-left: 12px;
@@ -99,7 +90,7 @@ const Container = styled.div`
   padding: 40px;
 
   a {
-    color: ${({ theme }) => theme.color.white};
+    color: #fff;
     font-weight: 600;
 
     :visited {
@@ -107,7 +98,7 @@ const Container = styled.div`
     }
 
     :hover {
-      box-shadow: 0 2px 0 0 ${({ theme }) => theme.color.white};
+      box-shadow: 0 2px 0 0 #fff;
       text-decoration: none;
     }
   }

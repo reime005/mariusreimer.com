@@ -1,12 +1,37 @@
 //@ts-check
+
+const { chromium, devices } = require('playwright');
+const expect = require('expect');
+let context;
+let browser;
+let page;
+
+const pixel2 = devices['Pixel 2'];
+
 const pageTitle = 'React Native';
 const openSourceMobileText = 'Github';
 
 beforeAll(async () => {
-  await page.goto('http://localhost:8000/');
+  browser = await chromium.launch();
+
+  context = await browser.newContext({
+    ...pixel2,
+  });
+});
+afterAll(async () => {
+  await browser.close();
+});
+
+beforeEach(async () => {
+  page = await context.newPage();
+});
+afterEach(async () => {
+  await page.close();
 });
 
 test('toggle mobile menu, and do dark mode switch', async () => {
+  await page.goto('http://localhost:8000/');
+
   let sectionText = await page.$eval(`text=${pageTitle}`, e => e.textContent);
 
   expect(sectionText).toEqual(pageTitle);
@@ -30,6 +55,8 @@ test('toggle mobile menu, and do dark mode switch', async () => {
 });
 
 test('navigate to the about page via menu', async () => {
+  await page.goto('http://localhost:8000/');
+
   await page.click('#mobileButton');
 
   await page.click('a >> text=About');
@@ -44,28 +71,28 @@ test('navigate to the about page via menu', async () => {
   expect(text).toEqual('Mobile Engineer');
 });
 
-// test('navigate to a blog article', async () => {
-//   await page.click('#mobileButton');
+test('navigate to a blog article', async () => {
+  await page.goto('http://localhost:8000/');
 
-//   await page.click('a >> text=Blog');
+  await page.click('#mobileButton');
 
-//   await page.waitForSelector('data-testid=blog-header-title');
+  await page.click('a >> text=Blog');
 
-//   const listHeaderTitle = await page.$eval(
-//     'data-testid=blog-header-title',
-//     e => e.textContent,
-//   );
+  await page.waitForSelector('data-testid=blog-header-title');
 
-//   await page.click(`text=${listHeaderTitle}`);
+  const listHeaderTitle = await page.$eval(
+    'data-testid=blog-header-title',
+    e => e.textContent,
+  );
 
-//   await page.waitForSelector('data-testid=blog-title');
+  await page.click(`data-testid=blog-header`);
 
-//   // await page.screenshot({ path: Date.now() / 1000 + '_test.png' });
+  await page.waitForSelector('data-testid=blog-title');
 
-//   const headerTitle = await page.$eval(
-//     'data-testid=blog-title',
-//     e => e.textContent,
-//   );
+  const headerTitle = await page.$eval(
+    'data-testid=blog-title',
+    e => e.textContent,
+  );
 
-//   expect(headerTitle).toEqual(listHeaderTitle);
-// });
+  expect(headerTitle).toEqual(listHeaderTitle);
+});

@@ -16,27 +16,7 @@ const Wrapper = styled.div`
   align-items: center;
   box-sizing: border-box;
   min-height: 300px;
-  background-color: ${({ theme }) => theme.color.backgroundColor2};
-`;
-
-const Line = styled.div`
-  display: flex;
-  margin-left: 24px;
-  margin-right: 24px;
-  margin-bottom: 40px;
-  border-bottom: 3px solid ${({ theme }) => theme.color.stroke};
-`;
-
-const Box = styled.div`
-  font-weight: 900;
-  align-self: center;
-  font-size: 24px;
-  padding-left: 32px;
-  padding-right: 32px;
-  padding: 16px;
-  border: 3px solid ${({ theme }) => theme.color.stroke};
-  border-bottom: none;
-  color: ${({ theme }) => theme.color.listItemHeadline};
+  background-color: var(--backgroundColor2);
 `;
 
 const data: ProjectShowHeaderProps[] = [
@@ -177,10 +157,6 @@ export const ProjectShow = () => {
   return (
     <Wrapper>
       <div style={{ width: '100%', maxWidth: 1000 }}>
-        {/* <Line>
-          <Box>Projects & Work</Box>
-        </Line> */}
-
         {data.map((d, i) => {
           return <ProjectShowHeader {...d} right={i % 2 === 0} key={d.title} />;
         })}

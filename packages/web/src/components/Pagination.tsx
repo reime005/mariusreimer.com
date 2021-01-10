@@ -29,7 +29,7 @@ const NavButton = styled.button<INavButton>`
   margin: 0;
   border: none;
   outline: none;
-  color: ${({ theme }) => theme.color.font};
+  color: var(--font);
   background-color: inherit;
   padding: 0;
   margin-left: 4px;
@@ -54,7 +54,7 @@ const Navigation = styled.div`
 const Span = styled.span`
   :hover {
     text-decoration: none;
-    box-shadow: 0 1.5px 0 0 ${({ theme }) => theme.color.primary};
+    box-shadow: 0 1.5px 0 0 var(--primary);
   }
 `;
 

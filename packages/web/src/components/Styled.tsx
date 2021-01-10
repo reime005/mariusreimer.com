@@ -13,6 +13,7 @@ export const Intro = styled.div`
   line-height: 1.55em;
   width: 100%;
   margin-bottom: 24px;
+  justify-content: space-around;
 
   h1 {
     margin-bottom: 1em;
@@ -26,14 +27,14 @@ export const Intro = styled.div`
   a {
     font-weight: 500;
 
-    color: ${({ theme }) => theme.color.link};
+    color: var(--link);
     text-decoration: none;
     :hover {
       text-decoration: none;
-      box-shadow: 0 2px 0 0 ${({ theme }) => theme.color.link};
+      box-shadow: 0 2px 0 0 var(--link);
     }
     :visited {
-      color: ${({ theme }) => theme.color.link};
+      color: var(--link);
     }
   }
 
