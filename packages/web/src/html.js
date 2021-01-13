@@ -16,6 +16,7 @@ export default function HTML(props) {
           type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/solid.min.css"
         />
+        <title>React Native Development | Marius Reimer</title>
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>

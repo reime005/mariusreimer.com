@@ -116,7 +116,7 @@ export const ProjectShowHeader = (props: ProjectShowHeaderProps) => {
         alignItems: 'center',
       }}
     >
-      <Image loading="lazy" src={props.imageSource} />
+      <Image loading="lazy" alt={props.title} src={props.imageSource} />
     </div>
   );
 
