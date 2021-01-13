@@ -18,7 +18,7 @@ const Wrapper = styled.div<ProjectShowHeaderProps>`
   display: grid;
   align-items: center;
   align-content: center;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: 1fr 1fr;
   grid-auto-flow: dense;
   grid-auto-rows: minmax(300px, min-content);
   min-height: 500px;
@@ -34,11 +34,13 @@ const Wrapper = styled.div<ProjectShowHeaderProps>`
   padding: 24px;
   margin-bottom: 40px;
   color: #fff;
-  -webkit-box-shadow: 0px 0px 3px 1px
-    var(--projectHeaderStroke);
-  -moz-box-shadow: 0px 0px 3px 1px
-    var(--projectHeaderStroke);
+  -webkit-box-shadow: 0px 0px 3px 1px var(--projectHeaderStroke);
+  -moz-box-shadow: 0px 0px 3px 1px var(--projectHeaderStroke);
   box-shadow: 0px 0px 3px 1px var(--projectHeaderStroke);
+
+  @media screen and (max-width: 570px) {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
 `;
 
 const Tags = styled.div`
