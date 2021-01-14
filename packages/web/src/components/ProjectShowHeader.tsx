@@ -120,7 +120,8 @@ export const ProjectShowHeader = (props: ProjectShowHeaderProps) => {
     >
       {props.fluid ? (
         <Img
-          style={{ width: '100%', height: '100%' }}
+          style={{ width: '100%', maxWidth: 400 }}
+
           alt={props.title}
           fluid={props.fluid}
         />
