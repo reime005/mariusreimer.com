@@ -13,11 +13,11 @@ tags:
 cover_image: "https://mariusreimer.com/images/track-x.jpg"
 ---
 
-# **A quick Overview about Anki Overdrive**
+# A quick Overview about Anki Overdrive
 
 I will give you a quick overview about [Anki Overdrive](https://www.anki.com/de-de). It is an intelligent battle racing system that lets you explore the power of **artificial intelligence** (AI).
 
-## **#1: The Hardware is dumb**
+## #1: The Hardware is dumb
 
 Each vehicle only consists of a 50MHz processor, infrared camera, Bluetooth Low Energy controller, an approx. 30 minutes battery and a rear wheel drive. The infrared camera is used to scan the infrared markings on the track pieces at 500Hz (each 2ms) to determine their position.
 
@@ -35,10 +35,10 @@ If you want to write the software for controlling the vehicles, you must find a 
 
 If you do not want to buy a new track, print it. There is an [open source](https://github.com/NoveroResearch/tragediy) software for this use case. I have tested it - successfully.
 
-But: Print it on a large paper and be careful about sticking it together precisely! Otherwise, the vehicles may delocalise.
+But: Print it on a large paper and be careful about sticking it together precisely! Otherwise, the vehicles may delocalize.
 
 `youtube:https://www.youtube.com/embed/KVeH33uwLWU`
 
 ## #4: There is a vehicle test mode
 
-Pressing the grey button on the downside quick and often (should be 5x) causes the vehicle to drive in a police-like behaviour. You can see this mode in the video above.
+Pressing the grey button on the downside quick and often (should be 5x) causes the vehicle to drive in a police-like behavior. You can see this mode in the video above.
