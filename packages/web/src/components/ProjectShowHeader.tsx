@@ -1,26 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link as GLink } from 'gatsby';
 
 const Link = styled.a`
   font-weight: 500;
-  color: ${({ theme }) => theme.color.white} !important;
+  color: #fff !important;
   line-height: 1.25em;
 
   :hover,
   &.activeLink {
-    box-shadow: 0 1.5px 0 0 ${({ theme }) => theme.color.white};
+    box-shadow: 0 1.5px 0 0 #fff;
     text-decoration: none;
   }
 `;
 
-const Wrapper = styled.div<ProjectShowHeaderProps>`
+const Wrapper = styled.div`
   display: grid;
   align-items: center;
   align-content: center;
   grid-template-columns: 1fr 1fr;
   grid-auto-flow: dense;
-  grid-auto-rows: minmax(300px, min-content);
+  grid-auto-rows: minmax(600px, min-content);
   min-height: 500px;
   column-gap: 16px;
   width: 100%;
@@ -76,6 +75,7 @@ export interface ProjectShowHeaderProps {
   title: string;
   subTitle?: string;
   description: string;
+  items?: string[];
   link?: {
     text: string;
     to: string;
@@ -130,6 +130,19 @@ export const ProjectShowHeader = (props: ProjectShowHeaderProps) => {
         {!!props.subTitle && <h4>{props.subTitle}</h4>}
 
         <p dangerouslySetInnerHTML={{ __html: props.description }} />
+
+        {props.items && (
+          <ul>
+            {props.items.map(p => (
+              <li key={p}>
+                <span
+                  style={{ color: '#fff' }}
+                  dangerouslySetInnerHTML={{ __html: p }}
+                ></span>
+              </li>
+            ))}
+          </ul>
+        )}
 
         {props.link && props.link.text && props.link.to && (
           <div>
