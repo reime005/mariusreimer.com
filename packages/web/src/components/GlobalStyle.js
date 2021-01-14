@@ -3,6 +3,7 @@ import { darkTheme, lightTheme } from '@reime005/common';
 
 export const GlobalStyle = createGlobalStyle`
   :root {
+    --body: ${lightTheme.color.body};
     --backgroundColor1: ${lightTheme.color.backgroundColor1};
     --backgroundColor2: ${lightTheme.color.backgroundColor2};
     --primaryLight: ${lightTheme.color.primaryLight};
@@ -26,15 +27,11 @@ export const GlobalStyle = createGlobalStyle`
     text-rendering: optimizeLegibility;
     font-family: 'Lato';
 
-    &.light {
-      background-color: ${lightTheme.color.body};
-      color: ${lightTheme.color.font};
-    }
+    background-color: var(--body);
+    color: var(--font);
 
     &.dark {
-      background-color: ${darkTheme.color.body};
-      color: ${darkTheme.color.font};
-
+      --body: ${darkTheme.color.body};
       --backgroundColor1: ${darkTheme.color.backgroundColor1};
       --backgroundColor2: ${darkTheme.color.backgroundColor2};
       --primaryLight: ${darkTheme.color.primaryLight};
@@ -54,22 +51,17 @@ export const GlobalStyle = createGlobalStyle`
       max-height: 100vh;
     }
   }
-  button {
-    background-color: ${({ theme }) => (theme === 'dark' ? '#282c33' : '#fff')};
-  }
   a {
     font-weight: 500;
     line-height: 1.25em;
 
-    color: ${({ theme }) =>
-      theme === 'dark' ? darkTheme.color.link : lightTheme.color.link};
+    color: var(--link);
       text-decoration: none;
     :hover {
       text-decoration: underline;
     }
     :visited {
-      color: ${({ theme }) =>
-        theme === 'dark' ? darkTheme.color.link : lightTheme.color.link};
+      color: var(--link);
     }
   }
   #tableText {
@@ -93,15 +85,17 @@ export const GlobalStyle = createGlobalStyle`
   span {
     color: var(--font);
   }
-  p {
-    margin-bottom: 1.33em;
-  }
+  /* p {
+    margin-bottom: 1.45rem;
+  } */
   ul {
-    margin-top: 1.33em;
+    /* margin-top: 1.45rem;
+    margin-left: 1.45rem;
+    margin-bottom: 1.45rem; */
     list-style-type: square;
   }
   li {
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
   }
   img {
     margin: 0;

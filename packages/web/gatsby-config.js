@@ -2,7 +2,8 @@ module.exports = {
   siteMetadata: {
     title: 'React Native Development | Marius Reimer',
     author: 'Marius Reimer',
-    description: 'Personal Website, Blog and App by Marius Reimer. React Native, Flutter and Rust.',
+    description:
+      'Personal Website, Blog and App by Marius Reimer. React Native, Flutter and Rust.',
     siteUrl: 'https://mariusreimer.com',
     social: {
       twitter: '@reime005',
@@ -17,22 +18,30 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/assets`,
+      },
+    },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
           `gatsby-remark-reading-time`,
           {
-            resolve: "gatsby-remark-embed-youtube",
+            resolve: 'gatsby-remark-embed-youtube',
             options: {
               width: 800,
-              height: 400
-            }
+              height: 400,
+            },
           },
-          "gatsby-remark-responsive-iframe",
+          'gatsby-remark-responsive-iframe',
           {
-            resolve: "gatsby-remark-embed-gist",
-            options: {
-            }
+            resolve: 'gatsby-remark-embed-gist',
+            options: {},
           },
           {
             resolve: `gatsby-remark-prismjs`,
@@ -44,11 +53,11 @@ module.exports = {
               // you may use this to prevent Prism from re-processing syntax.
               // This is an uncommon use-case though;
               // If you're unsure, it's best to use the default value.
-              classPrefix: "language-",
+              classPrefix: 'language-',
             },
-          }
-        ]
-      }
+          },
+        ],
+      },
     },
     {
       resolve: 'gatsby-plugin-typescript',
@@ -90,8 +99,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-zopfli',
       options: {
-        extensions: ['css', 'html', 'js', 'svg', 'json']
-      }
-    }
+        extensions: ['css', 'html', 'js', 'svg', 'json'],
+      },
+    },
+    'gatsby-plugin-robots-txt',
   ],
 };

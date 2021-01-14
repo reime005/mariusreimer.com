@@ -1,26 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link as GLink } from 'gatsby';
+import Img, { FluidObject } from 'gatsby-image';
 
 const Link = styled.a`
   font-weight: 500;
-  color: ${({ theme }) => theme.color.white} !important;
+  color: #fff !important;
   line-height: 1.25em;
 
   :hover,
   &.activeLink {
-    box-shadow: 0 1.5px 0 0 ${({ theme }) => theme.color.white};
+    box-shadow: 0 1.5px 0 0 #fff;
     text-decoration: none;
   }
 `;
 
-const Wrapper = styled.div<ProjectShowHeaderProps>`
+const Wrapper = styled.div`
   display: grid;
   align-items: center;
   align-content: center;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: 1fr 1fr;
   grid-auto-flow: dense;
-  grid-auto-rows: minmax(300px, min-content);
+  grid-auto-rows: minmax(600px, min-content);
   min-height: 500px;
   column-gap: 16px;
   width: 100%;
@@ -34,11 +34,13 @@ const Wrapper = styled.div<ProjectShowHeaderProps>`
   padding: 24px;
   margin-bottom: 40px;
   color: #fff;
-  -webkit-box-shadow: 0px 0px 3px 1px
-    var(--projectHeaderStroke);
-  -moz-box-shadow: 0px 0px 3px 1px
-    var(--projectHeaderStroke);
+  -webkit-box-shadow: 0px 0px 3px 1px var(--projectHeaderStroke);
+  -moz-box-shadow: 0px 0px 3px 1px var(--projectHeaderStroke);
   box-shadow: 0px 0px 3px 1px var(--projectHeaderStroke);
+
+  @media screen and (max-width: 570px) {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
 `;
 
 const Tags = styled.div`
@@ -74,10 +76,12 @@ export interface ProjectShowHeaderProps {
   title: string;
   subTitle?: string;
   description: string;
+  items?: string[];
   link?: {
     text: string;
     to: string;
   };
+  fluid?: FluidObject;
   tags: string[];
 }
 
@@ -114,7 +118,16 @@ export const ProjectShowHeader = (props: ProjectShowHeaderProps) => {
         alignItems: 'center',
       }}
     >
-      <Image loading="lazy" src={props.imageSource} />
+      {props.fluid ? (
+        <Img
+          style={{ width: '100%', maxWidth: 400 }}
+
+          alt={props.title}
+          fluid={props.fluid}
+        />
+      ) : (
+        <Image loading="lazy" alt={props.title} src={props.imageSource} />
+      )}
     </div>
   );
 
@@ -128,6 +141,19 @@ export const ProjectShowHeader = (props: ProjectShowHeaderProps) => {
         {!!props.subTitle && <h4>{props.subTitle}</h4>}
 
         <p dangerouslySetInnerHTML={{ __html: props.description }} />
+
+        {props.items && (
+          <ul>
+            {props.items.map(p => (
+              <li key={p}>
+                <span
+                  style={{ color: '#fff' }}
+                  dangerouslySetInnerHTML={{ __html: p }}
+                ></span>
+              </li>
+            ))}
+          </ul>
+        )}
 
         {props.link && props.link.text && props.link.to && (
           <div>
