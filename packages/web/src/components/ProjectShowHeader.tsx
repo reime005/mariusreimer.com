@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Img, { FluidObject } from 'gatsby-image';
 
 const Link = styled.a`
   font-weight: 500;
@@ -80,6 +81,7 @@ export interface ProjectShowHeaderProps {
     text: string;
     to: string;
   };
+  fluid?: FluidObject;
   tags: string[];
 }
 
@@ -116,7 +118,15 @@ export const ProjectShowHeader = (props: ProjectShowHeaderProps) => {
         alignItems: 'center',
       }}
     >
-      <Image loading="lazy" alt={props.title} src={props.imageSource} />
+      {props.fluid ? (
+        <Img
+          style={{ width: '100%', height: '100%' }}
+          alt={props.title}
+          fluid={props.fluid}
+        />
+      ) : (
+        <Image loading="lazy" alt={props.title} src={props.imageSource} />
+      )}
     </div>
   );
 

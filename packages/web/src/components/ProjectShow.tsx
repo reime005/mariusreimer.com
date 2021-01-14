@@ -23,9 +23,7 @@ const data: ProjectShowHeaderProps[] = [
   {
     title: 'Space Seek',
     subTitle: 'React Native App',
-    description: `
-      Rewrite of the 'Space Viewer' app
-      `,
+    description: `Rewrite of the 'Space Viewer' app`,
     items: [
       'See information about live streams, launch time or mission description!',
       'The data is fetched from the <a rel="noopener noreferrer" href="https://thespacedevs.com/">The Space Devs API</a>',
@@ -143,12 +141,33 @@ const data: ProjectShowHeaderProps[] = [
   },
 ];
 
-export const ProjectShow = () => {
+interface IProjectShowProps {
+  data: {
+    [key: string]: {
+      childImageSharp: any;
+    };
+  };
+}
+
+export const ProjectShow = (props: IProjectShowProps) => {
   return (
     <Wrapper>
       <div style={{ width: '100%', maxWidth: 1000 }}>
         {data.map((d, i) => {
-          return <ProjectShowHeader {...d} right={i % 2 === 0} key={d.title} />;
+          let fluid;
+
+          if (props.data[`image_${i}`]) {
+            fluid = props.data[`image_${i}`].childImageSharp.fluid;
+          }
+
+          return (
+            <ProjectShowHeader
+              {...d}
+              fluid={fluid}
+              right={i % 2 === 0}
+              key={d.title}
+            />
+          );
         })}
       </div>
     </Wrapper>

@@ -7,12 +7,13 @@ import { ProjectShow } from '../components/ProjectShow';
 import Layout from '../components/layout';
 import { Intro } from '../components/Styled';
 import { HeadLine } from '../components/HeadLine';
+import { graphql } from 'gatsby';
 
 const Sub = styled.p`
   font-size: 1.1rem;
 `;
 
-export const HomePage = () => {
+export const HomePage = (props: any) => {
   return (
     <Layout>
       <Header />
@@ -22,7 +23,7 @@ export const HomePage = () => {
           <HeadLine />
         </Intro>
 
-        <ProjectShow />
+        <ProjectShow {...props} />
 
         <Intro>
           <Sub>
@@ -47,5 +48,41 @@ export const HomePage = () => {
     </Layout>
   );
 };
+
+export const fluidImage = graphql`
+  fragment fluidImage on File {
+    childImageSharp {
+      fluid(maxWidth: 800) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+`;
+
+export const pageQuery = graphql`
+  query {
+    image_0: file(relativePath: { eq: "project_spaceseek_hq.png" }) {
+      ...fluidImage
+    }
+    image_1: file(relativePath: { eq: "project_spaceviewer.png" }) {
+      ...fluidImage
+    }
+    image_2: file(relativePath: { eq: "project_flutter.png" }) {
+      ...fluidImage
+    }
+    image_3: file(relativePath: { eq: "project-react.png" }) {
+      ...fluidImage
+    }
+    image_4: file(relativePath: { eq: "project_splintersweets.png" }) {
+      ...fluidImage
+    }
+    image_5: file(relativePath: { eq: "project_bubblefling.png" }) {
+      ...fluidImage
+    }
+    image_6: file(relativePath: { eq: "project_hammerize.png" }) {
+      ...fluidImage
+    }
+  }
+`;
 
 export default HomePage;
