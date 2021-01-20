@@ -164,7 +164,7 @@ export const BlogListItem = (props: Props) => {
               {
                 <DateAndMinRead
                   date={new Date(item.date)}
-                  minRead={props.minRead || 5}
+                  minRead={props.item?.minRead || 5}
                 />
               }
             </View>
