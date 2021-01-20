@@ -20,6 +20,10 @@ export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
   }
+  :focus {
+    outline: dashed 0.15em darkred;
+    outline-offset: 0.12em;
+  }
   body {
     height: 100%;
     margin: 0;
