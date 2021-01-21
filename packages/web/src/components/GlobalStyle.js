@@ -91,7 +91,7 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
     width: 100%;
   }
-  span, p {
+  span {
     color: var(--font);
   }
   ul {

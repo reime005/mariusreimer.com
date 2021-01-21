@@ -5,7 +5,6 @@ import Layout from '../components/layout';
 import styled from 'styled-components';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import { H1, SubH1 } from '@reime005/common/src/components/Styled';
 import dateFormat from 'date-fns/format';
 
 const Link = styled.a`
@@ -21,7 +20,7 @@ const Link = styled.a`
 
   :hover {
     text-decoration: none;
-    box-shadow: 0 2px 0 0 ${({ theme }) => theme.color.primary};
+    box-shadow: 0 2px 0 0 var(--primary);
   }
 `;
 
@@ -49,6 +48,14 @@ const BackLink = ({ blogIndex = 1 }) => {
   );
 };
 
+const SubH1 = styled.h2`
+  font-weight: normal;
+  font-size: 16px;
+  margin-bottom: 32px;
+  line-height: 32px;
+  color: var(--listItemFont);
+`;
+
 const MarkdownPostTemplate = (props: any) => {
   return (
     <Layout>
@@ -71,9 +78,9 @@ const MarkdownPostTemplate = (props: any) => {
             width: '100%',
           }}
         >
-          <H1 testID="blog-title" accessibilityRole="heading" aria-level={1}>
+          <h1 data-testid="blog-title">
             {props.data.markdownRemark.frontmatter.title}
-          </H1>
+          </h1>
 
           <SubH1>
             {dateFormat(

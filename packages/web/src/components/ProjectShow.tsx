@@ -66,7 +66,7 @@ const data: ProjectShowHeaderProps[] = [
     description: 'Check how many people are in space right now!',
     items: [
       'Built in collaboration with <a rel="noopener noreferrer" href="https://berger-apps.de/">Berger</a>',
-      'Experience documented <a rel="noopener noreferrer" href="/blog/id/my-points-on-flutter-as-a-react-native-developer" aria-label="Blog Post About Flutter Experience">here</a>',
+      'Experience documented <a rel="noopener noreferrer" href="/blog/id/my-points-on-flutter-as-a-react-native-developer" aria-label="Blog Post About Flutter Experience">in this article</a>',
       '<a rel="noopener noreferrer" href="https://github.com/berger89/hmpaisrn" aria-label="Github How Many People Are In Space Right Now Project">Open Source</a>',
     ],
     backgroundColor: 'rgb(30, 30, 30)',
