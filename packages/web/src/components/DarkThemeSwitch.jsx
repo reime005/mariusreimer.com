@@ -4,7 +4,7 @@ import { useTheme } from '@reime005/common';
 
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
-import { getItem, setItem } from '../utils/storageHelper';
+import { getItem } from '../utils/storageHelper';
 
 const Wrapper = styled.div`
   display: flex;
@@ -60,6 +60,7 @@ export const DarkThemeSwitch = () => {
   const { theme, toggleTheme, setTheme } = useTheme();
 
   const isDark = theme === 'dark';
+  const isLight = theme === 'light';
 
   useEffect(() => {
     const preferredTheme = getItem('theme');
@@ -69,6 +70,10 @@ export const DarkThemeSwitch = () => {
     }
     /* eslint-disable-next-line */
   }, []);
+
+  if (!isDark && !isLight) {
+    return null;
+  }
 
   return (
     <Wrapper data-test-id="switch">
@@ -95,7 +100,7 @@ export const DarkThemeSwitch = () => {
           </>
         )}
 
-        {!isDark && (
+        {isLight && (
           <>
             <FontAwesomeIcon
               icon={faMoon}

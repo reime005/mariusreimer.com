@@ -17,6 +17,9 @@ export const GlobalStyle = createGlobalStyle`
     --listBG: ${lightTheme.color.listBG};
     --listItemHeadline: ${lightTheme.color.listItemHeadline};
     --headLine: ${lightTheme.color.headLine};
+    --lighter: ${lightTheme.color.primaryMedium};
+    --inlineCodeFont: ${lightTheme.color.inlineCodeFont};
+    --inlineCodeBG: ${lightTheme.color.inlineCodeBG};
   }
   * {
     box-sizing: border-box;
@@ -50,6 +53,9 @@ export const GlobalStyle = createGlobalStyle`
       --listBG: ${darkTheme.color.listBG};
       --listItemHeadline: ${darkTheme.color.listItemHeadline};
       --headLine: ${darkTheme.color.headLine};
+      --lighter: ${darkTheme.color.primaryLight};
+      --inlineCodeFont: ${darkTheme.color.inlineCodeFont};
+      --inlineCodeBG: ${darkTheme.color.inlineCodeBG};
     }
 
     &.mobile {
@@ -57,9 +63,9 @@ export const GlobalStyle = createGlobalStyle`
       max-height: 100vh;
     }
   }
-  h1,h2,h3,h4,h5 {
+  /* h1,h2,h3,h4,h5 {
     color: var(--headLine);
-  }
+  } */
   a {
     font-weight: 500;
     line-height: 1.25em;
@@ -110,27 +116,17 @@ export const GlobalStyle = createGlobalStyle`
     padding-bottom: 3px;
     border-radius: 2px;
     font-size: 14px;
-    background-color: ${({ theme }) =>
-      theme === 'dark'
-        ? darkTheme.color.inlineCodeBG
-        : lightTheme.color.inlineCodeBG};
-    color: ${({ theme }) =>
-      theme === 'dark'
-        ? darkTheme.color.inlineCodeFont
-        : lightTheme.color.inlineCodeFont};
+    background-color: var(--inlineCodeBG);
+    color: var(--inlineCodeFont);
   }
   .strong,
   strong {
     font-weight: 900;
-    color: ${({ theme }) =>
-      theme === 'dark' ? darkTheme.color.primary : lightTheme.color.primary};
+    color: var(--primary);
   }
   .lighter,
   lighter {
-    color: ${({ theme }) =>
-      theme === 'dark'
-        ? darkTheme.color.primaryLight
-        : lightTheme.color.primaryMedium};
+    color: var(--lighter);
   }
   @media screen and (max-width: 570px) {
     main h1 {
