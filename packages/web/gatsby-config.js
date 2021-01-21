@@ -41,7 +41,16 @@ module.exports = {
           'gatsby-remark-responsive-iframe',
           {
             resolve: 'gatsby-remark-embed-gist',
-            options: {},
+            options: {
+              // a flag indicating whether the github default gist css should be included or not
+              // default: true
+              gistDefaultCssInclude: false,
+
+              // a flag indicating whether the github default gist css should be preloaded or not
+              // use this if you want to load the default css asynchronously.
+              // default: false
+              gistCssPreload: false,
+            },
           },
           {
             resolve: `gatsby-remark-prismjs`,

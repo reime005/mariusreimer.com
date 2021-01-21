@@ -16,11 +16,6 @@ export default function HTML(props) {
           content="Personal Website, Blog and App by Marius Reimer. React Native, Flutter and Rust."
         />
         <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/solid.min.css"
-        />
-        <link
           rel="preconnect"
           href="https://fonts.gstatic.com/"
           crossorigin
@@ -66,8 +61,6 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/solid.min.js" />
       </body>
     </html>
   );
