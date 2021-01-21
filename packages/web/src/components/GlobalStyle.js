@@ -36,6 +36,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Lato';
 
     background-color: var(--body);
+    transition: color 0.1s ease-out, background 0.1s ease-out;
     color: var(--font);
 
     &.dark {

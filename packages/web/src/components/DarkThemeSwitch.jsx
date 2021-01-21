@@ -61,6 +61,7 @@ export const DarkThemeSwitch = () => {
 
   const isDark = theme === 'dark';
   const isLight = theme === 'light';
+  const hidden = (!isDark && !isLight) || typeof window === 'undefined';
 
   useEffect(() => {
     const preferredTheme = getItem('theme');
@@ -71,12 +72,13 @@ export const DarkThemeSwitch = () => {
     /* eslint-disable-next-line */
   }, []);
 
-  if (!isDark && !isLight) {
-    return null;
-  }
-
   return (
-    <Wrapper data-test-id="switch">
+    <Wrapper
+      data-test-id="switch"
+      style={{
+        visibility: hidden ? 'hidden' : 'visible',
+      }}
+    >
       <Input
         type="checkbox"
         id="switch"
