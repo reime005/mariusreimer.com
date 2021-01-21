@@ -39,7 +39,9 @@ export const HomePage = (props: any) => {
           </Sub>
 
           <div>
-            <a href="/about">Read More</a>
+            <a href="/about" aria-label="About" style={{ fontWeight: 'bold' }}>
+              Read More
+            </a>
           </div>
         </Intro>
       </main>

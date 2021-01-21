@@ -121,7 +121,6 @@ export const ProjectShowHeader = (props: ProjectShowHeaderProps) => {
       {props.fluid ? (
         <Img
           style={{ width: '100%', maxWidth: 400 }}
-
           alt={props.title}
           fluid={props.fluid}
         />
@@ -138,7 +137,9 @@ export const ProjectShowHeader = (props: ProjectShowHeaderProps) => {
       <Container>
         <h1>{props.title}</h1>
 
-        {!!props.subTitle && <h4>{props.subTitle}</h4>}
+        {!!props.subTitle && (
+          <p style={{ fontWeight: 'bold' }}>{props.subTitle}</p>
+        )}
 
         <p dangerouslySetInnerHTML={{ __html: props.description }} />
 

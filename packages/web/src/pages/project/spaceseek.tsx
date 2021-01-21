@@ -36,7 +36,11 @@ export const SpaceSeekProjectPage = () => {
             Space Seek is an iOS and Android app, built with React Native. You
             can view information about upcoming and previous rocket launches
             worldwide, thanks to&nbsp;
-            <a rel="noopener noreferrer" href="https://thespacedevs.com/">
+            <a
+              rel="noopener noreferrer"
+              href="https://thespacedevs.com/"
+              aria-label="The Space Devs API"
+            >
               The Space Devs API
             </a>
             .
@@ -48,6 +52,7 @@ export const SpaceSeekProjectPage = () => {
             <a
               rel="noopener noreferrer"
               href="https://github.com/reime005/SpaceSeek"
+              aria-label="Github SpaceSeek Project"
             >
               here
             </a>
@@ -55,6 +60,7 @@ export const SpaceSeekProjectPage = () => {
             <a
               rel="noopener noreferrer"
               href="https://github.com/reime005/react-native-spaceviewer"
+              aria-label="Github SpaceViewer Project"
             >
               here
             </a>

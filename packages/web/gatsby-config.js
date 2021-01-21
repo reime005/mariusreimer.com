@@ -63,7 +63,7 @@ module.exports = {
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
               maxWidth: 800,
-              quality: 90
+              quality: 90,
             },
           },
         ],
@@ -112,6 +112,7 @@ module.exports = {
         extensions: ['css', 'html', 'js', 'svg', 'json'],
       },
     },
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
   ],
 };

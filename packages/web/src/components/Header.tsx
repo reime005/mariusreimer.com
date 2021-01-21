@@ -106,7 +106,7 @@ export const Header = () => {
         </Overlay>
         <Inner>
           <div style={{ flex: 1 }}>
-            <a href="/">
+            <a href="/" aria-label="Back To Main">
               <Logo />
             </a>
           </div>
@@ -121,7 +121,7 @@ export const Header = () => {
     <Wrapper>
       <Inner>
         <div style={{ flex: 1 }}>
-          <a href="/">
+          <a href="/" aria-label="Back To Main">
             <Logo />
           </a>
         </div>

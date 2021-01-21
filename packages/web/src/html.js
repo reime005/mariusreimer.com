@@ -11,6 +11,10 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        <meta
+          name="description"
+          content="Personal Website, Blog and App by Marius Reimer. React Native, Flutter and Rust."
+        />
         <link
           rel="stylesheet"
           type="text/css"

@@ -16,6 +16,7 @@ export const GlobalStyle = createGlobalStyle`
     --link: ${lightTheme.color.link};
     --listBG: ${lightTheme.color.listBG};
     --listItemHeadline: ${lightTheme.color.listItemHeadline};
+    --headLine: ${lightTheme.color.headLine};
   }
   * {
     box-sizing: border-box;
@@ -48,12 +49,16 @@ export const GlobalStyle = createGlobalStyle`
       --link: ${darkTheme.color.link};
       --listBG: ${darkTheme.color.listBG};
       --listItemHeadline: ${darkTheme.color.listItemHeadline};
+      --headLine: ${darkTheme.color.headLine};
     }
 
     &.mobile {
       overflow: hidden;
       max-height: 100vh;
     }
+  }
+  h1,h2,h3,h4,h5 {
+    color: var(--headLine);
   }
   a {
     font-weight: 500;
@@ -86,16 +91,10 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
     width: 100%;
   }
-  span {
+  span, p {
     color: var(--font);
   }
-  /* p {
-    margin-bottom: 1.45rem;
-  } */
   ul {
-    /* margin-top: 1.45rem;
-    margin-left: 1.45rem;
-    margin-bottom: 1.45rem; */
     list-style-type: square;
   }
   li {
