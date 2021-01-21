@@ -20,6 +20,11 @@ export default function HTML(props) {
           type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/solid.min.css"
         />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com/"
+          crossorigin
+        ></link>
         <title>React Native Development | Marius Reimer</title>
         {props.headComponents}
       </head>
