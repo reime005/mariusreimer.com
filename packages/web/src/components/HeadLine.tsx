@@ -4,7 +4,7 @@ import { StyledHeadline } from './Styled';
 export const HeadLine = () => {
   return (
     <StyledHeadline>
-      <strong>React Native</strong>
+      <strong color="#7f5af0">React Native</strong>
       <br />
       App Development
     </StyledHeadline>
