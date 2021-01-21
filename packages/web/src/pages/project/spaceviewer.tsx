@@ -36,7 +36,11 @@ export const SpaceViewerProjectPage = () => {
             Space Viewer is an iOS and Android app, built with React Native. You
             can view information about upcoming and previous rocket launches
             worldwide, thanks to&nbsp;
-            <a rel="noopener noreferrer" href="https://launchlibrary.net/">
+            <a
+              rel="noopener noreferrer"
+              href="https://launchlibrary.net/"
+              aria-label="Launch Library API"
+            >
               launchlibrary.net
             </a>
             .
@@ -68,7 +72,13 @@ export const SpaceViewerProjectPage = () => {
             (E2E) tests, based on Detox and Appium. The reason I did both is
             because I wanted to compare both. I've documented my
             experience&nbsp;
-            <a href="/blog/id/react-native-end-to-end-testing">here</a>.
+            <a
+              href="/blog/id/react-native-end-to-end-testing"
+              aria-label="Blog Post React Native End To End Testing"
+            >
+              here
+            </a>
+            .
           </p>
 
           <h2>Continuous Integration and Delivery</h2>

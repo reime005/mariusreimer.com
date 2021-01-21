@@ -11,11 +11,15 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/solid.min.css"
+        <meta
+          name="description"
+          content="Personal Website, Blog and App by Marius Reimer. React Native, Flutter and Rust."
         />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com/"
+          crossorigin
+        ></link>
         <title>React Native Development | Marius Reimer</title>
         {props.headComponents}
       </head>
@@ -57,8 +61,6 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/solid.min.js" />
       </body>
     </html>
   );

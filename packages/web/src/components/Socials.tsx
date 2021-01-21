@@ -22,7 +22,7 @@ export const Socials = () => {
 
   return (
     <>
-      <Link href="mailto:reimerm.dev@gmail.com">
+      <Link href="mailto:reimerm.dev@gmail.com" aria-label="send to mail">
         <Svg height={25} width={25} viewBox="0 0 512 512">
           <Path
             fill={theme === 'dark' ? darkColor : 'grey'}
@@ -31,7 +31,10 @@ export const Socials = () => {
         </Svg>
       </Link>
 
-      <Link href="https://github.com/reime005/mariusreimer.com">
+      <Link
+        href="https://github.com/reime005/mariusreimer.com"
+        aria-label="Github"
+      >
         <Svg height={25} width={25} viewBox="0 0 448 512">
           <Path
             fill={theme === 'dark' ? darkColor : 'black'}
@@ -40,7 +43,7 @@ export const Socials = () => {
         </Svg>
       </Link>
 
-      <Link href="https://de.linkedin.com/in/reime005">
+      <Link href="https://de.linkedin.com/in/reime005" aria-label="Linkedin">
         <Svg height={25} width={25} viewBox="0 0 448 512">
           <Path
             fill={theme === 'dark' ? darkColor : '#2867B2'}
@@ -49,7 +52,7 @@ export const Socials = () => {
         </Svg>
       </Link>
 
-      <Link href="https://twitter.com/reime005">
+      <Link href="https://twitter.com/reime005" aria-label="Twitter">
         <Svg height={25} width={25} viewBox="0 0 448 512">
           <Path
             fill={theme === 'dark' ? darkColor : '#1DA1F2'}

@@ -55,11 +55,19 @@ export const PeopleInSpaceProjectPage = () => {
           <p>
             'How many people are in space right now?' is an iOS and Android app,
             built with Flutter. In collaboration with&nbsp;
-            <a rel="noopener noreferrer" href="https://berger-apps/">
+            <a
+              rel="noopener noreferrer"
+              href="https://berger-apps/"
+              aria-label="Berger Apps"
+            >
               berger-apps.de
             </a>
             , this app has similar functionality to&nbsp;
-            <a rel="noopener noreferrer" href="/project/spaceviewer">
+            <a
+              rel="noopener noreferrer"
+              href="/project/spaceviewer"
+              aria-label="Project Space Viewer"
+            >
               Space Viewer
             </a>
             . Additionally, the app's main screen shows the number of people,
@@ -70,10 +78,11 @@ export const PeopleInSpaceProjectPage = () => {
             Flutter is a framework to build cross platform native apps in the
             Dart programming language. It has similar goals as React Native
             (fully native applications, not based on web views). I have
-            documened my experience and made a comparison
+            documented my experience and made a comparison
             <a
               rel="noopener noreferrer"
               href="/blog/id/my-points-on-flutter-as-a-react-native-developer"
+              aria-label="Blog Post About Flutter Experience"
             >
               here
             </a>

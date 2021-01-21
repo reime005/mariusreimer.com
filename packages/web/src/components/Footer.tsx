@@ -83,13 +83,25 @@ export const Footer = () => {
         <Item>
           <Text>
             Open Source on&nbsp;
-            <a href="https://github.com/reime005/mariusreimer.com">Github</a>
+            <a
+              href="https://github.com/reime005/mariusreimer.com"
+              aria-label="Github"
+              style={{ fontWeight: 'bold' }}
+            >
+              Github
+            </a>
           </Text>
         </Item>
 
         <Item>
           <Text>
-            <a href="/privacy-policy">Privacy Policy</a>
+            <a
+              href="/privacy-policy"
+              aria-label="Privacy Policy"
+              style={{ fontWeight: 'bold' }}
+            >
+              Privacy Policy
+            </a>
           </Text>
         </Item>
 

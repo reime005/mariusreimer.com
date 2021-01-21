@@ -8,7 +8,7 @@ import {
   ThemeProvider,
 } from '@reime005/common';
 import { ThemeProvider as WebThemeProvider } from 'styled-components';
-import { DarkGistsStyle, GlobalStyle } from './GlobalStyle';
+import { DarkGistsStyle, GlobalStyle, LightGistsStyle } from './GlobalStyle';
 
 const Layout = ({ children }) => {
   return (
@@ -59,6 +59,7 @@ const Style = () => {
     <>
       <GlobalStyle theme={theme} />
       {theme === 'dark' && <DarkGistsStyle />}
+      {theme === 'light' && <LightGistsStyle />}
     </>
   );
 };

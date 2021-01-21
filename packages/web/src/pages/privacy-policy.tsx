@@ -73,6 +73,7 @@ export const PrivacyPolicyPage = () => {
                 href="https://www.google.com/policies/privacy/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Google Play Services"
               >
                 Google Play Services
               </a>
@@ -82,6 +83,7 @@ export const PrivacyPolicyPage = () => {
                 href="https://support.google.com/admob/answer/6128543?hl=en"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="AdMob"
               >
                 AdMob
               </a>
@@ -91,6 +93,7 @@ export const PrivacyPolicyPage = () => {
                 href="https://firebase.google.com/policies/analytics"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Google Analytics for Firebase"
               >
                 Google Analytics for Firebase
               </a>
@@ -100,6 +103,7 @@ export const PrivacyPolicyPage = () => {
                 href="https://firebase.google.com/support/privacy/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Firebase Crashlytics"
               >
                 Firebase Crashlytics
               </a>
@@ -109,6 +113,7 @@ export const PrivacyPolicyPage = () => {
                 href="https://expo.io/privacy"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Expo"
               >
                 Expo
               </a>
