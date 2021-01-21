@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faLocationArrow } from '@fortawesome/free-solid-svg-icons';
 
 import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
@@ -110,7 +112,16 @@ export const AboutPage = () => {
                     <div>
                       <h2>{d.title}</h2>
                       <h4>{d.date}</h4>
-                      <h5 className="lighter">{d.location}</h5>
+                      <h5 className="lighter">
+                        <FontAwesomeIcon
+                          icon={faLocationArrow}
+                          style={{
+                            marginRight: 8,
+                            color: 'var(--lighter)',
+                          }}
+                        />
+                        {d.location}
+                      </h5>
                     </div>
                   </ContentHeader>
 
@@ -139,13 +150,6 @@ const ContentHeader = styled.div`
 
   h5 {
     margin-bottom: 0;
-
-    :before {
-      font-family: 'Font Awesome 5 Free';
-      font-weight: 700;
-      content: '\f124';
-      margin-right: 4px;
-    }
   }
 
   h2 {
@@ -194,7 +198,7 @@ const TimeLine = styled.div`
     content: '';
     position: absolute;
     width: 4px;
-    background-color: ${({ theme }) => theme.color.primaryLight};
+    background-color: var(--primaryLight);
     top: 0;
     bottom: 0;
     left: 50%;
