@@ -4,10 +4,10 @@ date: '2021-01-23'
 title: 'Typed Config via Context in React Native'
 description: I show to create and share typed settings in your React Native App using React Context plus Environment Secrets via react-native-config
 tags: react, reactnative, javascript, typescript
-cover_image: https://mariusreimer.com/images/rn-config-context-thumb.png
+cover_image: https://mariusreimer.com/images/rn-config-context-thumb.jpeg
 ---
 
-![Typed Config via Context in React Native](/images/rn-config-context-hq.png)
+![Typed Config via Context in React Native](/images/rn-config-context-hq.jpeg)
 
 Contexts are common in most programming languages or frameworks. They are mostly used to contain and share specific information or functionality across different parts of an application. Sometimes they are used to inject behavior depending on the use case, like testing or production. I explain how I have used React Context to share configuration data across a React Native app with TypeScript support.
 
