@@ -167,6 +167,11 @@ export const GlobalStyle = createGlobalStyle`
     padding: 6px 10px;
     background-color: var(--backgroundColor2);
     color: var(--listItemHeadline);
+
+    :focus {
+      outline: inherit;
+      outline-offset: inherit;
+    }
   }
 `;
 
