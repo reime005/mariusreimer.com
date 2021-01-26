@@ -13,6 +13,8 @@ interface Data {
   title: string;
   desc: string;
   date: string;
+  orga: string;
+  href: string;
   location?: string;
   imgSource?: string;
 }
@@ -20,65 +22,81 @@ interface Data {
 const data: Data[] = [
   {
     title: 'Computer Science Student (Bachelor)',
+    orga: 'Ostfalia University',
     desc: '<p>Studies focused on Systems Engineering.</p>',
-    location: 'Wolfenbüttel, Germany',
+    location: 'Wolfenbuettel, Germany',
     date: '2011-2014',
     imgSource: require('../assets/ostfalialogo.png'),
+    href: 'https://ostfalia.de',
   },
   {
     title: 'Bachelor Thesis',
+    orga: 'Bertrandt',
     desc:
       '<p>Developed an embedded system that detects different car infotainment system.</p><ul><li>C/C++</li><li>Linux Shell Script</li></ul>',
     location: 'Wolfsburg, Germany',
     date: '2014',
     imgSource: require('../assets/bertrandtlogo.png'),
+    href: 'https://bertrandt.com',
   },
   {
     title: 'Computer Science Student (Master)',
+    orga: 'Ostfalia University',
     desc:
       '<p>Studies focused on Mobile and Systems Engineering (in-depth theory, complexity and algorithms).</p>',
-    location: 'Wolfenbüttel, Germany',
+    location: 'Wolfenbuettel, Germany',
     date: '2014-2017',
     imgSource: require('../assets/ostfalialogo.png'),
+    href: 'https://ostfalia.de',
   },
   {
     title: 'Student Employee',
+    orga: 'Bertrandt',
     desc:
       '<p>Worked as an engineer on automotive projects.</p><ul><li>C/C++</li><li>Python, MySQL</li><li>JavaScript, D3.js</li></ul>',
     location: 'Wolfsburg, Germany',
     date: '2014-2015',
     imgSource: require('../assets/bertrandtlogo.png'),
+    href: 'https://bertrandt.com',
   },
   {
     title: 'Study Abroad',
+    orga: 'University of Wisconsin-Parkside',
     desc: '<p>Semester abroad as a computer science masters student.</p>',
     location: 'Kenosha, WI, US',
     date: '2015',
     imgSource: require('../assets/uwplogo.png'),
+    href: 'https://uwp.edu',
   },
   {
     title: 'Research Member',
+    orga: 'Ostfalia University (Faculty Software Engineering)',
     desc:
       "<p>Supporting my professor`s work. Worked on my master theses on 'controlling a cyber physical system with Virtual Reality'.<ul><li>Java, Java EE</li><li>C#, Unity, Virtual Reality</li><li>Software Defined Networking</li></ul>",
-    location: 'Wolfenbüttel, Germany',
+    location: 'Wolfenbuettel, Germany',
     date: '2016-2017',
     imgSource: require('../assets/ostfalialogo.png'),
+    href: 'https://siemens.com',
   },
   {
     title: 'Internship',
+    orga: 'Siemens Corporate Technology',
     desc:
       '<p>Worked at Siemens Corporate Technology in a team on a robotics project.</p><ul><li>C#</li><li>Angular 2</li></ul>',
     location: 'Princeton, NJ, US',
     date: '2017',
     imgSource: require('../assets/siemenslogo.png'),
+    href: 'https://siemens.com',
   },
   {
     title: 'Mobile Engineer',
+    orga: 'Nect GmbH',
     desc:
       "<p>Responsible for the React Native and React applications in a 5 to 60 people startup.</p><p>Apps had a rating of ~4.7 and more than 300k downloads.</p><p>Germany's first fully-automated biometric self-identification app.</p><ul><li>React, React Native and many Custom Native Modules</li><li>Strong focus on camera use cases (OpenCV and Tesseract OCR)</li><li>TypeScript, JavaScript</li><li>Objective C, Swift</li><li>Kotlin, Java</li><li>Docker, CI/CD, E2E Tests</li></ul>",
     location: 'Hamburg, Germany',
     date: '2018-2020',
     imgSource: require('../assets/nectlogo.png'),
+    href: 'https://nect.com',
   },
 ].reverse();
 
@@ -88,7 +106,7 @@ export const AboutPage = () => {
       <Header />
 
       <main>
-        <Intro style={{ flexDirection: 'row' }}>
+        <Intro>
           <HeadLine />
 
           <img
@@ -107,12 +125,24 @@ export const AboutPage = () => {
               <ContentContainer key={d.title} className={className}>
                 <Content>
                   <ContentHeader>
-                    <img src={d.imgSource} />
+                    <div style={{ display: 'block', flex: '0 auto' }}>
+                      <a href={d.href} aria-label={d.title}>
+                        <img src={d.imgSource} alt={d.title} />
+                      </a>
+                    </div>
 
                     <div>
                       <h2>{d.title}</h2>
+                      <h3>{d.orga}</h3>
                       <h4>{d.date}</h4>
-                      <h5 className="lighter">
+                      <h5
+                        className="lighter"
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          fontWeight: 600,
+                        }}
+                      >
                         <FontAwesomeIcon
                           icon={faLocationArrow}
                           style={{
@@ -153,18 +183,21 @@ const ContentHeader = styled.div`
   }
 
   h2 {
-    margin-bottom: 16px;
+    margin-bottom: 0.7rem;
   }
 
+  h3,
   h4 {
-    margin-bottom: 8px;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
   }
 
   img {
-    width: 95px;
-    height: 95px;
+    width: 115px;
+    height: 115px;
     border-radius: 8px;
     margin-right: 24px;
+    padding: 4px;
     margin-bottom: 0;
     object-fit: cover;
   }
@@ -174,7 +207,7 @@ const ContentHeader = styled.div`
 
     img {
       margin-right: 0;
-      margin-bottom: 24px;
+      margin-bottom: 1rem;
     }
   }
 `;
