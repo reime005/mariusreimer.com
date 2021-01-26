@@ -106,7 +106,7 @@ export const AboutPage = () => {
       <Header />
 
       <main>
-        <Intro>
+        <Intro style={{ flexDirection: 'row' }}>
           <HeadLine />
 
           <img
