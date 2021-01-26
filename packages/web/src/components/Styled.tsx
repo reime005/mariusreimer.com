@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Intro = styled.div`
   box-sizing: border-box;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex: 1;
   max-width: 1000px;
   padding: 32px;
@@ -14,6 +14,7 @@ export const Intro = styled.div`
   width: 100%;
   margin-bottom: 24px;
   justify-content: space-around;
+  align-items: center;
 
   h1 {
     margin-bottom: 1em;
@@ -45,6 +46,4 @@ export const Intro = styled.div`
 
 export const StyledHeadline = styled.h1`
   font-size: 2.5rem;
-  margin: 0 !important;
-  padding: 0.1rem !important;
 `;

@@ -106,7 +106,7 @@ export const AboutPage = () => {
       <Header />
 
       <main>
-        <Intro style={{ flexDirection: 'row', alignItems: 'center' }}>
+        <Intro>
           <HeadLine />
 
           <img
@@ -125,9 +125,11 @@ export const AboutPage = () => {
               <ContentContainer key={d.title} className={className}>
                 <Content>
                   <ContentHeader>
-                    <a href={d.href} aria-label={d.title}>
-                      <img src={d.imgSource} alt={d.title} />
-                    </a>
+                    <div style={{ display: 'block', flex: '0 auto' }}>
+                      <a href={d.href} aria-label={d.title}>
+                        <img src={d.imgSource} alt={d.title} />
+                      </a>
+                    </div>
 
                     <div>
                       <h2>{d.title}</h2>
@@ -205,7 +207,7 @@ const ContentHeader = styled.div`
 
     img {
       margin-right: 0;
-      margin-bottom: 24px;
+      margin-bottom: 1rem;
     }
   }
 `;
