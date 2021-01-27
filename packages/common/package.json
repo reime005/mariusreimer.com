@@ -14,14 +14,11 @@
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/react-native-fontawesome": "^0.2.5",
     "eslint-plugin-react-hooks": "^4.0.2",
-    "react-native-htmlview": "https://github.com/reime005/react-native-htmlview.git#7a1fb98",
     "react-native-svg": "^12.1.0",
-    "react-native-syntax-highlighter": "^2.1.0",
     "typescript": "3.9.2"
   },
   "dependencies": {
     "date-fns": "^2.13.0",
-    "htmlparser2-without-node-native": "^3.9.2",
     "react-native-webview": "^9.4.0"
   }
 }

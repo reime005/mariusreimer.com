@@ -1,7 +1,5 @@
-import { Gist } from './components/Gist';
 import { BlogListItem } from './components/BlogListItem';
 import { BlogList } from './components/BlogList';
-import { BlogContent } from './components/BlogContent';
 import { ScrollBox } from './components/ScrollBox';
 import { IconSwitch } from './components/IconSwitch';
 import { ThemeProvider, useTheme } from './components/ThemeProvider';
@@ -13,10 +11,8 @@ export {
   lightTheme,
   darkTheme,
   IconSwitch,
-  Gist,
   BlogListItem,
   BlogList,
-  BlogContent,
   ThemeProvider,
   ScrollBox,
   useTheme,

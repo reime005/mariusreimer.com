@@ -18,7 +18,7 @@ export default function HTML(props) {
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com/"
-          crossorigin
+          crossOrigin
         ></link>
         <title>React Native Development | Marius Reimer</title>
         {props.headComponents}
