@@ -16,7 +16,7 @@ type Actions = Action<'TOGGLE_THEME', {}>;
 
 export const lightTheme: styledComponents.DefaultTheme = {
   color: {
-    primary: '#6246ea',
+    primary: '#7f5af0',
     primaryMedium: 'rgba(98, 70, 234, 0.7)',
     primaryLight: 'rgba(98, 70, 234, 0.2)',
     white: '#fffffe',

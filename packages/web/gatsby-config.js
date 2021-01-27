@@ -121,6 +121,12 @@ module.exports = {
         extensions: ['css', 'html', 'js', 'svg', 'json'],
       },
     },
+    {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        devMode: false,
+      },
+    },
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
   ],
