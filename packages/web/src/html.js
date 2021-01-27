@@ -15,6 +15,7 @@ export default function HTML(props) {
           name="description"
           content="Personal Website, Blog and App by Marius Reimer. React Native, Flutter and Rust."
         />
+        <meta name="theme-color" content="#7f5af0" />
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com/"
@@ -61,6 +62,11 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
+        <link
+          href="//fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i,900,900i&display=swap"
+          rel="stylesheet"
+          type="text/css"
+        ></link>
       </body>
     </html>
   );
