@@ -63,7 +63,12 @@ export default function HTML(props) {
         />
         {props.postBodyComponents}
         <link
-          href="//fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i,900,900i&display=swap"
+          href="//fonts.googleapis.com/css?family=Khula:800&display=swap"
+          rel="stylesheet"
+          type="text/css"
+        ></link>
+        <link
+          href="//fonts.googleapis.com/css?family=Cabin:400,400i,500,500i,700&display=swap"
           rel="stylesheet"
           type="text/css"
         ></link>

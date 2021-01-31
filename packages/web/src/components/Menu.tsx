@@ -41,11 +41,11 @@ const ContactLink = styled.a`
   background-color: var(--primary);
   color: white;
   font-weight: 500;
-  padding-left: 14px;
-  padding-right: 14px;
-  padding-top: 5px;
-  padding-bottom: 7px;
-  border-radius: 6px;
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+  border-radius: 0.2rem;
 `;
 
 const Wrapper = styled.ul`

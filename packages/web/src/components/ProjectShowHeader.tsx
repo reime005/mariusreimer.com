@@ -20,9 +20,9 @@ const Wrapper = styled.div`
   align-content: center;
   grid-template-columns: 1fr 1fr;
   grid-auto-flow: dense;
-  grid-auto-rows: minmax(600px, min-content);
-  min-height: 500px;
-  column-gap: 16px;
+  grid-auto-rows: minmax(10px, min-content);
+  min-height: 600px;
+  column-gap: 1rem;
   width: 100%;
   background-color: var(--backgroundColor1);
   transition: transform 300ms ease-in-out 0s;
@@ -50,7 +50,7 @@ const Tags = styled.div`
   align-items: center;
   row-gap: 4px;
   width: 100%;
-  margin-top: 16px;
+  margin-top: 1.5rem;
 `;
 
 const Image = styled.img`
@@ -73,9 +73,10 @@ export interface ProjectShowHeaderProps {
   backgroundColor: string;
   right?: boolean;
   bgComponent?: any;
-  title: string;
+  title?: JSX.Element;
+  alt: string;
   subTitle?: string;
-  description: string;
+  description?: string;
   items?: string[];
   link?: {
     text: string;
@@ -91,7 +92,11 @@ const Container = styled.div`
   justify-content: center;
   display: flex;
   flex-direction: column;
-  padding: 40px;
+  padding: 2vw;
+
+  h1 {
+    margin: 0;
+  }
 
   a {
     color: #fff;
@@ -109,6 +114,8 @@ const Container = styled.div`
 `;
 
 export const ProjectShowHeader = (props: ProjectShowHeaderProps) => {
+  const { alt, title } = props;
+
   const rightElement = (
     <div
       style={{
@@ -121,27 +128,29 @@ export const ProjectShowHeader = (props: ProjectShowHeaderProps) => {
       {props.fluid ? (
         <Img
           style={{ width: '100%', maxWidth: 400 }}
-          alt={props.title}
+          alt={alt}
           fluid={props.fluid}
         />
       ) : (
-        <Image loading="lazy" alt={props.title} src={props.imageSource} />
+        <Image loading="lazy" alt={alt} src={props.imageSource} />
       )}
     </div>
   );
 
   return (
-    <Wrapper {...props} style={{ backgroundColor: props.backgroundColor }}>
+    <Wrapper style={{ backgroundColor: props.backgroundColor }}>
       {props.right ? null : rightElement}
 
       <Container>
-        <h1>{props.title}</h1>
+        {title ? props.title : <h1>{props.alt}</h1>}
 
         {!!props.subTitle && (
           <p style={{ fontWeight: 'bold' }}>{props.subTitle}</p>
         )}
 
-        <p dangerouslySetInnerHTML={{ __html: props.description }} />
+        {props.description && (
+          <p dangerouslySetInnerHTML={{ __html: props.description }} />
+        )}
 
         {props.items && (
           <ul>
@@ -157,7 +166,7 @@ export const ProjectShowHeader = (props: ProjectShowHeaderProps) => {
         )}
 
         {props.link && props.link.text && props.link.to && (
-          <div>
+          <div style={{ marginTop: '1em' }}>
             <Link href={props.link.to}>{props.link.text} ➔</Link>
           </div>
         )}

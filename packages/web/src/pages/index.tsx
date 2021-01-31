@@ -34,13 +34,13 @@ export const HomePage = (props: any) => {
 
           <Sub>
             Additionally, I use techniques like Docker to provide Continuous
-            Integration. For developing backend software I like to take Node.JS
+            Integration. For developing backend software I like to use Node.JS
             / Rust.
           </Sub>
 
           <div>
             <a href="/about" aria-label="About" style={{ fontWeight: 'bold' }}>
-              Read More About Me
+              More About Me
             </a>
           </div>
         </Intro>
@@ -54,7 +54,7 @@ export const HomePage = (props: any) => {
 export const fluidImage = graphql`
   fragment fluidImage on File {
     childImageSharp {
-      fluid(maxWidth: 800, quality: 90) {
+      fluid(maxWidth: 700, quality: 90) {
         ...GatsbyImageSharpFluid
       }
     }
@@ -63,27 +63,21 @@ export const fluidImage = graphql`
 
 export const pageQuery = graphql`
   query {
-    image_0: file(relativePath: { eq: "project_spaceseek_hq.png" }) {
+    image_0: file(relativePath: { eq: "project-space-apps.png" }) {
       ...fluidImage
     }
-    image_1: file(relativePath: { eq: "project_spaceviewer.png" }) {
+    image_1: file(relativePath: { eq: "project-games.png" }) {
       ...fluidImage
     }
-    image_2: file(relativePath: { eq: "project_flutter.png" }) {
-      ...fluidImage
-    }
-    image_3: file(relativePath: { eq: "project-react.png" }) {
-      ...fluidImage
-    }
-    image_4: file(relativePath: { eq: "project_splintersweets.png" }) {
-      ...fluidImage
-    }
-    image_5: file(relativePath: { eq: "project_bubblefling.png" }) {
-      ...fluidImage
-    }
-    image_6: file(relativePath: { eq: "project_hammerize.png" }) {
-      ...fluidImage
-    }
+    # image_4: file(relativePath: { eq: "project_splintersweets.png" }) {
+    #   ...fluidImage
+    # }
+    # image_5: file(relativePath: { eq: "project_bubblefling.png" }) {
+    #   ...fluidImage
+    # }
+    # image_6: file(relativePath: { eq: "project_hammerize.png" }) {
+    #   ...fluidImage
+    # }
   }
 `;
 

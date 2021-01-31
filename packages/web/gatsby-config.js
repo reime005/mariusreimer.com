@@ -109,18 +109,12 @@ module.exports = {
       },
     },
     'gatsby-plugin-react-helmet',
-    {
-      resolve: 'gatsby-plugin-typography',
-      options: {
-        pathToConfigModule: 'src/utils/typography',
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-zopfli',
-      options: {
-        extensions: ['css', 'html', 'js', 'svg', 'json'],
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-zopfli',
+    //   options: {
+    //     extensions: ['css', 'html', 'js', 'svg', 'json'],
+    //   },
+    // },
     {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {

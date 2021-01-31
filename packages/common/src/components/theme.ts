@@ -16,9 +16,9 @@ type Actions = Action<'TOGGLE_THEME', {}>;
 
 export const lightTheme: styledComponents.DefaultTheme = {
   color: {
-    primary: '#7f5af0',
-    primaryMedium: 'rgba(98, 70, 234, 0.7)',
-    primaryLight: 'rgba(98, 70, 234, 0.2)',
+    primary: 'rgb(85, 121, 255)',
+    primaryMedium: 'rgba(85, 121, 255, 0.8)',
+    primaryLight: 'rgba(85, 121, 255, 0.7)',
     white: '#fffffe',
     body: '#fff',
     font: '#121212',
@@ -30,8 +30,8 @@ export const lightTheme: styledComponents.DefaultTheme = {
     scroller: '#f1b883',
     yellow: '#ffd803',
     grey: 'rgba(0,0,0,.64)',
-    link: '#6246ea',
-    buttonBG: '#6246ea',
+    link: 'rgb(85, 121, 255)',
+    buttonBG: 'rgb(85, 121, 255)',
     buttonFont: '#d9d7e0',
     headLine: '#121212',
     backgroundColor1: 'rgb(255,255,255)',
@@ -53,9 +53,9 @@ export const lightTheme: styledComponents.DefaultTheme = {
 
 export const darkTheme: styledComponents.DefaultTheme = {
   color: {
-    primary: '#7f5af0',
-    primaryMedium: 'rgba(98, 70, 234, 0.8)',
-    primaryLight: 'rgba(127, 90, 240, 0.7)',
+    primary: 'rgb(85, 121, 255)',
+    primaryMedium: 'rgba(85, 121, 255, 0.8)',
+    primaryLight: 'rgba(85, 121, 255, 0.7)',
     white: '#fffffe',
     body: '#16161a',
     font: '#94a1b2',
@@ -67,8 +67,8 @@ export const darkTheme: styledComponents.DefaultTheme = {
     scroller: '#f29705',
     yellow: '#ffd803',
     grey: 'rgba(230, 230, 230,.6)',
-    link: '#7f5af0',
-    buttonBG: '#7f5af0',
+    link: 'rgb(85, 121, 255)',
+    buttonBG: 'rgb(85, 121, 255)',
     buttonFont: '#fffffe',
     headLine: '#fffffe',
     backgroundColor1: 'rgb(40, 44, 51)',
