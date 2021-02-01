@@ -57,9 +57,9 @@ const Style = () => {
 
   return (
     <>
-      <GlobalStyle theme={theme} />
       {theme === 'dark' && <DarkGistsStyle />}
       {theme === 'light' && <LightGistsStyle />}
+      <GlobalStyle theme={theme} />
     </>
   );
 };
