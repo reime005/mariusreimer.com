@@ -6,6 +6,7 @@ import { BGFirst } from '../assets/BGFirst';
 import { BGSecond } from '../assets/BGSecond';
 import { MobileGamesTitle } from '../assets/MobileGamesTitle';
 import { SpaceAppsTitle } from '../assets/SpaceAppsTitle';
+import { SelfieIdentTitle } from '../assets/SelfieIdentTitle';
 
 const Wrapper = styled.div`
   display: flex;
@@ -27,6 +28,18 @@ const Wrapper = styled.div`
 
 const data: ProjectShowHeaderProps[] = [
   {
+    title: <SelfieIdentTitle />,
+    alt: 'Nect Selfie Ident',
+    description: `I have worked on Germany's first, fully automated biometric self identification app at <a rel="noopener noreferrer" aria-label="Nect GmbH" href="https://nect.com/">Nect.</a> High performance, good user experience, strong security and data privacy were key features of the application.`,
+    backgroundColor: '#59c2b1',
+    tags: ['React Native', 'iOS', 'Android'],
+    link: {
+      text: 'More',
+      to: '/about',
+    },
+    bgComponent: <BGFirst fill="#000" />,
+  },
+  {
     title: <SpaceAppsTitle />,
     alt: 'Space Devs Apps',
     description:
@@ -37,7 +50,6 @@ const data: ProjectShowHeaderProps[] = [
       text: 'More',
       to: '/project/spaceapps/',
     },
-    imageSource: require('../assets/project_flutter.png'),
     bgComponent: <BGSecond fill="white" />,
   },
   {
@@ -51,7 +63,6 @@ const data: ProjectShowHeaderProps[] = [
       text: 'More',
       to: 'https://github.com/reime005/splintersweets',
     },
-    imageSource: require('../assets/project-games.png'),
     bgComponent: <BGFirst fill="#e45858" />,
   },
 ];

@@ -69,7 +69,6 @@ const Tag = styled.div`
 `;
 
 export interface ProjectShowHeaderProps {
-  imageSource: any;
   backgroundColor: string;
   right?: boolean;
   bgComponent?: any;
@@ -125,14 +124,12 @@ export const ProjectShowHeader = (props: ProjectShowHeaderProps) => {
         alignItems: 'center',
       }}
     >
-      {props.fluid ? (
+      {props.fluid && (
         <Img
           style={{ width: '100%', maxWidth: 400 }}
           alt={alt}
           fluid={props.fluid}
         />
-      ) : (
-        <Image loading="lazy" alt={alt} src={props.imageSource} />
       )}
     </div>
   );

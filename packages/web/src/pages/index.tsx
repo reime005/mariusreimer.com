@@ -33,9 +33,9 @@ export const HomePage = (props: any) => {
           </Sub>
 
           <Sub>
-            Additionally, I use techniques like Docker to provide Continuous
-            Integration. For developing backend software I like to use Node.JS
-            / Rust.
+            Additionally, I use systems like Docker to provide Continuous
+            Integration. For developing backend software I like to use Node.JS /
+            Rust.
           </Sub>
 
           <div>
@@ -63,10 +63,13 @@ export const fluidImage = graphql`
 
 export const pageQuery = graphql`
   query {
-    image_0: file(relativePath: { eq: "project-space-apps.png" }) {
+    image_0: file(relativePath: { eq: "project-nect.jpg" }) {
       ...fluidImage
     }
-    image_1: file(relativePath: { eq: "project-games.png" }) {
+    image_1: file(relativePath: { eq: "project-space-apps.png" }) {
+      ...fluidImage
+    }
+    image_2: file(relativePath: { eq: "project-games.png" }) {
       ...fluidImage
     }
   }
