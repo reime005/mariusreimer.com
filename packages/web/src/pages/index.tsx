@@ -55,7 +55,7 @@ export const fluidImage = graphql`
   fragment fluidImage on File {
     childImageSharp {
       fluid(maxWidth: 700, quality: 90) {
-        ...GatsbyImageSharpFluid
+        ...GatsbyImageSharpFluid_withWebp
       }
     }
   }
@@ -69,15 +69,6 @@ export const pageQuery = graphql`
     image_1: file(relativePath: { eq: "project-games.png" }) {
       ...fluidImage
     }
-    # image_4: file(relativePath: { eq: "project_splintersweets.png" }) {
-    #   ...fluidImage
-    # }
-    # image_5: file(relativePath: { eq: "project_bubblefling.png" }) {
-    #   ...fluidImage
-    # }
-    # image_6: file(relativePath: { eq: "project_hammerize.png" }) {
-    #   ...fluidImage
-    # }
   }
 `;
 
