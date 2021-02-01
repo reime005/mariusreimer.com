@@ -108,6 +108,7 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
   a {
+    transition: all .2s ease-in-out;
     font-weight: 500;
     line-height: 1.25em;
 

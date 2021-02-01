@@ -35,7 +35,7 @@ const data: ProjectShowHeaderProps[] = [
     tags: ['React Native', 'Flutter', 'iOS', 'Android'],
     link: {
       text: 'More',
-      to: 'https://github.com/reime005/splintersweets',
+      to: '/project/spaceapps/',
     },
     imageSource: require('../assets/project_flutter.png'),
     bgComponent: <BGSecond fill="white" />,
@@ -49,7 +49,7 @@ const data: ProjectShowHeaderProps[] = [
     tags: ['Kotlin', 'libGDX', 'Java', 'iOS', 'Android'],
     link: {
       text: 'More',
-      to: '/project/mobilegames/',
+      to: 'https://github.com/reime005/splintersweets',
     },
     imageSource: require('../assets/project-games.png'),
     bgComponent: <BGFirst fill="#e45858" />,
