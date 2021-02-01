@@ -4,11 +4,10 @@ import styled from 'styled-components';
 import { Socials } from './Socials';
 
 const Text = styled.p`
-  font-family: 'Lato';
-  font-size: 14px;
+  font-size: 0.8rem;
   color: var(--font);
   margin: 0;
-  line-height: 2em;
+  line-height: 1.5em;
 
   @media screen and (max-width: 570px) {
     text-align: center;
@@ -37,10 +36,8 @@ const Wrapper = styled.div`
   margin-top: 16px;
   margin-left: 32px;
   margin-right: 32px;
-  box-sizing: border-box;
   padding-left: 40px;
   padding-right: 40px;
-  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;

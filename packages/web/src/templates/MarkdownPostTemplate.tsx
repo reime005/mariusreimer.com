@@ -27,14 +27,16 @@ const Link = styled.a`
 const Wrapper = styled.div`
   flex: 1;
   display: flex;
+  flex-direction: row;
   align-items: center;
   align-self: center;
   justify-content: space-between;
-  max-width: 900px;
+  max-width: 50rem;
+  margin-bottom: 2rem;
   width: 100%;
   box-sizing: border-box;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: 2rem;
+  padding-right: 2rem;
 `;
 
 const BackLink = ({ blogIndex = 1 }) => {
@@ -48,12 +50,10 @@ const BackLink = ({ blogIndex = 1 }) => {
   );
 };
 
-const SubH1 = styled.h2`
-  font-weight: normal;
-  font-size: 16px;
-  margin-bottom: 32px;
-  line-height: 32px;
-  color: var(--listItemFont);
+const Sub = styled.h2`
+  margin-top: 0.5em;
+  font-size: 1.125rem;
+  color: var(--grey);
 `;
 
 const MarkdownPostTemplate = (props: any) => {
@@ -66,23 +66,12 @@ const MarkdownPostTemplate = (props: any) => {
           <BackLink blogIndex={props.pageContext.currentPage} />
         </Wrapper>
 
-        <div
-          style={{
-            padding: 0,
-            paddingLeft: 24,
-            paddingRight: 24,
-            display: 'flex',
-            flexDirection: 'column',
-            maxWidth: 800,
-            marginTop: 24,
-            width: '100%',
-          }}
-        >
+        <Wrapper style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
           <h1 data-testid="blog-title">
             {props.data.markdownRemark.frontmatter.title}
           </h1>
 
-          <SubH1>
+          <Sub>
             {dateFormat(
               new Date(props.data.markdownRemark.frontmatter.date),
               'MMMM d, yyyy',
@@ -92,13 +81,13 @@ const MarkdownPostTemplate = (props: any) => {
               props?.data?.markdownRemark?.fields?.readingTime?.minutes,
             ) || 0}
             &nbsp;min read
-          </SubH1>
+          </Sub>
 
           <div
             className="blog-post-content"
             dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}
           />
-        </div>
+        </Wrapper>
 
         <Wrapper>
           <BackLink blogIndex={props.pageContext.currentPage} />

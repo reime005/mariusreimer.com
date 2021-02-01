@@ -31,17 +31,17 @@ interface Props {
 
 const Paragraph = styled.Text`
   color: ${props => props.theme.color.listItemHeadline};
-  font-size: 12px;
-  line-height: 20px;
+  font-size: 0.8rem;
+  line-height: 1.25em;
   @media (min-width: 570px) {
     margin-bottom: 8px;
   }
 `;
 
 const H1 = styled(Paragraph)`
-  font-weight: ${({ theme }) => theme.h1.fontWeight};
-  font-size: 20px;
-  padding-bottom: 16px;
+  font-weight: 500;
+  font-size: 1.25rem;
+  margin-bottom: 0.5em;
   letter-spacing: 0.25;
   line-height: 24px;
   color: ${({ theme }) => theme.color.listItemHeadline};

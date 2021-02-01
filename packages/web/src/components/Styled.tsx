@@ -6,23 +6,17 @@ export const Intro = styled.div`
   flex-direction: column;
   flex: 1;
   max-width: 1000px;
-  padding: 32px;
+  padding: 1.5rem;
   padding-left: 3vw;
   padding-right: 3vw;
-  font-size: 18px;
-  line-height: 1.55em;
   width: 100%;
-  margin-bottom: 24px;
+  margin-bottom: 2rem;
   justify-content: space-around;
   align-items: center;
 
-  h1 {
-    margin-bottom: 1em;
-  }
-
-  h2 {
-    margin-top: 1em;
-    margin-bottom: 1em;
+  h1, h2, h3, h4, h5, img {
+    margin-bottom: 0;
+    margin-top: 1.5em;
   }
 
   a {
@@ -44,7 +38,11 @@ export const Intro = styled.div`
   }
 `;
 
-export const StyledHeadline = styled.h1`
-  font-size: 2.5rem;
+export const StyledHeadline = styled.span`
+  font-family: 'Khula', sans-serif;
+  font-weight: 800;
+  font-size: 3rem;
+  line-height: 1em;
+  letter-spacing: -0.04em;
   margin: 0 !important;
 `;

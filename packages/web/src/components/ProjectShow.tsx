@@ -4,6 +4,9 @@ import { ProjectShowHeader, ProjectShowHeaderProps } from './ProjectShowHeader';
 import { BGThird } from '../assets/BGThird';
 import { BGFirst } from '../assets/BGFirst';
 import { BGSecond } from '../assets/BGSecond';
+import { MobileGamesTitle } from '../assets/MobileGamesTitle';
+import { SpaceAppsTitle } from '../assets/SpaceAppsTitle';
+import { SelfieIdentTitle } from '../assets/SelfieIdentTitle';
 
 const Wrapper = styled.div`
   display: flex;
@@ -17,126 +20,50 @@ const Wrapper = styled.div`
   box-sizing: border-box;
   min-height: 300px;
   background-color: var(--backgroundColor2);
+
+  img {
+    margin: 0;
+  }
 `;
 
 const data: ProjectShowHeaderProps[] = [
   {
-    title: 'Space Seek',
-    subTitle: 'React Native App',
-    description: `Rewrite of the 'Space Viewer' app`,
-    items: [
-      'See information about live streams, launch time or mission description!',
-      'The data is fetched from the <a rel="noopener noreferrer" href="https://thespacedevs.com/">The Space Devs API</a>',
-      'CI/CD via Github Actions, Fastlane and Detox E2E Tests',
-      '<a rel="noopener noreferrer" href="https://github.com/reime005/spaceseek" aria-label="Github SpaceSeek Project">Open Source</a>',
-    ],
-    backgroundColor: '#7a2c1a',
-    tags: ['TypeScript', 'React Native', 'iOS', 'Android'],
+    title: <SelfieIdentTitle />,
+    alt: 'Nect Selfie Ident',
+    description: `I have worked on Germany's first, fully automated biometric self identification app at <a rel="noopener noreferrer" aria-label="Nect GmbH" href="https://nect.com/">Nect.</a> High performance, good user experience, strong security and data privacy were key features of the application.`,
+    backgroundColor: '#59c2b1',
+    tags: ['React Native', 'iOS', 'Android'],
     link: {
       text: 'More',
-      to: '/project/spaceseek/',
+      to: '/about',
     },
-    imageSource: require('../assets/project_spaceseek.png'),
-    bgComponent: <BGFirst fill="rgba(21, 92, 172, 1)" />,
+    bgComponent: <BGFirst fill="#000" />,
   },
   {
-    title: 'Space Viewer',
-    subTitle: 'React Native App',
+    title: <SpaceAppsTitle />,
+    alt: 'Space Devs Apps',
     description:
-      'Get to know all about upcoming and previous rocket space launches!',
-    items: [
-      'See information about live streams, launch time or mission description!',
-      'The data is fetched from the <a rel="noopener noreferrer" href="https://launchlibrary.net/">LaunchLibrary.net API</a>',
-      'Code sharing via React Native Web',
-      'CI/CD via Github Actions, Fastlane and Detox E2E Tests',
-      '<a rel="noopener noreferrer" href="https://github.com/reime005/react-native-spaceviewer" aria-label="Github SpaceViewer Project">Open Source</a>',
-    ],
-    backgroundColor: 'rgba(21, 92, 172, 1)',
-    tags: ['TypeScript', 'React Native', 'iOS', 'Android'],
+      'Check how many people are in space right now! I have worked on three different apps that leverage space data via the Space Devs API. The projects are open source with full CI/CD setup.',
+    backgroundColor: 'rgb(125, 55, 55)',
+    tags: ['React Native', 'Flutter', 'iOS', 'Android'],
     link: {
       text: 'More',
-      to: '/project/spaceviewer/',
+      to: '/project/spaceapps/',
     },
-    imageSource: require('../assets/project_spaceviewer.png'),
-    bgComponent: <BGFirst fill="#e45858" />,
+    bgComponent: <BGSecond fill="white" />,
   },
   {
-    title: 'People in Space',
-    subTitle: 'Flutter App',
-    description: 'Check how many people are in space right now!',
-    items: [
-      'Built in collaboration with <a rel="noopener noreferrer" href="https://berger-apps.de/">Berger</a>',
-      'Experience documented <a rel="noopener noreferrer" href="/blog/id/my-points-on-flutter-as-a-react-native-developer" aria-label="Blog Post About Flutter Experience">in this article</a>',
-      '<a rel="noopener noreferrer" href="https://github.com/berger89/hmpaisrn" aria-label="Github How Many People Are In Space Right Now Project">Open Source</a>',
-    ],
-    backgroundColor: 'rgb(30, 30, 30)',
-    tags: ['Dart', 'Flutter', 'iOS', 'Android'],
-    link: {
-      text: 'More',
-      to: '/project/peopleinspace/',
-    },
-    imageSource: require('../assets/project_flutter.png'),
-    bgComponent: <BGSecond fill="#e45858" />,
-  },
-  {
-    title: 'Open Source Contributions',
-    subTitle: 'Maintainer and Core Contributor',
+    title: <MobileGamesTitle />,
+    alt: 'Cross Platform Mobile Games',
     description:
-      "I'm participating in several different projects in the React and React Native ecosystem. Some of them are:",
-    items: ['react-native-camera', 'react-native-video', 'react-native (core)'],
-    backgroundColor: '#63578f',
-    tags: ['React', 'React Native', 'Github'],
-    link: {
-      text: 'More',
-      to: 'https://github.com/reime005',
-    },
-    imageSource: require('../assets/project-react.png'),
-    bgComponent: <BGFirst fill="#e45858" />,
-  },
-  {
-    title: 'Splinter Sweets',
-    subTitle: 'Cross Platform Mobile Game App',
-    description:
-      'You have to smash as many sweets as possible within 50 seconds.',
-    items: [
-      '<a rel="noopener noreferrer" href="https://github.com/reime005/splintersweets" aria-label="Github Splinter Sweets Project">Open Source</a>',
-    ],
-    backgroundColor: '#1b2061',
-    tags: ['Kotlin', 'libGDX', 'iOS', 'Android'],
+      'In 2016-2017 I worked on different mobile apps using the cross platform framework libGDX. They were developed for both iOS / Android and some put open source. You may find a web version <a rel="noopener noreferrer" aria-label="Game web version of Hammerize" href="https://reime005.itch.io/hammerize">here.</a>',
+    backgroundColor: '#2c6f7a',
+    tags: ['Kotlin', 'libGDX', 'Java', 'iOS', 'Android'],
     link: {
       text: 'More',
       to: 'https://github.com/reime005/splintersweets',
     },
-    imageSource: require('../assets/project_splintersweets.png'),
-    bgComponent: <BGThird fill="#e45858" />,
-  },
-  {
-    title: 'Bubble Fling',
-    subTitle: 'Cross Platform Mobile Game App',
-    description:
-      'Use your finger to drag and fling bubbles and destroy those with the same color',
-    backgroundColor: '#2c6f7a',
-    tags: ['Kotlin', 'libGDX', 'iOS', 'Android'],
-    // link: {
-    //   text: 'More',
-    //   to: '/project/bubblefling/',
-    // },
-    imageSource: require('../assets/project_bubblefling.png'),
     bgComponent: <BGFirst fill="#e45858" />,
-  },
-  {
-    title: 'Hammerize - Zombie Defense',
-    subTitle: 'Cross Platform Mobile Game App',
-    description:
-      'Hit zombies with a hammer, and they will move faster and fast over time! Built in collaboration with Umur Coskun',
-    backgroundColor: '#15631b',
-    tags: ['Java', 'libGDX', 'iOS', 'Android'],
-    link: {
-      text: 'More (careful, game may load with a sound)',
-      to: 'https://reime005.itch.io/hammerize',
-    },
-    imageSource: require('../assets/project_hammerize.png'),
-    bgComponent: <BGSecond fill="#e45858" />,
   },
 ];
 
@@ -164,7 +91,7 @@ export const ProjectShow = (props: IProjectShowProps) => {
               {...d}
               fluid={fluid}
               right={i % 2 === 0}
-              key={d.title}
+              key={d.alt}
             />
           );
         })}

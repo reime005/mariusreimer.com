@@ -110,12 +110,6 @@ module.exports = {
     },
     'gatsby-plugin-react-helmet',
     {
-      resolve: 'gatsby-plugin-typography',
-      options: {
-        pathToConfigModule: 'src/utils/typography',
-      },
-    },
-    {
       resolve: 'gatsby-plugin-zopfli',
       options: {
         extensions: ['css', 'html', 'js', 'svg', 'json'],

@@ -3,10 +3,9 @@ import dateFormat from 'date-fns/format';
 import styled from 'styled-components/native';
 
 const SText = styled.Text`
-  font-family: 'Lato';
-  font-size: 12px;
-  margin-top: 8px;
-  line-height: 22px;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  line-height: 1.5em;
   color: ${({ theme }) => theme.color.listItemFont};
   font-weight: 400;
 `;

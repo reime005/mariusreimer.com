@@ -20,6 +20,7 @@ export const GlobalStyle = createGlobalStyle`
     --lighter: ${lightTheme.color.primaryMedium};
     --inlineCodeFont: ${lightTheme.color.inlineCodeFont};
     --inlineCodeBG: ${lightTheme.color.inlineCodeBG};
+    --listItemFont: ${lightTheme.color.listItemFont};
   }
   * {
     box-sizing: border-box;
@@ -28,12 +29,53 @@ export const GlobalStyle = createGlobalStyle`
     outline: dashed 0.15em darkred;
     outline-offset: 0.12em;
   }
+    /* width */
+  ::-webkit-scrollbar {
+    width: 0px;
+    height: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(73, 73, 73);
+  }
+
+  html {
+    font-size: 17px;
+    font-family: 'Cabin', sans-serif;
+  }
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    * {
+      /* Very short durations means JavaScript that relies on events still works */
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+
+  @media (inverted-colors) {
+    img,
+    video {
+      filter: invert(100%);
+    }
+  }
+
   body {
     height: 100%;
     margin: 0;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    font-family: 'Lato';
 
     background-color: var(--body);
     transition: color 0.1s ease-out, background 0.1s ease-out;
@@ -57,6 +99,7 @@ export const GlobalStyle = createGlobalStyle`
       --lighter: ${darkTheme.color.primaryLight};
       --inlineCodeFont: ${darkTheme.color.inlineCodeFont};
       --inlineCodeBG: ${darkTheme.color.inlineCodeBG};
+      --listItemFont: ${darkTheme.color.listItemFont};
     }
 
     &.mobile {
@@ -64,30 +107,28 @@ export const GlobalStyle = createGlobalStyle`
       max-height: 100vh;
     }
   }
-  /* h1,h2,h3,h4,h5 {
-    color: var(--headLine);
-  } */
   a {
+    transition: all .2s ease-in-out;
     font-weight: 500;
     line-height: 1.25em;
 
     color: var(--link);
       text-decoration: none;
     :hover {
-      text-decoration: underline;
+      text-decoration: none;
     }
     :visited {
       color: var(--link);
     }
   }
-  #tableText {
+  /* #tableText {
     color: ${({ theme }) =>
       theme === 'dark' ? darkTheme.color.font : lightTheme.color.font};
   }
   #table {
     border-color: ${({ theme }) =>
       theme === 'dark' ? darkTheme.color.stroke : lightTheme.color.stroke};
-  }
+  } */
   main {
     display: flex;
     flex: 1;
@@ -97,18 +138,54 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 100%;
     height: 100%;
     width: 100%;
+
+    h1, h2, h3, h4, h5 {
+      margin: 0;
+      line-height: 1em;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      word-break: break-word;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+    }
+
+    h3, p {
+      font-size: 1rem;
+    }
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Khula', sans-serif;
+  }
+  span, p, h1, h2, h3, h4 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-word;
   }
   span {
     color: var(--font);
   }
   ul {
     list-style-type: square;
+    margin-top: 1em;
+    margin-bottom: 0;
+  }
+  p {
+    margin-top: 2em;
+    margin-bottom: 0;
+    line-height: 1.5em;
   }
   li {
-    margin-bottom: 0.5rem;
+    margin-top: 0.35em;
   }
   img {
     margin: 0;
+    margin-top: 2em;
   }
   code {
     padding-left: 4px;
@@ -129,11 +206,6 @@ export const GlobalStyle = createGlobalStyle`
   lighter {
     color: var(--lighter);
   }
-  @media screen and (max-width: 570px) {
-    main h1 {
-      width: 100%;
-    }
-  }
   .device .device-content {
     overflow: hidden;
     background: #1e5284;
@@ -146,16 +218,34 @@ export const GlobalStyle = createGlobalStyle`
   [data-testid="blogEmptyContainer"] {
     background-color: var(---backgroundColor1);
   }
-  .blog-post-content img {
-    height: auto;
-    position: relative;
-    display: block;
-    margin: auto;
+  .blog-post-content {
+    --marginTop: 1.5em;
     max-width: 100%;
-    max-height: calc(50vh + 180px);
-  }
-  .blog-post-content p {
-    line-height: 1.75rem;
+
+    img {
+      height: auto;
+      position: relative;
+      display: block;
+      margin: auto;
+      max-width: 100%;
+      max-height: calc(50vh + 180px);
+      margin-top: var(--marginTop);
+    }
+
+    h1 {
+      margin-top: var(--marginTop);
+      margin-bottom: 0;
+    }
+
+    h2 {
+      margin-top: var(--marginTop);
+      margin-bottom: 0;
+    }
+
+    h3, p {
+      margin-top: var(--marginTop);
+      margin-bottom: 0;
+    }
   }
   .gist-data td {
     border-bottom: none;

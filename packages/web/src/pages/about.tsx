@@ -89,7 +89,7 @@ const data: Data[] = [
     href: 'https://siemens.com',
   },
   {
-    title: 'Mobile Engineer',
+    title: 'Frontend/Mobile Engineer',
     orga: 'Nect GmbH',
     desc:
       "<p>Responsible for the React Native and React applications in a 5 to 60 people startup.</p><p>Apps had a rating of ~4.7 and more than 300k downloads.</p><p>Germany's first fully-automated biometric self-identification app.</p><ul><li>React, React Native and many Custom Native Modules</li><li>Strong focus on camera use cases (OpenCV and Tesseract OCR)</li><li>TypeScript, JavaScript</li><li>Objective C, Swift</li><li>Kotlin, Java</li><li>Docker, CI/CD, E2E Tests</li></ul>",
@@ -175,30 +175,20 @@ const ContentHeader = styled.div`
     display: flex;
     flex-direction: column;
     flex: 1;
-    justify-content: space-between;
+    justify-content: center;
   }
 
-  h5 {
-    margin-bottom: 0;
-  }
-
-  h2 {
-    margin-bottom: 0.7rem;
-  }
-
-  h3,
-  h4 {
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+  h2, h3, h4 {
+    margin-bottom: 0.2em;
   }
 
   img {
     width: 115px;
     height: 115px;
-    border-radius: 8px;
-    margin-right: 24px;
-    padding: 4px;
-    margin-bottom: 0;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin: 0;
+    margin-right: 1.25rem;
     object-fit: cover;
   }
 
