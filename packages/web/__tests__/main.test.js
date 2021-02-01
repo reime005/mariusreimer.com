@@ -61,14 +61,14 @@ test('navigate to the about page via menu', async () => {
 
   await page.click('a >> text=About');
 
-  await page.waitForSelector('article >> text=Mobile Engineer');
+  await page.waitForSelector('article >> text=Frontend/Mobile Engineer');
 
   const text = await page.$eval(
-    'article >> text=Mobile Engineer',
+    'article >> text=Frontend/Mobile Engineer',
     e => e.textContent,
   );
 
-  expect(text).toEqual('Mobile Engineer');
+  expect(text).toEqual('Frontend/Mobile Engineer');
 });
 
 test('navigate to a blog article', async () => {
