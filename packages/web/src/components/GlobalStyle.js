@@ -29,6 +29,12 @@ export const GlobalStyle = createGlobalStyle`
     outline: dashed 0.15em darkred;
     outline-offset: 0.12em;
   }
+
+  ::selection  {
+    background-color: var(--primary);
+    color: #fff;
+  }
+
     /* width */
   ::-webkit-scrollbar {
     width: 0px;
