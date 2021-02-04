@@ -51,6 +51,7 @@ const ContactLink = styled.a`
 const Wrapper = styled.ul`
   list-style: none;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;

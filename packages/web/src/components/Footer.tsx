@@ -32,12 +32,10 @@ const Item = styled.div`
 `;
 
 const Wrapper = styled.div`
-  padding: 16px;
   margin-top: 16px;
   margin-left: 32px;
   margin-right: 32px;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
