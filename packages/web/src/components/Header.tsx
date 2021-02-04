@@ -62,8 +62,7 @@ const MenuWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding: 0;
 
   @media screen and (max-width: 570px) {
     display: none;
