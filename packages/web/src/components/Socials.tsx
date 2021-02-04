@@ -1,7 +1,6 @@
 import React from 'react';
 import Svg, { Path } from 'react-native-svg';
 import { useTheme } from '@reime005/common';
-import { Link as GLink } from 'gatsby';
 
 import styled from 'styled-components';
 
@@ -22,7 +21,7 @@ export const Socials = () => {
 
   return (
     <>
-      <Link href="mailto:reimerm.dev@gmail.com" aria-label="send to mail">
+      <Link href="mailto:reimerm.dev@gmail.com" aria-label="send an email">
         <Svg height={25} width={25} viewBox="0 0 512 512">
           <Path
             fill={theme === 'dark' ? darkColor : 'grey'}
@@ -31,10 +30,7 @@ export const Socials = () => {
         </Svg>
       </Link>
 
-      <Link
-        href="https://github.com/reime005/mariusreimer.com"
-        aria-label="Github"
-      >
+      <Link href="https://github.com/reime005/" aria-label="Github">
         <Svg height={25} width={25} viewBox="0 0 448 512">
           <Path
             fill={theme === 'dark' ? darkColor : 'black'}
@@ -43,7 +39,7 @@ export const Socials = () => {
         </Svg>
       </Link>
 
-      <Link href="https://de.linkedin.com/in/reime005" aria-label="Linkedin">
+      <Link href="https://de.linkedin.com/in/reime005" aria-label="LinkedIn">
         <Svg height={25} width={25} viewBox="0 0 448 512">
           <Path
             fill={theme === 'dark' ? darkColor : '#2867B2'}
