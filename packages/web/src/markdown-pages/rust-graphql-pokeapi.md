@@ -61,7 +61,7 @@ Code optimization is done at compile time. Also, state management is much simple
 
 Showing Svelte code here would be a bit too much, but the syntax is quite easy to understand.
 
-## Deploying on Heroku
+## Deploying to Heroku
 
 I have used Github Actions as a simple CI/CD. The Rust app is deployed to Heroku via Docker. I have added the `pokeapi` repository as a git submodule and deployed the Python app in the Docker container, too. On start of the container, both server are started and GraphQL server uses the local REST API. For Heroku, you have to make sure that your server's port can be changed via the `PORT` environment variable.
 
