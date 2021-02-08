@@ -2,7 +2,7 @@
 slug: 'rust-graphql-pokeapi'
 date: '2021-02-08'
 title: 'Svelte with Rust and a GraphQL REST API Wrapper'
-description: I show I created a basic GraphQL Wrapper in Rust for the REST PokeAPI, including a PokeDex website using Svelte
+description: I show how I created a basic GraphQL Wrapper in Rust for the REST PokeAPI, including a PokeDex website using Svelte
 tags: rust, graphql, svelte
 cover_image: https://mariusreimer.com/images/rust-graphql-pokeapi-thumb.jpg
 ---
