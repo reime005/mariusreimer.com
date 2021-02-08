@@ -238,17 +238,7 @@ export const GlobalStyle = createGlobalStyle`
       margin-top: var(--marginTop);
     }
 
-    h1 {
-      margin-top: var(--marginTop);
-      margin-bottom: 0;
-    }
-
-    h2 {
-      margin-top: var(--marginTop);
-      margin-bottom: 0;
-    }
-
-    h3, p {
+    h1, h2, h3, h4, h5, p {
       margin-top: var(--marginTop);
       margin-bottom: 0;
     }
