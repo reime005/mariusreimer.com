@@ -11,6 +11,8 @@ cover_image: https://mariusreimer.com/images/rust-graphql-pokeapi-thumb.jpg
 
 GraphQL has become a new alternative for developing APIs other than the common REST approach. Being more lightweight by selectively requesting fields (querying) instead of transmitting unnecessary data just makes sense. With these and other benefits there also are disadvantages like the knowledge it requires to maintain, develop or offer such an API (not every customer wants GraphQL).
 
+You can find the source code [on Github](https://github.com/reime005/graphql_pokeapi_rust) and the Svelte PokeDex UI [here](https://graphql-pokeapi-rust.reime005.vercel.app).
+
 What you could do is to add GraphQL to your existing REST API, basically as a thin layer on top of it. This gives you the benefit of being able to use both. Of course, there is also the cost of maintaining both.
 
 I decided to create a GraphQL server for the open source PokeAPI. For that, I've used Rust, with the **Juniper** GraphQL library, with **Actix Web** as a web server implementation. Serialization of objects has been done with **Serde**. The whole thing is a wrapper on top of the pokerust REST client. Lastly, I've built a small web interface with Svelte in form of a PokeDex which displays some basic Pokemon information.
