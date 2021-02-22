@@ -15,7 +15,7 @@ What you could do is to add GraphQL to your existing REST API, basically as a th
 
 I decided to create a GraphQL server for the open source PokeAPI. For that, I've used Rust, with the **Juniper** GraphQL library, with **Actix Web** as a web server implementation. Serialization of objects has been done with **Serde**. The whole thing is a wrapper on top of the pokerust REST client. Lastly, I've built a small web interface with Svelte in form of a PokeDex which displays some basic Pokemon information.
 
-`youtube:https://www.youtube.com/embed/RV-8q-AkPd8`
+`youtube:https://www.youtube-nocookie.com/embed/RV-8q-AkPd8`
 
 ### GraphQL
 

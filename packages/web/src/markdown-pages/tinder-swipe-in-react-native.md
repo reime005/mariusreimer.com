@@ -19,7 +19,7 @@ Tinder is a dating app that shows you profiles as a card stack. You drag and swi
 The source code can be found [here](https://github.com/reime005/react-native-tinder-demo "https://github.com/reime005/react-native-tinder-demo").
 
 
-`youtube:https://www.youtube.com/embed/goZrjnemJgU`
+`youtube:https://www.youtube-nocookie.com/embed/goZrjnemJgU`
 
 ## In Short
 

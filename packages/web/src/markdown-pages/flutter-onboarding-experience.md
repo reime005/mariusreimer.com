@@ -11,7 +11,7 @@ cover_image: https://mariusreimer.com/images/flutter-onboarding-experience-thumb
 
 Many mobile apps have a unique flow of experience that the user has to go through. A tutorial or onboarding screen can help with explaining the steps that the user has to do in the app. I show roughly how I created such a screen in Flutter. The source code can be found [on Github](https://github.com/reime005/FlutterOnboarding).
 
-`youtube:https://www.youtube.com/embed/XgtzUORaYKU`
+`youtube:https://www.youtube-nocookie.com/embed/XgtzUORaYKU`
 
 ## The Important Widgets
 

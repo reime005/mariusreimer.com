@@ -36,7 +36,23 @@ interface State {
   searchValue: string;
 }
 
+const debounce = (func, wait) => {
+  let timeout;
+  return function (...args) {
+    const context = this;
+    if (timeout) clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      timeout = null;
+      console.error(args);
+
+      func.apply(context, args);
+    }, wait);
+  };
+};
+
 class BlogPageTemplate extends Component<Props, State> {
+  inputTimerRef: number;
+
   constructor(props: Props) {
     super(props);
 
@@ -46,6 +62,10 @@ class BlogPageTemplate extends Component<Props, State> {
       searchResult: [],
       searchValue: '',
     };
+
+    this.inputTimerRef = 0;
+
+    this.onChange = this.onChange.bind(this);
   }
 
   componentDidMount() {
@@ -53,6 +73,42 @@ class BlogPageTemplate extends Component<Props, State> {
     const allData = this.props.data.all.edges.map(mapNode);
 
     this.setState({ data, allData });
+  }
+
+  componentWillUnmount() {
+    this.reset();
+  }
+
+  reset() {
+    if (this.inputTimerRef) {
+      clearTimeout(this.inputTimerRef);
+      this.inputTimerRef = 0;
+    }
+  }
+
+  componentDidUpdate(prevProps: Props, prevState: State) {
+    if (prevState.searchValue !== this.state.searchValue) {
+      this.reset();
+
+      this.inputTimerRef = setTimeout(() => {
+        this.inputTimerRef = 0;
+
+        const searchResult = this.state.allData.filter(
+          ({ node }) =>
+            node.title
+              .toLowerCase()
+              .indexOf(this.state.searchValue.toLowerCase()) != -1,
+        );
+
+        this.setState({ searchResult });
+      }, 50);
+    }
+  }
+
+  onChange(e: any) {
+    const value = e.target.value;
+
+    this.setState({ searchValue: value }, () => {});
   }
 
   render() {
@@ -74,17 +130,7 @@ class BlogPageTemplate extends Component<Props, State> {
               type="text"
               placeholder="Search Blog"
               value={this.state.searchValue}
-              onChange={e => {
-                this.setState({ searchValue: e.target.value });
-
-                const val = e.target.value.toLowerCase();
-
-                const searchResult = this.state.allData.filter(
-                  ({ node }) => node.title.toLowerCase().indexOf(val) != -1,
-                );
-
-                this.setState({ searchResult });
-              }}
+              onChange={this.onChange}
             />
           </div>
 

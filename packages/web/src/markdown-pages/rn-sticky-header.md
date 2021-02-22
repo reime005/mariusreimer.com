@@ -9,7 +9,7 @@ cover_image: https://mariusreimer.com/images/rn-sticky-header.png
 
 Some apps have a special behavior, as you scroll their content. You may call this **Sticky Header**. This means a list's feature of keeping a specific item sticked to its top, until the next sticky item is scrolled over. The use case in general could be a `ScrollView` that has specific sections or categories that you want to keep sticky.
 
-`youtube:https://www.youtube.com/embed/11g_R85G5E8`
+`youtube:https://www.youtube-nocookie.com/embed/11g_R85G5E8`
 
 Luckily, the `ScrollView` component from core React Native has this feature already implemented. It is called [stickyHeaderIndices](https://reactnative.dev/docs/scrollview#stickyheaderindices) and accepts an "array of child indices determining which children get docked to the top of the screen when scrolling".
 

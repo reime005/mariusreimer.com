@@ -11,7 +11,7 @@ cover_image: https://mariusreimer.com/images/rn-animated-star-rating.png
 
 Animations can make already good apps look and feel even better. It can improve the user experience by making actions feel more natural or living. One use case of animations are modals or pop ups, that dynamically display content on the screen. I will describe how you can create a modal in React Native, that opens and closes from/to the bottom.
 
-`youtube:https://www.youtube.com/embed/gTjrigBf1f8`
+`youtube:https://www.youtube-nocookie.com/embed/gTjrigBf1f8`
 
 
 In addition, the modal will have a vector-based star rating box, in order to make the user rate an item (in this case books). Also, the backdrop of the modal blurs the content behind it. This should make the modal fell more natural. Works on Android and iOS. You can find the full source code [on Github](https://github.com/reime005/ReactNativeStarRating).
