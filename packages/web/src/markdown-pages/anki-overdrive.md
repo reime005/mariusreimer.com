@@ -37,7 +37,7 @@ If you do not want to buy a new track, print it. There is an [open source](https
 
 But: Print it on a large paper and be careful about sticking it together precisely! Otherwise, the vehicles may delocalize.
 
-`youtube:https://www.youtube.com/embed/KVeH33uwLWU`
+`youtube:https://www.youtube-nocookie.com/embed/KVeH33uwLWU`
 
 ## #4: There is a vehicle test mode
 

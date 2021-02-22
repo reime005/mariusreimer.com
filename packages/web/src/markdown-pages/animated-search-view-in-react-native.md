@@ -15,7 +15,7 @@ cover_image: "https://mariusreimer.com/images/Simulator-Screen-Shot-iPhone-11-20
 
 Lately I've been working more with animations in React Native. When it comes to that, React Native has its own API. There are some limitation though, as for example gesture handling or changing width and height of an element. For that,  I can recommend using the [react-native-reanimated](https://github.com/software-mansion/react-native-reanimated) library.
 
-`youtube:https://www.youtube.com/embed/l7_CsQY2kUQ`
+`youtube:https://www.youtube-nocookie.com/embed/l7_CsQY2kUQ`
 
 The source code can be found [here](https://github.com/reime005/ReactNativeSearchAnimated). Note: this example uses react-native-reanimated v2. I will explain the most difficult points I had with this example.
 

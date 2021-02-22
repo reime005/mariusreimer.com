@@ -65,7 +65,7 @@ If you look at that code example, you probably wouldn't (I didn't) expect it to 
 
 ![](/images/Screen-Shot-2019-05-29-at-4.35.37-PM.png)
 
-https://www.youtube.com/watch?v=yzfmookAdk8
+https://www.youtube-nocookie.com/watch?v=yzfmookAdk8
 
 But simply wrapping this code into a separate component dramatically decreased the render time. If you are gonna build a new app with React Native and want to get the best out of performance, you may think about building the Android version first, and use that as a benchmark setting.
 

@@ -16,7 +16,7 @@ A transition is a change of one view state into another. The react-native-reanim
 
 The source code in action can be found [here](https://github.com/reime005/ReactNativeTikTokComments/blob/master/src/components/CommentsButton/ToggleIcon.tsx).
 
-`youtube:https://www.youtube.com/embed/Bd_XlpQHDk4`
+`youtube:https://www.youtube-nocookie.com/embed/Bd_XlpQHDk4`
 
 You could achieve the same effect using basic animations, but transitions can make it more easy by triggering multiple animations at the same time or in sequence.
 

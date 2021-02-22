@@ -14,7 +14,7 @@ cover_image: "https://mariusreimer.com/images/tiktok-0.png"
 
 The TikTok app has a pretty interesting loading animation. It has two horizontally aligned circles that seem to rotate its positions, seemingly in a circle. I wanted to create a similar behavior in React Native. The source code can be found [here](https://github.com/reime005/ReactNativeTikTokComments/blob/master/src/components/Spinner/Spinner.tsx).
 
-`youtube:https://www.youtube.com/embed/HiFhYtRElD0`
+`youtube:https://www.youtube-nocookie.com/embed/HiFhYtRElD0`
 
 Initially, the spinner consists of two colored circles.
 

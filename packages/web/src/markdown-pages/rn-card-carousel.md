@@ -9,7 +9,7 @@ cover_image: https://mariusreimer.com/images/rn-card-carousel.png
 
 A card carousel allows you to display data in a horizontal swipe view, in the form of cards. Each card has a specific snap position that the user may scroll to, instead of having a free scrolling. This should give a better experience in case the user has to choose between different categories for example. I will show how you can achieve create such a carousel view, with core React Native components.
 
-`youtube:https://www.youtube.com/embed/csUb9nnhelU`
+`youtube:https://www.youtube-nocookie.com/embed/csUb9nnhelU`
 
 To keep the example simple, we will fill the carousel view with cards (simple Views), that each represent a different color and a random word (lorem ipsum). Each card that is currently selected or active (in the middle of the carousel view), will have a slightly higher size than its neighbors. Also, the neighbor left and right from the active one will already be party visible. The size of the cards will change, depending on how far it is scrolled.
 

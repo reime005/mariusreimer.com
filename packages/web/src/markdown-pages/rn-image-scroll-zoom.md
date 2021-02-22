@@ -13,7 +13,7 @@ When creating a scroll view for a mobile app, a common principle could be to hav
 
 Scrolling up a list of items with an image on top, it can be a nice feature to zoom in the picture naturally. I describe how this can be easily done in React Native. In one of my current React Native apps, which is [open source] with full End-To-End and CI/CD setup, I have implemented this feature. The source code / component can be found [on Github](https://github.com/reime005/SpaceSeek/blob/master/src/components/LaunchContent/LaunchContent.tsx).
 
-`youtube:https://www.youtube.com/embed/5q5ORAdSlBk`
+`youtube:https://www.youtube-nocookie.com/embed/5q5ORAdSlBk`
 
 The basis of all here is the React Native `ScrollView`. This allows us to have content in a scrollable container. When hitting the end of the scroll container in one direction, you may see a bounce of the content. This can be manipulated by changing the boolean `bounces` prop. Since this is enabled by default, we should be good here.
 
