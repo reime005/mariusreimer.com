@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'React Native Development | Marius Reimer',
+    title: 'React Native Development | Marius Reimer ',
     author: 'Marius Reimer',
     description:
       'Personal Website, Blog and App by Marius Reimer. React Native, Flutter and Rust.',
