@@ -25,8 +25,8 @@ jobs:
         with:
           node-version: 16
 
-      - name: Install playwright browsers
-        run: npx playwright install --with-deps
+      # - name: Install playwright browsers
+      #   run: npx playwright install --with-deps
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
@@ -57,23 +57,23 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      - name: Prepare Screenshots Folder
-        working-directory: packages/web/
-        run: mkdir -p ./screenshots
+      # - name: Prepare Screenshots Folder
+      #   working-directory: packages/web/
+      #   run: mkdir -p ./screenshots
 
-      - name: Start Test Webserver in Background
-        working-directory: packages/web/public
-        run: npx serve -p 8000 &
+      # - name: Start Test Webserver in Background
+      #   working-directory: packages/web/public
+      #   run: npx serve -p 8000 &
 
-      - name: Test
-        working-directory: packages/web/
-        run: yarn test
+      # - name: Test
+      #   working-directory: packages/web/
+      #   run: yarn test
 
-      - uses: actions/upload-artifact@v3
-        if: ${{ always() }}
-        with:
-          name: test-screenshots
-          path: ./packages/web/screenshots
+      # - uses: actions/upload-artifact@v3
+      #   if: ${{ always() }}
+      #   with:
+      #     name: test-screenshots
+      #     path: ./packages/web/screenshots
 
       - name: Deploy Test
         if: "(github.ref == 'refs/heads/master' || github.ref == 'refs/heads/develop')"

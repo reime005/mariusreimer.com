@@ -9052,11 +9052,6 @@ expand-tilde@^2.0.0, expand-tilde@^2.0.2:
   dependencies:
     homedir-polyfill "^1.0.1"
 
-expect-playwright@^0.2.4:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/expect-playwright/-/expect-playwright-0.2.4.tgz#a091f081eeb65d23d17ef63738634acfa76569ad"
-  integrity sha512-gsEJxwNPgjq924zuMqZ++P12zAOw2vxKOFRDQzWZgd4cK7cmannqEP41ArOKcfaQRKdSihuXL+ehJ5qDTiriJA==
-
 expect@^24.9.0:
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/expect/-/expect-24.9.0.tgz#b75165b4817074fa4a157794f46fe9f1ba15b6ca"
@@ -13608,19 +13603,6 @@ jest-mock@^26.1.0:
   dependencies:
     "@jest/types" "^26.1.0"
 
-jest-playwright-preset@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/jest-playwright-preset/-/jest-playwright-preset-1.2.1.tgz#7cab79e6aa0b7a78021f1fb0245496afea6f9bba"
-  integrity sha512-iMIpZgwtbZtRMSL+cui7iTrJ7bmVAlgBAdm1TEl7T7pGk+8gPW3b8ZxfgM4fAYNFVKmydHHJ0QyK/K0X/phW3Q==
-  dependencies:
-    expect-playwright "^0.2.4"
-    jest-circus "^26.0.1"
-    jest-environment-node "^26.0.1"
-    jest-process-manager "^0.2.3"
-    nyc "^15.1.0"
-    rimraf "^3.0.2"
-    uuid "^8.1.0"
-
 jest-pnp-resolver@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/jest-pnp-resolver/-/jest-pnp-resolver-1.2.1.tgz#ecdae604c077a7fbc70defb6d517c3c1c898923a"
@@ -17291,40 +17273,6 @@ pkg-up@2.0.0, pkg-up@^2.0.0:
   integrity sha1-yBmscoBZpGHKscOImivjxJoATX8=
   dependencies:
     find-up "^2.1.0"
-
-playwright-firefox@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/playwright-firefox/-/playwright-firefox-1.2.0.tgz#fa28be0c3ffe991fcc6af50c76e9af5965bc808d"
-  integrity sha512-i4EMJqbB8mNZMGqLqGiNKelCx8G+NzndZumgQTb0evqx23ByMznwjIeKBMpiJWDX+5N781m4xBmC6dTXy8DAkg==
-  dependencies:
-    commander "^5.1.0"
-    debug "^4.1.1"
-    extract-zip "^2.0.0"
-    https-proxy-agent "^5.0.0"
-    jpeg-js "^0.3.7"
-    mime "^2.4.4"
-    pngjs "^5.0.0"
-    progress "^2.0.3"
-    proxy-from-env "^1.1.0"
-    rimraf "^3.0.2"
-    ws "^6.1.0"
-
-playwright@^1.7.1:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/playwright/-/playwright-1.7.1.tgz#841638811bc39eb2fed792ffaacbcc959a0aaf5e"
-  integrity sha512-dOSWME42wDedJ/PXv8k0zG0Kxd6d6R2OKA51/05++Z2ISdA4N58gHlWqlVKPDkBog1MI6lu/KNt7QDn19AybWQ==
-  dependencies:
-    debug "^4.1.1"
-    extract-zip "^2.0.1"
-    https-proxy-agent "^5.0.0"
-    jpeg-js "^0.4.2"
-    mime "^2.4.6"
-    pngjs "^5.0.0"
-    progress "^2.0.3"
-    proper-lockfile "^4.1.1"
-    proxy-from-env "^1.1.0"
-    rimraf "^3.0.2"
-    ws "^7.3.1"
 
 please-upgrade-node@^3.2.0:
   version "3.2.0"
