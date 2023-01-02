@@ -98,6 +98,16 @@ const data: Data[] = [
     imgSource: require('../assets/nectlogo.png'),
     href: 'https://nect.com',
   },
+  {
+    title: 'React Native Developer (Freelancer)',
+    orga: 'EWE AG',
+    desc:
+      "<p>Responsible for the React Native application in its full lifecycle.</p><p>Climate change and CO2 awareness are the challenges, that were solved by an intelligent tracking and social system.</p><ul><li>React Native</li><li>JavaScript</li><li>AWS</li><li>Bitrise, Fastlane</li></ul>",
+    location: 'Oldenburg, Germany (remote)',
+    date: '2021-2022',
+    imgSource: require('../assets/codyo.webp'),
+    href: 'https://codyo.app/',
+  },
 ].reverse();
 
 export const AboutPage = () => {
