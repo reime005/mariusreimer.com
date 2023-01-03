@@ -102,11 +102,21 @@ const data: Data[] = [
     title: 'React Native Developer (Freelancer)',
     orga: 'EWE AG',
     desc:
-      "<p>Responsible for the React Native application in its full lifecycle.</p><p>Climate change and CO2 awareness are the challenges, that were solved by an intelligent tracking and social system.</p><ul><li>React Native</li><li>JavaScript</li><li>AWS</li><li>Bitrise, Fastlane</li></ul>",
+      "<p>Responsible for the React Native application in its full lifecycle.</p><p>Climate change and CO2 awareness are the challenges, that were solved by an intelligent tracking and social system.</p><ul><li>React Native</li><li>JavaScript</li><li>AWS</li><li>Bitrise, Fastlane</li><li>Scrum</li></ul>",
     location: 'Oldenburg, Germany (remote)',
     date: '2021-2022',
     imgSource: require('../assets/codyo.webp'),
     href: 'https://codyo.app/',
+  },
+  {
+    title: 'React Native Developer (Freelancer)',
+    orga: 'Tonies GmbH / Frozen Donkey GmbH',
+    desc:
+      "<p>Leading developer for the React Native application.</p><p>Enabling customers to experience tonies® from their phone.</p><ul><li>React Native with Custom Native Modules</li><li>TypeScript, Java, ObjectiveC</li><li>GraphQL, REST, Jest, Detox E2E</li><li>Sentry, Firebase, Zendesk, Zeplin</li><li>Bitrise, Fastlane</li><li>Scrum, Kanban</li></ul>",
+    location: 'Düsseldorf, Germany (remote)',
+    date: '2021-2023',
+    imgSource: require('../assets/tonies.png'),
+    href: 'https://tonies.com/',
   },
 ].reverse();
 
