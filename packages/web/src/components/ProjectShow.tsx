@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ProjectShowHeader, ProjectShowHeaderProps } from './ProjectShowHeader';
-import { BGThird } from '../assets/BGThird';
 import { BGFirst } from '../assets/BGFirst';
 import { BGSecond } from '../assets/BGSecond';
 import { MobileGamesTitle } from '../assets/MobileGamesTitle';
 import { SpaceAppsTitle } from '../assets/SpaceAppsTitle';
 import { SelfieIdentTitle } from '../assets/SelfieIdentTitle';
+import { ToniesTitle } from '../assets/ToniesTitle';
 
 const Wrapper = styled.div`
   display: flex;
@@ -27,6 +27,18 @@ const Wrapper = styled.div`
 `;
 
 const data: ProjectShowHeaderProps[] = [
+  {
+    title: <ToniesTitle />,
+    alt: 'mytonies® App',
+    description: `I was leading the development of the mytonies® app for <a rel="noopener noreferrer" aria-label="tonies GmbH" href="https://tonies.com/">tonies®</a> at <a rel="noopener noreferrer" aria-label="Frozen Donkey GmbH" href="https://frozendonkey.com/">Frozen Donkey</a>.`,
+    backgroundColor: '#d2000f',
+    tags: ['React Native', 'iOS', 'Android'],
+    link: {
+      text: 'More',
+      to: '/about',
+    },
+    bgComponent: <BGSecond fill="#000" />,
+  },
   {
     title: <SelfieIdentTitle />,
     alt: 'Nect Selfie Ident',
