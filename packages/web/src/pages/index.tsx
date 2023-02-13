@@ -63,13 +63,16 @@ export const fluidImage = graphql`
 
 export const pageQuery = graphql`
   query {
-    image_0: file(relativePath: { eq: "project-nect.jpg" }) {
+    image_0: file(relativePath: { eq: "project-tonies.png" }) {
       ...fluidImage
     }
-    image_1: file(relativePath: { eq: "project-space-apps.png" }) {
+    image_1: file(relativePath: { eq: "project-nect.jpg" }) {
       ...fluidImage
     }
-    image_2: file(relativePath: { eq: "project-games.png" }) {
+    image_2: file(relativePath: { eq: "project-space-apps.png" }) {
+      ...fluidImage
+    }
+    image_3: file(relativePath: { eq: "project-games.png" }) {
       ...fluidImage
     }
   }
