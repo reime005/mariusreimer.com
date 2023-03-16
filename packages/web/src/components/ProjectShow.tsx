@@ -43,7 +43,7 @@ const data: ProjectShowHeaderProps[] = [
   {
     title: <CodyoTitle />,
     alt: 'Codyo App',
-    description: `I was responsible for developing and deploying the Codyo app at <a rel="noopener noreferrer" aria-label="Codyo GmbH / EWE AG" href="https://ewe.com/">EWE AG</a>.`,
+    description: `I was responsible for developing and deploying the Codyo app at <a rel="noopener noreferrer" aria-label="Codyo GmbH / EWE AG" href="https://ewe.com/">Codyo GmbH / EWE AG</a>.`,
     backgroundColor: '#FEB12B',
     tags: ['React Native', 'iOS', 'Android'],
     link: {
