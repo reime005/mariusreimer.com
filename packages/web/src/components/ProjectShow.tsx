@@ -7,6 +7,7 @@ import { MobileGamesTitle } from '../assets/MobileGamesTitle';
 import { SpaceAppsTitle } from '../assets/SpaceAppsTitle';
 import { SelfieIdentTitle } from '../assets/SelfieIdentTitle';
 import { ToniesTitle } from '../assets/ToniesTitle';
+import { CodyoTitle } from '../assets/CodyoTitle';
 
 const Wrapper = styled.div`
   display: flex;
@@ -30,8 +31,20 @@ const data: ProjectShowHeaderProps[] = [
   {
     title: <ToniesTitle />,
     alt: 'mytonies® App',
-    description: `I was leading the development of the mytonies® app for <a rel="noopener noreferrer" aria-label="tonies GmbH" href="https://tonies.com/">tonies®</a> at <a rel="noopener noreferrer" aria-label="Frozen Donkey GmbH" href="https://frozendonkey.com/">Frozen Donkey</a>.`,
+    description: `I was a leading developer for the mytonies® app at <a rel="noopener noreferrer" aria-label="tonies GmbH" href="https://tonies.com/">tonies®</a> and <a rel="noopener noreferrer" aria-label="Frozen Donkey GmbH" href="https://frozendonkey.com/">Frozen Donkey</a>.`,
     backgroundColor: '#d2000f',
+    tags: ['React Native', 'iOS', 'Android'],
+    link: {
+      text: 'More',
+      to: '/about',
+    },
+    bgComponent: <BGFirst fill="#000" />,
+  },
+  {
+    title: <CodyoTitle />,
+    alt: 'Codyo App',
+    description: `I was responsible for developing and deploying the Codyo app at <a rel="noopener noreferrer" aria-label="Codyo GmbH / EWE AG" href="https://ewe.com/">EWE AG</a>.`,
+    backgroundColor: '#FEB12B',
     tags: ['React Native', 'iOS', 'Android'],
     link: {
       text: 'More',
