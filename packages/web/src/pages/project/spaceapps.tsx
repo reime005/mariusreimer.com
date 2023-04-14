@@ -275,17 +275,6 @@ export const SpaceSeekProjectPage = (props: any) => {
             well as the native project configurations (require files from the
             node_modules).
           </p>
-
-          <p>
-            <strike>
-              Below you may see a "lite" version rendered of the app to web
-              using React Native Web. Please note that this rather a
-              beta-version and should show the practicability of React Native
-              Web:
-            </strike>
-            &nbsp;*Update 20201: Due to API deprecation the web version is not
-            shown anymore
-          </p>
         </Intro>
       </main>
 
