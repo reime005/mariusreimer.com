@@ -118,6 +118,16 @@ const data: Data[] = [
     imgSource: require('../assets/tonies.png'),
     href: 'https://tonies.com/',
   },
+  {
+    title: 'React Native Developer (Freelancer)',
+    orga: 'SAP SE',
+    desc:
+      "<p>React Native Developer and consulting for the KulturPass App.</p><p>Project of the Federal Government SAP to promote culture to the youth.</p><ul><li>React Native</li><li>TypeScript</li><li>RTK Query</li><li>Open Source</li></ul>",
+    location: 'Germany (remote)',
+    date: '2023-2024',
+    imgSource: require('../assets/sap.svg'),
+    href: 'https://news.sap.com/2023/06/sap-develops-kulturpass-app/',
+  },
 ].reverse();
 
 export const AboutPage = () => {
