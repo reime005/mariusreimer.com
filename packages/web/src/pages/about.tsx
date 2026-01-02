@@ -125,7 +125,7 @@ const data: Data[] = [
       "<p>React Native Developer and consulting for the KulturPass App.</p><p>Project of the Federal Government SAP to promote culture to the youth.</p><ul><li>React Native</li><li>TypeScript</li><li>RTK Query</li><li>Open Source</li></ul>",
     location: 'Germany (remote)',
     date: '2023-2024',
-    imgSource: require('../assets/sap.svg'),
+    imgSource: require('../assets/sap.jpg'),
     href: 'https://news.sap.com/2023/06/sap-develops-kulturpass-app/',
   },
 ].reverse();
