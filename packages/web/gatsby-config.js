@@ -99,6 +99,8 @@ module.exports = {
         display: 'minimal-ui',
         icon: 'static/icons/icon-144x144.png',
         theme_color_in_head: false,
+        cache_busting_mode: 'none',
+        legacy: false,
       },
     },
     {
